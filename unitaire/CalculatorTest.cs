@@ -4,9 +4,9 @@ namespace unitaire;
 public class CalculatorTest
 {
     [Theory]
-    [InlineData(10,20)]
-    [InlineData(0,0)]
-    public void CalculateAverage_PositifNumber_ReturnAverage(double x, double y)
+    [InlineData(10,20,15)]
+    [InlineData(0,0,0)]
+    public void CalculateAverage_PositifNumber_ReturnAverage(double x, double y, double expectedResult)
     {
         //arrange
         var calculator = new Calculator();
@@ -16,7 +16,7 @@ public class CalculatorTest
         var actualAverage =calculator.CalculateAverage(x, y);
 
         //assert
-        Assert.Equal(15, actualAverage); 
+        Assert.Equal(expectedResult, actualAverage); 
     }
 
     [Fact]
