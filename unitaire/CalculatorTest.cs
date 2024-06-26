@@ -3,12 +3,14 @@ namespace unitaire;
 
 public class CalculatorTest
 {
-    [Fact]
-    public void CalculateAverage_PositifNumber_ReturnAverage()
+    [Theory]
+    [InlineData(10,20)]
+    [InlineData(0,0)]
+    public void CalculateAverage_PositifNumber_ReturnAverage(double x, double y)
     {
         //arrange
         var calculator = new Calculator();
-        double x = 10, y = 20;
+        
 
         //act
         var actualAverage =calculator.CalculateAverage(x, y);
