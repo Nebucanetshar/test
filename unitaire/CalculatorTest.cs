@@ -19,12 +19,14 @@ public class CalculatorTest
         Assert.Equal(expectedResult, actualAverage); 
     }
 
-    [Fact]
-    public void CalculateAverage_NegatifNumber_ThrowException()
+    [Theory]
+    [InlineData(1, -1)]
+    [InlineData(-10, 20)]
+    public void CalculateAverage_NegatifNumber_ThrowException(double x, double y)
     {
         // arrange
         var calculator = new Calculator();
-        double x= -10 , y= -20;
+        
 
         //act & assert
         Assert.Throws<ArgumentException>(()=>calculator.CalculateAverage(x, y));
