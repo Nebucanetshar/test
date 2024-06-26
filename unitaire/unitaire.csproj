@@ -22,4 +22,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\console\console.csproj" />
+  </ItemGroup>
+
 </Project>

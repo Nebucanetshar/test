@@ -1,2 +1,8 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using console;
+
+var calculator = new Calculator();
+var average = calculator.CalculateAverage(10, 20);
+Console.WriteLine(average);
+
+average = calculator.CalculateAverage(-10, -20);
+Console.WriteLine(average);
