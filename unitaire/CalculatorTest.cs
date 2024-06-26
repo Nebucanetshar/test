@@ -45,4 +45,40 @@ public class CalculatorTest
         //Assert
         Assert.Equal(expectedSum, actualSum);
     }
+
+    [Theory]
+    [MemberData(nameof(GetStudents))]
+    public void CalculateStudentsAverageNote_Students_ReturnAverage(Student student, double expectedAverage)
+    {
+        // arrange
+        var calculator=new Calculator();
+
+        //act
+        var actualAverage = calculator.CalculateMarksAverage(student);
+
+        //assert
+        Assert.Equal(expectedAverage, actualAverage);
+    }
+    public static IEnumerable<object[]>GetStudents()
+    {
+        yield return new object[]
+        {
+            new Student
+            {
+                Name="alhann",
+                Note= new List<double> {10, 20}
+            }
+            ,15
+        };
+
+        yield return new object[]
+        {
+            new Student
+            {
+                Name= "Manuella",
+                Note = new List<double> {10 ,16}
+            }
+            ,13
+        };
+    }
 }

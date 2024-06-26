@@ -13,4 +13,13 @@ public class Calculator
         return (x + y);
     }
 
+    public double CalculateMarksAverage(Student student)
+    {
+        if (student.Note != null && student.Note.Any())
+        {
+            return student.Note.Average();
+        }
+        throw new ArgumentException("la note ne peut être null ou vide");
+    }
+
 }
