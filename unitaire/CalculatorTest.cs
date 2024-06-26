@@ -30,7 +30,19 @@ public class CalculatorTest
 
         //act & assert
         Assert.Throws<ArgumentException>(()=>calculator.CalculateAverage(x, y));
+    }
 
+    [Theory]
+    [InlineData(1,2,3)]
+    public void CalculateAverage_PositifNumber_ReturnSum(double x, double y, double expectedSum)
+    {
+        //arrange 
+        var calculator= new Calculator();
 
+        //act
+        var actualSum =calculator.CalculateSum(x, y);
+
+        //Assert
+        Assert.Equal(expectedSum, actualSum);
     }
 }
