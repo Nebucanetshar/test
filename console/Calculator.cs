@@ -10,7 +10,7 @@ public class Calculator
 
     public double CalculateSum(double x, double y)
     {
-        throw new NotImplementedException();
+        return (x + y);
     }
 
 }
