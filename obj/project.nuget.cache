@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bfwONePCDblZS8wJylicPPm9WgPHvNDeKcr69NkopNzkRYbd7twJzgBYCjFEormY7n+ULvZF/WQIHyQw7S9u0g==",
+  "dgSpecHash": "WwLnlWcAoScRUx0LAYc9SSH51aCImDmRFo/c6hUrQTTel4T4s7UaN58yoa8TnBJCfavfYgp/8LdKQLkfJH2cMg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\source\\visualStudio\\c#\\test\\front\\wasm\\wasm.csproj",
+  "projectFilePath": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\Front\\wasm\\wasm.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.authorization\\8.0.0\\microsoft.aspnetcore.authorization.8.0.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.components\\8.0.0\\microsoft.aspnetcore.components.8.0.0.nupkg.sha512",

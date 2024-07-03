@@ -10,7 +10,22 @@
         </div>
 
         <article class="content px-4">
-            @Body
+            <CustomBoundary @ref="@errorBoundary" Context="Exception">
+                <ChildContent>
+                    @Body
+                </ChildContent>
+                <ErrorContent>
+                    <div class=" alert bg-danger text-white alert-dismissible">
+                        @Exception.GetType(): @Exception.Message
+                        <button class=" btn-close" @onclick="@errorBoundary.Recover"></button>
+                    </div>
+                </ErrorContent>
+
+            </CustomBoundary>
         </article>
     </main>
 </div>
+
+@code {
+    private ErrorBoundary errorBoundary;
+}
