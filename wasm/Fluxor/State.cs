@@ -1,6 +1,14 @@
-﻿namespace wasm;
+﻿using Fluxor;
+namespace wasm.fluxor;
 
-public class State
+[FeatureState]
+public record class State
 {
+    public ResultResponseViewModel? response { get; set; }
+    public string data { get; private set; }
 
+    public CounterState()
+    {
+        response = new ResultResponseViewModel(data);
+    }
 }

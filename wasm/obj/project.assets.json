@@ -2,6 +2,18 @@
   "version": 3,
   "targets": {
     "net8.0": {
+      "Fluxor/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0/Fluxor.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Fluxor.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Authorization/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -494,6 +506,18 @@
       }
     },
     "net8.0/browser-wasm": {
+      "Fluxor/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0/Fluxor.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Fluxor.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Authorization/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -981,6 +1005,21 @@
     }
   },
   "libraries": {
+    "Fluxor/6.0.0": {
+      "sha512": "1Z8q9wOdRmjyxf4BDRkZTggreZPMXbUgD54oXK4qKoLnSuYbVqX/Lxy39Ieok33hxahBd3qcyH1ZF+Qvw0eHCg==",
+      "type": "package",
+      "path": "fluxor/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fluxor-small-logo.png",
+        "fluxor.6.0.0.nupkg.sha512",
+        "fluxor.nuspec",
+        "lib/net6.0/Fluxor.dll",
+        "lib/net7.0/Fluxor.dll",
+        "lib/net8.0/Fluxor.dll"
+      ]
+    },
     "Microsoft.AspNetCore.Authorization/8.0.0": {
       "sha512": "OGIGJMnlWvQgcweHcv1Mq/P24Zx/brUHeEdD05NzqkSXmQSnFomTvVyCuBtCXT4JPfv2m70y1RSocmd9bIbJRg==",
       "type": "package",
@@ -2053,7 +2092,8 @@
       "Microsoft.AspNetCore.Components.WebAssembly >= 8.0.0",
       "Microsoft.AspNetCore.Components.WebAssembly.DevServer >= 8.0.0",
       "Microsoft.NET.ILLink.Tasks >= 8.0.0",
-      "Microsoft.NET.Sdk.WebAssembly.Pack >= 8.0.0"
+      "Microsoft.NET.Sdk.WebAssembly.Pack >= 8.0.0",
+      "fluxor >= 6.0.0"
     ]
   },
   "packageFolders": {
@@ -2116,6 +2156,10 @@
             "target": "Package",
             "version": "[8.0.0, )",
             "autoReferenced": true
+          },
+          "fluxor": {
+            "target": "Package",
+            "version": "[6.0.0, )"
           }
         },
         "imports": [

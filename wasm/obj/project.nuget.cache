@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "320jXiLty0rBL36d7w2BZAy/4hAj2Ybfk9jug9Jl+1T5j3KzFL/owu0No67LfglGfvAxsH/GsT6j5Hj2hKtA/w==",
+  "dgSpecHash": "rfPsM+lrqUYThbnDkS5QcmGLb4AljzhNqiH81v34Ju0cFS4TfUBEfKayDqQ8QkyTa+D6H811druEhfNFw4g+0Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\ProjetTest\\wasm\\wasm.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\user\\.nuget\\packages\\fluxor\\6.0.0\\fluxor.6.0.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.authorization\\8.0.0\\microsoft.aspnetcore.authorization.8.0.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.components\\8.0.0\\microsoft.aspnetcore.components.8.0.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\8.0.0\\microsoft.aspnetcore.components.analyzers.8.0.0.nupkg.sha512",
