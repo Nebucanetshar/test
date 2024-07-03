@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
+using common.Wrapper;
 using Fluxor;
 
 namespace wasm.fluxor;
@@ -7,7 +8,7 @@ public class Effet
 {
     private IgRpcCounterServiceClient gRpcCounterServiceClient;
 
-    public CounterEffet(IgRpcCounterServiceClient server)
+    public Effet(IgRpcCounterServiceClient server)
     {
         gRpcCounterServiceClient = server;
     }

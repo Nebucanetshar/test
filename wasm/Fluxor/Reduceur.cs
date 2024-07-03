@@ -4,7 +4,7 @@ namespace wasm.fluxor;
 public class Reduceur
 {
     [ReducerMethod]
-    public static CounterState ExecuteState(CounterState state, ActionOutput action)
+    public static State ExecuteState(State state, ActionOutput action)
     {
         return state with
         {

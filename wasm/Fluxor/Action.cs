@@ -1,6 +1,7 @@
-﻿namespace wasm.fluxor;
+﻿using common.ViewModel;
+namespace wasm.fluxor;
 
-public class Action
+public class ActionOutput
 {
     public ResultResponseViewModel? ResponseServer;
     public CounterViewModel? Content { get; }
