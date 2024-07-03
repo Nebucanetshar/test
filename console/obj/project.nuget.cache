@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fRkqB+z1cNdT2JlIeEg4bZQAu/k3nCYNLEVBJf/9CbZDIP2461VRxBNqr4tn8epHnILlcK+fxLPrVxVkS4L29g==",
+  "dgSpecHash": "MJinBueVtR/4aVdkHu/OUa3Hy3y3pXiAjbKuVc1Mkb+5j3Axy4wJoBS7IhIMaxhwXQ6p4Ia59G2jOA1GpfauCg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\console\\console.csproj",
+  "projectFilePath": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\testUnitaire\\console\\console.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

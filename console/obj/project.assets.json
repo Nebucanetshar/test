@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\source\\visualStudio\\c#\\test\\console\\console.csproj",
+      "projectUniqueName": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\testUnitaire\\console\\console.csproj",
       "projectName": "console",
-      "projectPath": "C:\\Users\\user\\source\\visualStudio\\c#\\test\\console\\console.csproj",
+      "projectPath": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\testUnitaire\\console\\console.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\source\\visualStudio\\c#\\test\\console\\obj\\",
+      "outputPath": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\testUnitaire\\console\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",

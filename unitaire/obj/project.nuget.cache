@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UEqoWHnIGoWvIKYeyRdpFYjsrL/raDDVlGYe0gRKU7XxVSltarGPYKMcT4iGSw5Ols3whDSjUkTm1Ueei2UmQg==",
+  "dgSpecHash": "Ik+TyS70F8N2jLZPfGh9KxgYz11HmMpmpvQovXHOQxEMy2PhjibXGk9bJtiDyJwuSwTaAQMaKkZXgsm8yID6sA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\unitaire\\unitaire.csproj",
+  "projectFilePath": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\testUnitaire\\unitaire\\unitaire.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.codecoverage\\17.6.0\\microsoft.codecoverage.17.6.0.nupkg.sha512",
