@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using grpc.Model;
+using Microsoft.EntityFrameworkCore;
 
 namespace grpc.Data;
 
