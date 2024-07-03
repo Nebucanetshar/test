@@ -13,39 +13,39 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = browser
 build_property.RootNamespace = wasm
 build_property.RootNamespace = wasm
-build_property.ProjectDir = C:\Users\user\source\VisualStudio\c#\test\ProjetTest\wasm\
+build_property.ProjectDir = C:\Users\user\source\visualStudio\c#\test\projetTest\wasm\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = false
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\user\source\VisualStudio\c#\test\ProjetTest\wasm
+build_property.MSBuildProjectDirectory = C:\Users\user\source\visualStudio\c#\test\projetTest\wasm
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/user/source/VisualStudio/c\#/test/ProjetTest/wasm/App.razor]
+[C:/Users/user/source/visualStudio/c\#/test/projetTest/wasm/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/VisualStudio/c\#/test/ProjetTest/wasm/Pages/Counter.razor]
+[C:/Users/user/source/visualStudio/c\#/test/projetTest/wasm/Pages/Counter.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/VisualStudio/c\#/test/ProjetTest/wasm/Pages/Home.razor]
+[C:/Users/user/source/visualStudio/c\#/test/projetTest/wasm/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/VisualStudio/c\#/test/ProjetTest/wasm/Pages/Weather.razor]
+[C:/Users/user/source/visualStudio/c\#/test/projetTest/wasm/Pages/Weather.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV2VhdGhlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/VisualStudio/c\#/test/ProjetTest/wasm/_Imports.razor]
+[C:/Users/user/source/visualStudio/c\#/test/projetTest/wasm/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/VisualStudio/c\#/test/ProjetTest/wasm/Layout/MainLayout.razor]
+[C:/Users/user/source/visualStudio/c\#/test/projetTest/wasm/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-cykcrbnhwa
 
-[C:/Users/user/source/VisualStudio/c\#/test/ProjetTest/wasm/Layout/NavMenu.razor]
+[C:/Users/user/source/visualStudio/c\#/test/projetTest/wasm/Layout/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE5hdk1lbnUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-f8fla3ww5l
