@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\source\\visualStudio\\c#\\test\\projetTest\\grpc\\grpc.csproj": {}
+    "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\ProjetTest\\grpc\\grpc.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\source\\visualStudio\\c#\\test\\projetTest\\grpc\\grpc.csproj": {
+    "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\ProjetTest\\grpc\\grpc.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\source\\visualStudio\\c#\\test\\projetTest\\grpc\\grpc.csproj",
+        "projectUniqueName": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\ProjetTest\\grpc\\grpc.csproj",
         "projectName": "grpc",
-        "projectPath": "C:\\Users\\user\\source\\visualStudio\\c#\\test\\projetTest\\grpc\\grpc.csproj",
+        "projectPath": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\ProjetTest\\grpc\\grpc.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\source\\visualStudio\\c#\\test\\projetTest\\grpc\\obj\\",
+        "outputPath": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\ProjetTest\\grpc\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",

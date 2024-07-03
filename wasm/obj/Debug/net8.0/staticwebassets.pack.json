@@ -1,47 +1,47 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\user\\source\\visualStudio\\c#\\test\\projetTest\\wasm\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "Id": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\ProjetTest\\wasm\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
       "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
     },
     {
-      "Id": "C:\\Users\\user\\source\\visualStudio\\c#\\test\\projetTest\\wasm\\obj\\Debug\\net8.0\\compressed\\gva33iq085.gz",
+      "Id": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\ProjetTest\\wasm\\obj\\Debug\\net8.0\\compressed\\gva33iq085.gz",
       "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
     },
     {
-      "Id": "C:\\Users\\user\\source\\visualStudio\\c#\\test\\projetTest\\wasm\\obj\\Debug\\net8.0\\scopedcss\\bundle\\wasm.styles.css",
+      "Id": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\ProjetTest\\wasm\\obj\\Debug\\net8.0\\scopedcss\\bundle\\wasm.styles.css",
       "PackagePath": "staticwebassets\\wasm.styles.css"
     },
     {
-      "Id": "C:\\Users\\user\\source\\visualStudio\\c#\\test\\projetTest\\wasm\\wwwroot\\css\\app.css",
+      "Id": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\ProjetTest\\wasm\\wwwroot\\css\\app.css",
       "PackagePath": "staticwebassets\\css\\app.css"
     },
     {
-      "Id": "C:\\Users\\user\\source\\visualStudio\\c#\\test\\projetTest\\wasm\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "Id": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\ProjetTest\\wasm\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Users\\user\\source\\visualStudio\\c#\\test\\projetTest\\wasm\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "Id": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\ProjetTest\\wasm\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Id": "C:\\Users\\user\\source\\visualStudio\\c#\\test\\projetTest\\wasm\\wwwroot\\css\\style.css",
+      "Id": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\ProjetTest\\wasm\\wwwroot\\css\\style.css",
       "PackagePath": "staticwebassets\\css\\style.css"
     },
     {
-      "Id": "C:\\Users\\user\\source\\visualStudio\\c#\\test\\projetTest\\wasm\\wwwroot\\favicon.png",
+      "Id": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\ProjetTest\\wasm\\wwwroot\\favicon.png",
       "PackagePath": "staticwebassets\\favicon.png"
     },
     {
-      "Id": "C:\\Users\\user\\source\\visualStudio\\c#\\test\\projetTest\\wasm\\wwwroot\\icon-192.png",
+      "Id": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\ProjetTest\\wasm\\wwwroot\\icon-192.png",
       "PackagePath": "staticwebassets\\icon-192.png"
     },
     {
-      "Id": "C:\\Users\\user\\source\\visualStudio\\c#\\test\\projetTest\\wasm\\wwwroot\\index.html",
+      "Id": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\ProjetTest\\wasm\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
     },
     {
-      "Id": "C:\\Users\\user\\source\\visualStudio\\c#\\test\\projetTest\\wasm\\wwwroot\\sample-data\\weather.json",
+      "Id": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\ProjetTest\\wasm\\wwwroot\\sample-data\\weather.json",
       "PackagePath": "staticwebassets\\sample-data\\weather.json"
     },
     {

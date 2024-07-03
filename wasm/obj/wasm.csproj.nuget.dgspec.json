@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\source\\visualStudio\\c#\\test\\projetTest\\wasm\\wasm.csproj": {}
+    "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\ProjetTest\\wasm\\wasm.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\source\\visualStudio\\c#\\test\\projetTest\\wasm\\wasm.csproj": {
+    "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\ProjetTest\\wasm\\wasm.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\source\\visualStudio\\c#\\test\\projetTest\\wasm\\wasm.csproj",
+        "projectUniqueName": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\ProjetTest\\wasm\\wasm.csproj",
         "projectName": "wasm",
-        "projectPath": "C:\\Users\\user\\source\\visualStudio\\c#\\test\\projetTest\\wasm\\wasm.csproj",
+        "projectPath": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\ProjetTest\\wasm\\wasm.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\source\\visualStudio\\c#\\test\\projetTest\\wasm\\obj\\",
+        "outputPath": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\ProjetTest\\wasm\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -5755,11 +5755,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\source\\visualStudio\\c#\\test\\projetTest\\common\\common.csproj",
+      "projectUniqueName": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\ProjetTest\\common\\common.csproj",
       "projectName": "common",
-      "projectPath": "C:\\Users\\user\\source\\visualStudio\\c#\\test\\projetTest\\common\\common.csproj",
+      "projectPath": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\ProjetTest\\common\\common.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\source\\visualStudio\\c#\\test\\projetTest\\common\\obj\\",
+      "outputPath": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\ProjetTest\\common\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5777,8 +5777,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\user\\source\\visualStudio\\c#\\test\\projetTest\\grpc\\grpc.csproj": {
-              "projectPath": "C:\\Users\\user\\source\\visualStudio\\c#\\test\\projetTest\\grpc\\grpc.csproj"
+            "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\ProjetTest\\grpc\\grpc.csproj": {
+              "projectPath": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\ProjetTest\\grpc\\grpc.csproj"
             }
           }
         }
