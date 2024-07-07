@@ -24,12 +24,13 @@ namespace gRpc {
     static GreetReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChJQcm90b3MvZ3JlZXQucHJvdG8SBWdyZWV0IhwKDEhlbGxvUmVxdWVzdBIM",
-            "CgRuYW1lGAEgASgJIh0KCkhlbGxvUmVwbHkSDwoHbWVzc2FnZRgBIAEoCTI9",
-            "CgdHcmVldGVyEjIKCFNheUhlbGxvEhMuZ3JlZXQuSGVsbG9SZXF1ZXN0GhEu",
-            "Z3JlZXQuSGVsbG9SZXBseUIHqgIEZ1JwY2IGcHJvdG8z"));
+            "ChJQcm90b3MvZ3JlZXQucHJvdG8SBWdyZWV0Ghxnb29nbGUvYXBpL2Fubm90",
+            "YXRpb25zLnByb3RvIhwKDEhlbGxvUmVxdWVzdBIMCgRuYW1lGAEgASgJIh0K",
+            "CkhlbGxvUmVwbHkSDwoHbWVzc2FnZRgBIAEoCTI9CgdHcmVldGVyEjIKCFNh",
+            "eUhlbGxvEhMuZ3JlZXQuSGVsbG9SZXF1ZXN0GhEuZ3JlZXQuSGVsbG9SZXBs",
+            "eUIHqgIEZ1JwY2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { },
+          new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::gRpc.HelloRequest), global::gRpc.HelloRequest.Parser, new[]{ "Name" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::gRpc.HelloReply), global::gRpc.HelloReply.Parser, new[]{ "Message" }, null, null, null, null)
@@ -42,6 +43,7 @@ namespace gRpc {
   /// <summary>
   /// The request message containing the user's name.
   /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class HelloRequest : pb::IMessage<HelloRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -234,6 +236,7 @@ namespace gRpc {
   /// <summary>
   /// The response message containing the greetings.
   /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class HelloReply : pb::IMessage<HelloReply>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
