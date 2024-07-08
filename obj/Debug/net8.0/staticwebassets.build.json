@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "ftU3EoB9/w4iOr0Ch1fC15sYWDzyb+6GF0ZhUu+ivUk=",
-  "Source": "gRpc",
-  "BasePath": "_content/gRpc",
+  "Hash": "ufLkahPO798SibdXcXz1j2pqn8S1MbeplDYUT0fEwSY=",
+  "Source": "grpc",
+  "BasePath": "_content/grpc",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],

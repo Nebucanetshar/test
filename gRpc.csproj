@@ -17,6 +17,10 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="microsoft.aspnetcore.grpc.jsontranscoding" Version="8.0.6" />
+    <PackageReference Include="microsoft.entityFrameworkCore" Version="8.0.6" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.0" />
+    <PackageReference Include="Npgsql.entityFrameworkCore.PostgreSql" Version="8.0.4" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSql.Design" Version="1.1.0" />
   </ItemGroup>
 
 </Project>

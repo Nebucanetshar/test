@@ -11,7 +11,14 @@ service Greeter {
   rpc SayHello (HelloRequest) returns (HelloReply)
   {
 	  option (google.api.http)={
-		  get: "/v1/greeter/{name}",
+		  get: "/v1/greeter/{name}"
+
+	  };
+  }
+  rpc SayHelloStream (HelloRequestCount) returns (stream HelloReply)
+  {
+	  option (google.api.http)={
+		  post :"/v1/greeter"
 		  body:"*"
 	  };
   }
@@ -21,6 +28,12 @@ message HelloRequest {
   string name = 1;
 }
 
+message HelloRequestCount{
+	string name =1;
+	int32 count=2;
+}
+
 message HelloReply {
   string message = 1;
+  string Text = 2;
 }
