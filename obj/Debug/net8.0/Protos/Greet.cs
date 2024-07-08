@@ -26,9 +26,9 @@ namespace gRpc {
           string.Concat(
             "ChJQcm90b3MvZ3JlZXQucHJvdG8SBWdyZWV0Ghxnb29nbGUvYXBpL2Fubm90",
             "YXRpb25zLnByb3RvIhwKDEhlbGxvUmVxdWVzdBIMCgRuYW1lGAEgASgJIh0K",
-            "CkhlbGxvUmVwbHkSDwoHbWVzc2FnZRgBIAEoCTI9CgdHcmVldGVyEjIKCFNh",
+            "CkhlbGxvUmVwbHkSDwoHbWVzc2FnZRgBIAEoCTJSCgdHcmVldGVyEkcKCFNh",
             "eUhlbGxvEhMuZ3JlZXQuSGVsbG9SZXF1ZXN0GhEuZ3JlZXQuSGVsbG9SZXBs",
-            "eUIHqgIEZ1JwY2IGcHJvdG8z"));
+            "eSITgtPkkwINEgsvdjEvZ3JlZXRlckIHqgIEZ1JwY2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
