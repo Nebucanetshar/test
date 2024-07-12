@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "wqD0zs840fJvEYeJQ+E2hdxgD6hoyTGtKIYXtkXuiEk=",
+  "Hash": "uRPwHD4DTPciXOGJLq+EIOlayek2G5TsqrA/Ek703Q4=",
   "Source": "blazor",
   "BasePath": "_content/blazor",
   "Mode": "Default",
@@ -141,6 +141,44 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.png"
+    },
+    {
+      "Identity": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\reference\\blazor\\wwwroot\\index.html",
+      "SourceId": "blazor",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\reference\\blazor\\wwwroot\\",
+      "BasePath": "_content/blazor",
+      "RelativePath": "index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    },
+    {
+      "Identity": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\reference\\blazor\\wwwroot\\style.css",
+      "SourceId": "blazor",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\reference\\blazor\\wwwroot\\",
+      "BasePath": "_content/blazor",
+      "RelativePath": "style.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\style.css"
     }
   ]
 }
