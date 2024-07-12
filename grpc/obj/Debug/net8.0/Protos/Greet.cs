@@ -24,13 +24,14 @@ namespace grpc {
     static GreetReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChJQcm90b3MvZ3JlZXQucHJvdG8SBWdyZWV0Ghtnb29nbGUvYXBpL2Fubm90",
-            "YXRpb24ucHJvdG8iHAoMSGVsbG9SZXF1ZXN0EgwKBG5hbWUYASABKAkiHQoK",
-            "SGVsbG9SZXBseRIPCgdtZXNzYWdlGAEgASgJMlkKB0dyZWV0ZXISTgoIU2F5",
-            "SGVsbG8SEy5ncmVldC5IZWxsb1JlcXVlc3QaES5ncmVldC5IZWxsb1JlcGx5",
-            "IhqC0+STAhQSEi92MS9ncmVldGVyL3tuYW1lfUIHqgIEZ3JwY2IGcHJvdG8z"));
+            "ChJQcm90b3MvZ3JlZXQucHJvdG8SBWdyZWV0Ghxnb29nbGUvYXBpL2Fubm90",
+            "YXRpb25zLnByb3RvIhwKDEhlbGxvUmVxdWVzdBIMCgRuYW1lGAEgASgJIh0K",
+            "CkhlbGxvUmVwbHkSDwoHbWVzc2FnZRgBIAEoCTJZCgdHcmVldGVyEk4KCFNh",
+            "eUhlbGxvEhMuZ3JlZXQuSGVsbG9SZXF1ZXN0GhEuZ3JlZXQuSGVsbG9SZXBs",
+            "eSIagtPkkwIUEhIvdjEvZ3JlZXRlci97bmFtZX1CB6oCBGdycGNiBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Google.Api.AnnotationReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::grpc.HelloRequest), global::grpc.HelloRequest.Parser, new[]{ "Name" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::grpc.HelloReply), global::grpc.HelloReply.Parser, new[]{ "Message" }, null, null, null, null)

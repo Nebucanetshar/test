@@ -8,10 +8,22 @@
     ".NETCoreApp,Version=v8.0": {
       "grpc/1.0.0": {
         "dependencies": {
-          "Grpc.AspNetCore": "2.57.0"
+          "Grpc.AspNetCore": "2.57.0",
+          "Microsoft.AspNetCore.Grpc.JsonTranscoding": "8.0.7"
         },
         "runtime": {
           "grpc.dll": {}
+        }
+      },
+      "Google.Api.CommonProtos/2.5.0": {
+        "dependencies": {
+          "Google.Protobuf": "3.23.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Google.Api.CommonProtos.dll": {
+            "assemblyVersion": "2.5.0.0",
+            "fileVersion": "2.5.0.0"
+          }
         }
       },
       "Google.Protobuf/3.23.1": {
@@ -96,6 +108,19 @@
         }
       },
       "Grpc.Tools/2.57.0": {},
+      "Microsoft.AspNetCore.Grpc.JsonTranscoding/8.0.7": {
+        "dependencies": {
+          "Google.Api.CommonProtos": "2.5.0",
+          "Google.Protobuf": "3.23.1",
+          "Grpc.AspNetCore.Server": "2.57.0"
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.AspNetCore.Grpc.JsonTranscoding.dll": {
+            "assemblyVersion": "8.0.7.0",
+            "fileVersion": "8.0.724.31402"
+          }
+        }
+      },
       "Microsoft.Extensions.DependencyInjection/6.0.0": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
@@ -145,6 +170,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Google.Api.CommonProtos/2.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-E3XQotIEGsk3s6nux/oQKtAqUTZ6RK56gSxDwf16OV2QmWMlFXeITajW+Pi2COT+dqChIuPp2z3otvEnPosaqg==",
+      "path": "google.api.commonprotos/2.5.0",
+      "hashPath": "google.api.commonprotos.2.5.0.nupkg.sha512"
     },
     "Google.Protobuf/3.23.1": {
       "type": "package",
@@ -208,6 +240,13 @@
       "sha512": "sha512-H/R3AqavrrWTPsKeEQjSlXFIkqaZ4gMVmtL6dzLg00xup1Fx9jZT9ACxGDv3t83HMmazJLM5rO3k2jfT4Ox58Q==",
       "path": "grpc.tools/2.57.0",
       "hashPath": "grpc.tools.2.57.0.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Grpc.JsonTranscoding/8.0.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-GEj2DlYffpsWSolwbfUpSeJ6XMTK97fSEm2MyAoK/h1OWN1fOf8quGitp6flbxHmmbM1tErJy24pFDGmlfs23Q==",
+      "path": "microsoft.aspnetcore.grpc.jsontranscoding/8.0.7",
+      "hashPath": "microsoft.aspnetcore.grpc.jsontranscoding.8.0.7.nupkg.sha512"
     },
     "Microsoft.Extensions.DependencyInjection/6.0.0": {
       "type": "package",

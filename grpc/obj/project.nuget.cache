@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "hvRAXvopAjcZL0AJ03U9EGlo7PoI9TSNRcuwQ3sc979pTwg+VqH/Zeo3jGRcizZ69cK5vQzboyfxmu8YP6DTlw==",
+  "dgSpecHash": "cHcBeMiYehiTHmmox77I3AGTkMsD/KxafcDBkrDxKRi6wIlZUFCZ3a/CLIphEy9PokU92iJ3xPMMY990QlHnxw==",
   "success": true,
   "projectFilePath": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\reference\\grpc\\grpc.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\user\\.nuget\\packages\\google.api.commonprotos\\2.5.0\\google.api.commonprotos.2.5.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\google.protobuf\\3.23.1\\google.protobuf.3.23.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\grpc.aspnetcore\\2.57.0\\grpc.aspnetcore.2.57.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\grpc.aspnetcore.server\\2.57.0\\grpc.aspnetcore.server.2.57.0.nupkg.sha512",
@@ -13,6 +14,7 @@
     "C:\\Users\\user\\.nuget\\packages\\grpc.net.clientfactory\\2.57.0\\grpc.net.clientfactory.2.57.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\grpc.net.common\\2.57.0\\grpc.net.common.2.57.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\grpc.tools\\2.57.0\\grpc.tools.2.57.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.grpc.jsontranscoding\\8.0.7\\microsoft.aspnetcore.grpc.jsontranscoding.8.0.7.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.0\\microsoft.extensions.dependencyinjection.6.0.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.extensions.http\\6.0.0\\microsoft.extensions.http.6.0.0.nupkg.sha512",

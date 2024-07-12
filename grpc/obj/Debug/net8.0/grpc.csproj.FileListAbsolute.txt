@@ -33,3 +33,6 @@ C:\Users\user\source\VisualStudio\c#\test\reference\grpc\obj\Debug\net8.0\refint
 C:\Users\user\source\VisualStudio\c#\test\reference\grpc\obj\Debug\net8.0\grpc.pdb
 C:\Users\user\source\VisualStudio\c#\test\reference\grpc\obj\Debug\net8.0\grpc.genruntimeconfig.cache
 C:\Users\user\source\VisualStudio\c#\test\reference\grpc\obj\Debug\net8.0\ref\grpc.dll
+C:\Users\user\source\VisualStudio\c#\test\reference\grpc\bin\Debug\net8.0\Google.Api.CommonProtos.dll
+C:\Users\user\source\VisualStudio\c#\test\reference\grpc\bin\Debug\net8.0\Microsoft.AspNetCore.Grpc.JsonTranscoding.dll
+C:\Users\user\source\VisualStudio\c#\test\reference\grpc\obj\Debug\net8.0\grpc.MvcApplicationPartsAssemblyInfo.cs
