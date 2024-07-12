@@ -36,3 +36,4 @@ C:\Users\user\source\VisualStudio\c#\test\reference\grpc\obj\Debug\net8.0\ref\gr
 C:\Users\user\source\VisualStudio\c#\test\reference\grpc\bin\Debug\net8.0\Google.Api.CommonProtos.dll
 C:\Users\user\source\VisualStudio\c#\test\reference\grpc\bin\Debug\net8.0\Microsoft.AspNetCore.Grpc.JsonTranscoding.dll
 C:\Users\user\source\VisualStudio\c#\test\reference\grpc\obj\Debug\net8.0\grpc.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\user\source\VisualStudio\c#\test\reference\grpc\bin\Debug\net8.0\Grpc.AspNetCore.Web.dll

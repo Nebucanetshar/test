@@ -41,9 +41,23 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Google.Protobuf": {
+              "target": "Package",
+              "version": "[3.27.2, )"
+            },
             "Grpc.AspNetCore": {
               "target": "Package",
               "version": "[2.57.0, )"
+            },
+            "Grpc.AspNetCore.Web": {
+              "target": "Package",
+              "version": "[2.63.0, )"
+            },
+            "Grpc.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.64.0, )"
             },
             "Microsoft.AspNetCore.Grpc.JsonTranscoding": {
               "target": "Package",
