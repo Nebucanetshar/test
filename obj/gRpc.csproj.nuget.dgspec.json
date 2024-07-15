@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\Back\\grpc\\grpc.csproj": {}
+    "C:\\Users\\user\\source\\visualStudio\\c#\\test\\back\\grpc\\gRpc.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\Back\\grpc\\grpc.csproj": {
+    "C:\\Users\\user\\source\\visualStudio\\c#\\test\\back\\grpc\\gRpc.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\Back\\grpc\\grpc.csproj",
-        "projectName": "grpc",
-        "projectPath": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\Back\\grpc\\grpc.csproj",
+        "projectUniqueName": "C:\\Users\\user\\source\\visualStudio\\c#\\test\\back\\grpc\\gRpc.csproj",
+        "projectName": "gRpc",
+        "projectPath": "C:\\Users\\user\\source\\visualStudio\\c#\\test\\back\\grpc\\gRpc.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\Back\\grpc\\obj\\",
+        "outputPath": "C:\\Users\\user\\source\\visualStudio\\c#\\test\\back\\grpc\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -45,6 +45,12 @@
               "target": "Package",
               "version": "[2.57.0, )"
             },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
             "Microsoft.Extensions.Logging": {
               "target": "Package",
               "version": "[8.0.0, )"
@@ -69,7 +75,7 @@
             },
             "microsoft.entityFrameworkCore": {
               "target": "Package",
-              "version": "[8.0.6, )"
+              "version": "[8.0.7, )"
             }
           },
           "imports": [

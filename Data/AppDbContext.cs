@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using gRpc;
 
 
 namespace grpc.Data;
@@ -13,7 +14,7 @@ public class AppDbContext : DbContext
     }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseNpgsql(Configuration.GetConnectionString("dbtest"));
+        optionsBuilder.UseNpgsql(Configuration.GetConnectionString("backTest"));
     }
-    //public DbSet<Items> Items { get; set; }
+    public DbSet<Items> Items { get; set; }
 }
