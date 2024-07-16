@@ -34,6 +34,8 @@ public class Program
 
         app.Run();
 
+        //*********** create canal and grpcClient **************
+        
         var channel = GrpcChannel.ForAddress("https://localhost:7052");
         var client = new Link.LinkClient(channel);
     

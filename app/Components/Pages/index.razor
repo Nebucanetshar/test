@@ -1,0 +1,19 @@
+@page "/grpc"
+@inject Link.LinkClient GreetClient
+
+<h3>gRPC Client in Blazor</h3>
+
+<button @onclick="SendGreeting">Send Greeting</button>
+
+<p>@responseMessage</p>
+
+@code {
+    private string responseMessage;
+
+    private async Task SendGreeting()
+    {
+        var request = new HelloRequest { Name = "Blazor" };
+        var response = await Link.GreetAsync(request);
+        responseMessage = response.Message;
+    }
+}
