@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "THo8hb9ol3A+s+JKoCUlHq7uRmnr6xcvM9kJMbwUwVmu+8QYLMFTxUhjFwrYtOquClOXQTm+5A68GkYO627WGA==",
+  "dgSpecHash": "e+S4XTgLUe4fyM+iGjbCaXIgWGktU6Lbr4eXoqe9YsiuqF8TorZyL0kMQtOPqGAGlKE/CNDxrH+RqCW/CdYYng==",
   "success": true,
   "projectFilePath": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\reference\\blazor\\blazor.csproj",
   "expectedPackageFiles": [
@@ -10,10 +10,12 @@
     "C:\\Users\\user\\.nuget\\packages\\grpc.aspnetcore.server\\2.57.0\\grpc.aspnetcore.server.2.57.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\grpc.aspnetcore.server.clientfactory\\2.57.0\\grpc.aspnetcore.server.clientfactory.2.57.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\grpc.aspnetcore.web\\2.63.0\\grpc.aspnetcore.web.2.63.0.nupkg.sha512",
-    "C:\\Users\\user\\.nuget\\packages\\grpc.core.api\\2.57.0\\grpc.core.api.2.57.0.nupkg.sha512",
-    "C:\\Users\\user\\.nuget\\packages\\grpc.net.client\\2.57.0\\grpc.net.client.2.57.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\grpc.core.api\\2.63.0\\grpc.core.api.2.63.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\grpc.net.client\\2.63.0\\grpc.net.client.2.63.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\grpc.net.client.web\\2.63.0\\grpc.net.client.web.2.63.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\grpc.net.clientfactory\\2.57.0\\grpc.net.clientfactory.2.57.0.nupkg.sha512",
-    "C:\\Users\\user\\.nuget\\packages\\grpc.net.common\\2.57.0\\grpc.net.common.2.57.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\grpc.net.common\\2.63.0\\grpc.net.common.2.63.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\grpc.tools\\2.64.0\\grpc.tools.2.64.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.authorization\\8.0.7\\microsoft.aspnetcore.authorization.8.0.7.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.components\\8.0.7\\microsoft.aspnetcore.components.8.0.7.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\8.0.7\\microsoft.aspnetcore.components.analyzers.8.0.7.nupkg.sha512",
