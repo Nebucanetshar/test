@@ -5,9 +5,7 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "grpc", "grpc\grpc.csproj", "{A5544932-5030-4C06-BB05-E757BF2AF656}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "blazor", "blazor\blazor.csproj", "{977F836C-128A-4263-8BD6-71D95A439791}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "app", "app\app.csproj", "{3A00FF1A-D090-45B9-8F9C-3585A66F9637}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "app", "app\app.csproj", "{3A00FF1A-D090-45B9-8F9C-3585A66F9637}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +17,6 @@ Global
 		{A5544932-5030-4C06-BB05-E757BF2AF656}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5544932-5030-4C06-BB05-E757BF2AF656}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A5544932-5030-4C06-BB05-E757BF2AF656}.Release|Any CPU.Build.0 = Release|Any CPU
-		{977F836C-128A-4263-8BD6-71D95A439791}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{977F836C-128A-4263-8BD6-71D95A439791}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{977F836C-128A-4263-8BD6-71D95A439791}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{977F836C-128A-4263-8BD6-71D95A439791}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3A00FF1A-D090-45B9-8F9C-3585A66F9637}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3A00FF1A-D090-45B9-8F9C-3585A66F9637}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A00FF1A-D090-45B9-8F9C-3585A66F9637}.Release|Any CPU.ActiveCfg = Release|Any CPU
