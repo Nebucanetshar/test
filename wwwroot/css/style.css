@@ -50,3 +50,8 @@ nav ul {
     .btn-primary{
         background-color:red;
     }
+
+    .success:hover {
+        background-color: #04AA6D;
+        color: yellow;
+    }
