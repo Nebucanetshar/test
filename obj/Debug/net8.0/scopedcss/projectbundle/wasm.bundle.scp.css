@@ -136,7 +136,7 @@ main[b-cykcrbnhwa] {
 
 .nav-item[b-f8fla3ww5l]  a.active {
     background-color: rgba(255,255,255,0.37);
-    color: white;
+    color: none;
 }
 
 .nav-item[b-f8fla3ww5l]  a:hover {
@@ -159,4 +159,13 @@ main[b-cykcrbnhwa] {
         height: calc(100vh - 3.5rem);
         overflow-y: auto;
     }
+}
+/* /Shared/MainMenu.razor.rz.scp.css */
+/* /Shared/Submenu.razor.rz.scp.css */
+.boulai[b-1xojt01jy2]{
+
+}
+
+.btn btn-primary[b-1xojt01jy2]{
+    background-color:red;
 }

@@ -25,6 +25,10 @@
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
+      "Id": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\Front\\wasm\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
       "Id": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\Front\\wasm\\wwwroot\\favicon.png",
       "PackagePath": "staticwebassets\\favicon.png"
     },

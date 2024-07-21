@@ -26,6 +26,10 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/user/source/VisualStudio/c\#/test/Front/wasm/Pages/Boulai.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQm91bGFpLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/user/source/VisualStudio/c\#/test/Front/wasm/Pages/Counter.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
@@ -36,14 +40,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/user/source/VisualStudio/c\#/test/Front/wasm/Pages/Weather.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV2VhdGhlci5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/user/source/VisualStudio/c\#/test/Front/wasm/Shared/MainMenu.razor]
-build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5NZW51LnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/user/source/VisualStudio/c\#/test/Front/wasm/Shared/Submenu.razor]
-build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1Ym1lbnUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/user/source/VisualStudio/c\#/test/Front/wasm/_Imports.razor]
@@ -57,3 +53,11 @@ build_metadata.AdditionalFiles.CssScope = b-cykcrbnhwa
 [C:/Users/user/source/VisualStudio/c\#/test/Front/wasm/Layout/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE5hdk1lbnUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-f8fla3ww5l
+
+[C:/Users/user/source/VisualStudio/c\#/test/Front/wasm/Shared/MainMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5NZW51LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-k0qemwq0go
+
+[C:/Users/user/source/VisualStudio/c\#/test/Front/wasm/Shared/Submenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1Ym1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-1xojt01jy2
