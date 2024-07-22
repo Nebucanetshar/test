@@ -24,15 +24,15 @@ namespace app {
     static GreetClientReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhQcm90b3MvZ3JlZXRDbGllbnQucHJvdG8SBWdyZWV0IhwKDEhlbGxvUmVx",
-            "dWVzdBIMCgRuYW1lGAEgASgJIh0KCkhlbGxvUmVwbHkSDwoHbWVzc2FnZRgB",
-            "IAEoCTI8CgRMaW5rEjQKCFNheUhlbGxvEhMuZ3JlZXQuSGVsbG9SZXF1ZXN0",
-            "GhEuZ3JlZXQuSGVsbG9SZXBseSIAQgaqAgNhcHBiBnByb3RvMw=="));
+            "ChhQcm90b3MvZ3JlZXRDbGllbnQucHJvdG8SBWdyZWV0IhcKB1JlcXVlc3QS",
+            "DAoEbmFtZRgBIAEoCSIYCgVSZXBseRIPCgdtZXNzYWdlGAEgASgJMjIKBExp",
+            "bmsSKgoIU2F5SGVsbG8SDi5ncmVldC5SZXF1ZXN0GgwuZ3JlZXQuUmVwbHki",
+            "AEIGqgIDYXBwYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::app.HelloRequest), global::app.HelloRequest.Parser, new[]{ "Name" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::app.HelloReply), global::app.HelloReply.Parser, new[]{ "Message" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::app.Request), global::app.Request.Parser, new[]{ "Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::app.Reply), global::app.Reply.Parser, new[]{ "Message" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,16 +40,16 @@ namespace app {
   }
   #region Messages
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-  public sealed partial class HelloRequest : pb::IMessage<HelloRequest>
+  public sealed partial class Request : pb::IMessage<Request>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<HelloRequest> _parser = new pb::MessageParser<HelloRequest>(() => new HelloRequest());
+    private static readonly pb::MessageParser<Request> _parser = new pb::MessageParser<Request>(() => new Request());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<HelloRequest> Parser { get { return _parser; } }
+    public static pb::MessageParser<Request> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -65,7 +65,7 @@ namespace app {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public HelloRequest() {
+    public Request() {
       OnConstruction();
     }
 
@@ -73,15 +73,15 @@ namespace app {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public HelloRequest(HelloRequest other) : this() {
+    public Request(Request other) : this() {
       name_ = other.name_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public HelloRequest Clone() {
-      return new HelloRequest(this);
+    public Request Clone() {
+      return new Request(this);
     }
 
     /// <summary>Field number for the "name" field.</summary>
@@ -99,12 +99,12 @@ namespace app {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as HelloRequest);
+      return Equals(other as Request);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(HelloRequest other) {
+    public bool Equals(Request other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -177,7 +177,7 @@ namespace app {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(HelloRequest other) {
+    public void MergeFrom(Request other) {
       if (other == null) {
         return;
       }
@@ -230,16 +230,16 @@ namespace app {
   }
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-  public sealed partial class HelloReply : pb::IMessage<HelloReply>
+  public sealed partial class Reply : pb::IMessage<Reply>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<HelloReply> _parser = new pb::MessageParser<HelloReply>(() => new HelloReply());
+    private static readonly pb::MessageParser<Reply> _parser = new pb::MessageParser<Reply>(() => new Reply());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<HelloReply> Parser { get { return _parser; } }
+    public static pb::MessageParser<Reply> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -255,7 +255,7 @@ namespace app {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public HelloReply() {
+    public Reply() {
       OnConstruction();
     }
 
@@ -263,15 +263,15 @@ namespace app {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public HelloReply(HelloReply other) : this() {
+    public Reply(Reply other) : this() {
       message_ = other.message_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public HelloReply Clone() {
-      return new HelloReply(this);
+    public Reply Clone() {
+      return new Reply(this);
     }
 
     /// <summary>Field number for the "message" field.</summary>
@@ -289,12 +289,12 @@ namespace app {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as HelloReply);
+      return Equals(other as Reply);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(HelloReply other) {
+    public bool Equals(Reply other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -367,7 +367,7 @@ namespace app {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(HelloReply other) {
+    public void MergeFrom(Reply other) {
       if (other == null) {
         return;
       }

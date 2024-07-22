@@ -7,17 +7,15 @@ package greet;
 
 service Link {
   
-  rpc SayHello (HelloRequest) returns (HelloReply){}
+  rpc SayHello (Request) returns (Reply){}
 
 }
 
-
-message HelloRequest {
+message Request {
   string name = 1;
   
 }
 
-
-message HelloReply {
+message Reply {
   string message = 1;
 }

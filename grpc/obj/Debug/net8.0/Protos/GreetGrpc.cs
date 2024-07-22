@@ -49,6 +49,8 @@ namespace grpc {
     static readonly grpc::Marshaller<global::grpc.HelloRequest> __Marshaller_greet_HelloRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::grpc.HelloRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::grpc.HelloReply> __Marshaller_greet_HelloReply = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::grpc.HelloReply.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::grpc.HelloRequestCount> __Marshaller_greet_HelloRequestCount = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::grpc.HelloRequestCount.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::grpc.HelloRequest, global::grpc.HelloReply> __Method_SayHello = new grpc::Method<global::grpc.HelloRequest, global::grpc.HelloReply>(
@@ -56,6 +58,14 @@ namespace grpc {
         __ServiceName,
         "SayHello",
         __Marshaller_greet_HelloRequest,
+        __Marshaller_greet_HelloReply);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::grpc.HelloRequestCount, global::grpc.HelloReply> __Method_SayHelloStream = new grpc::Method<global::grpc.HelloRequestCount, global::grpc.HelloReply>(
+        grpc::MethodType.ServerStreaming,
+        __ServiceName,
+        "SayHelloStream",
+        __Marshaller_greet_HelloRequestCount,
         __Marshaller_greet_HelloReply);
 
     /// <summary>Service descriptor</summary>
@@ -74,6 +84,12 @@ namespace grpc {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task SayHelloStream(global::grpc.HelloRequestCount request, grpc::IServerStreamWriter<global::grpc.HelloReply> responseStream, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
     }
 
     /// <summary>Creates service definition that can be registered with a server</summary>
@@ -82,7 +98,8 @@ namespace grpc {
     public static grpc::ServerServiceDefinition BindService(GreeterBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
-          .AddMethod(__Method_SayHello, serviceImpl.SayHello).Build();
+          .AddMethod(__Method_SayHello, serviceImpl.SayHello)
+          .AddMethod(__Method_SayHelloStream, serviceImpl.SayHelloStream).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
@@ -93,6 +110,7 @@ namespace grpc {
     public static void BindService(grpc::ServiceBinderBase serviceBinder, GreeterBase serviceImpl)
     {
       serviceBinder.AddMethod(__Method_SayHello, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::grpc.HelloRequest, global::grpc.HelloReply>(serviceImpl.SayHello));
+      serviceBinder.AddMethod(__Method_SayHelloStream, serviceImpl == null ? null : new grpc::ServerStreamingServerMethod<global::grpc.HelloRequestCount, global::grpc.HelloReply>(serviceImpl.SayHelloStream));
     }
 
   }
