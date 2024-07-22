@@ -21,8 +21,15 @@ service Greeter {
 		  body:"*"
 	  };
   }
-}
 
+  rpc StartCounter (CounterRequest) returns (stream CounterResponse)
+  {
+	  option (google.api.http)={
+		  post:"/v1/greeter"
+		  body:"*"
+	  };
+  }
+}
 
 message HelloRequest {
   string name = 1;
@@ -30,11 +37,18 @@ message HelloRequest {
 }
 
 message HelloRequestCount{
-	string name =1;
-	int32 count=2;
+	string name = 1;
+	int32 count = 2;
 }
-
 
 message HelloReply {
   string message = 1;
+}
+
+message CounterRequest{
+	int32 start = 1;
+}
+
+message CounterResponse{
+	int32 count = 1;
 }

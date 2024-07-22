@@ -51,6 +51,10 @@ namespace grpc {
     static readonly grpc::Marshaller<global::grpc.HelloReply> __Marshaller_greet_HelloReply = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::grpc.HelloReply.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::grpc.HelloRequestCount> __Marshaller_greet_HelloRequestCount = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::grpc.HelloRequestCount.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::grpc.CounterRequest> __Marshaller_greet_CounterRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::grpc.CounterRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::grpc.CounterResponse> __Marshaller_greet_CounterResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::grpc.CounterResponse.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::grpc.HelloRequest, global::grpc.HelloReply> __Method_SayHello = new grpc::Method<global::grpc.HelloRequest, global::grpc.HelloReply>(
@@ -67,6 +71,14 @@ namespace grpc {
         "SayHelloStream",
         __Marshaller_greet_HelloRequestCount,
         __Marshaller_greet_HelloReply);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::grpc.CounterRequest, global::grpc.CounterResponse> __Method_StartCounter = new grpc::Method<global::grpc.CounterRequest, global::grpc.CounterResponse>(
+        grpc::MethodType.ServerStreaming,
+        __ServiceName,
+        "StartCounter",
+        __Marshaller_greet_CounterRequest,
+        __Marshaller_greet_CounterResponse);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -90,6 +102,12 @@ namespace grpc {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task StartCounter(global::grpc.CounterRequest request, grpc::IServerStreamWriter<global::grpc.CounterResponse> responseStream, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
     }
 
     /// <summary>Creates service definition that can be registered with a server</summary>
@@ -99,7 +117,8 @@ namespace grpc {
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
           .AddMethod(__Method_SayHello, serviceImpl.SayHello)
-          .AddMethod(__Method_SayHelloStream, serviceImpl.SayHelloStream).Build();
+          .AddMethod(__Method_SayHelloStream, serviceImpl.SayHelloStream)
+          .AddMethod(__Method_StartCounter, serviceImpl.StartCounter).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
@@ -111,6 +130,7 @@ namespace grpc {
     {
       serviceBinder.AddMethod(__Method_SayHello, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::grpc.HelloRequest, global::grpc.HelloReply>(serviceImpl.SayHello));
       serviceBinder.AddMethod(__Method_SayHelloStream, serviceImpl == null ? null : new grpc::ServerStreamingServerMethod<global::grpc.HelloRequestCount, global::grpc.HelloReply>(serviceImpl.SayHelloStream));
+      serviceBinder.AddMethod(__Method_StartCounter, serviceImpl == null ? null : new grpc::ServerStreamingServerMethod<global::grpc.CounterRequest, global::grpc.CounterResponse>(serviceImpl.StartCounter));
     }
 
   }

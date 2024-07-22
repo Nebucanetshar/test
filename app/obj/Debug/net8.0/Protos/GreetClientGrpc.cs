@@ -12,51 +12,6 @@ namespace app {
   {
     static readonly string __ServiceName = "greet.Link";
 
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static void __Helper_SerializeMessage(global::Google.Protobuf.IMessage message, grpc::SerializationContext context)
-    {
-      #if !GRPC_DISABLE_PROTOBUF_BUFFER_SERIALIZATION
-      if (message is global::Google.Protobuf.IBufferMessage)
-      {
-        context.SetPayloadLength(message.CalculateSize());
-        global::Google.Protobuf.MessageExtensions.WriteTo(message, context.GetBufferWriter());
-        context.Complete();
-        return;
-      }
-      #endif
-      context.Complete(global::Google.Protobuf.MessageExtensions.ToByteArray(message));
-    }
-
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static class __Helper_MessageCache<T>
-    {
-      public static readonly bool IsBufferMessage = global::System.Reflection.IntrospectionExtensions.GetTypeInfo(typeof(global::Google.Protobuf.IBufferMessage)).IsAssignableFrom(typeof(T));
-    }
-
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static T __Helper_DeserializeMessage<T>(grpc::DeserializationContext context, global::Google.Protobuf.MessageParser<T> parser) where T : global::Google.Protobuf.IMessage<T>
-    {
-      #if !GRPC_DISABLE_PROTOBUF_BUFFER_SERIALIZATION
-      if (__Helper_MessageCache<T>.IsBufferMessage)
-      {
-        return parser.ParseFrom(context.PayloadAsReadOnlySequence());
-      }
-      #endif
-      return parser.ParseFrom(context.PayloadAsNewBuffer());
-    }
-
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::app.Request> __Marshaller_greet_Request = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::app.Request.Parser));
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::app.Reply> __Marshaller_greet_Reply = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::app.Reply.Parser));
-
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::app.Request, global::app.Reply> __Method_SayHello = new grpc::Method<global::app.Request, global::app.Reply>(
-        grpc::MethodType.Unary,
-        __ServiceName,
-        "SayHello",
-        __Marshaller_greet_Request,
-        __Marshaller_greet_Reply);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -91,26 +46,6 @@ namespace app {
       {
       }
 
-      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::app.Reply SayHello(global::app.Request request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-      {
-        return SayHello(request, new grpc::CallOptions(headers, deadline, cancellationToken));
-      }
-      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::app.Reply SayHello(global::app.Request request, grpc::CallOptions options)
-      {
-        return CallInvoker.BlockingUnaryCall(__Method_SayHello, null, options, request);
-      }
-      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::app.Reply> SayHelloAsync(global::app.Request request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-      {
-        return SayHelloAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
-      }
-      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::app.Reply> SayHelloAsync(global::app.Request request, grpc::CallOptions options)
-      {
-        return CallInvoker.AsyncUnaryCall(__Method_SayHello, null, options, request);
-      }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       protected override LinkClient NewInstance(ClientBaseConfiguration configuration)

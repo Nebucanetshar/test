@@ -6,7 +6,7 @@
 
 <h3>gRPC Client in Blazor</h3>
 
-<button type="button" @onclick="SendGreeting">Send Greeting</button>
+<button type="button" @onclick="SendGreeting">appel diffusion grpc</button>
 
 <p>@responseMessage</p>
 
@@ -15,8 +15,8 @@
 
     private async Task SendGreeting()
     {
-        var request = new HelloRequestCount { Name = "Blazor" };
-        var response = await GreeterService.SayHelloStream(/* ? */);
+        var request = new HelloRequest { Name = "alhann" };
+        var response = await GreeterService.SayHelloStream(/*?*/);
         responseMessage = response.Message;
     }
 }

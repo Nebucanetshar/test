@@ -7,7 +7,7 @@ namespace grpc.Services;
 //{
 //    Task<ResponseWrapperViewModel<IEnumerable<UserViewModel>>> GetOperatorsAsync();
 
-    
+
 //}
 public class GreeterService : Greeter.GreeterBase
 {
@@ -25,17 +25,32 @@ public class GreeterService : Greeter.GreeterBase
         });
     }
 
-   public override async Task SayHelloStream(HelloRequestCount request,IServerStreamWriter<HelloReply> responseSteam, ServerCallContext context)
+    public override async Task SayHelloStream(HelloRequestCount request, IServerStreamWriter<HelloReply> responseSteam, ServerCallContext context)
     {
         if (request.Count <= 0)
             throw new RpcException(new Status(StatusCode.InvalidArgument, "Le count doit être plus grand que zéros"));
 
         _logger.LogInformation($"envoie{request.Count} salut pour {request.Name}");
 
-        for (var i=0; i<request.Count; i++)
+        for (var i = 0; i < request.Count; i++)
         {
-            await responseSteam.WriteAsync(new HelloReply { Message=$"Salut {request.Name} {i+1}" });
+            await responseSteam.WriteAsync(new HelloReply { Message = $"Salut {request.Name} {i + 1}" });
             await Task.Delay(TimeSpan.FromSeconds(1));
         }
     }
+
+    //public override async Task StartCounter(CounterRequest request, IServerStreamWriter<CounterResponse> responseStream, ServerCallContext context)
+    //{
+    //    var count = request.Start;
+
+    //    while (!context.CancellationToken.IsCancellationRequested)
+    //    {
+    //        await responseStream.WriteAsync(new CounterResponse
+    //        {
+    //            Count = ++count
+    //        });
+
+    //        await Task.Delay(TimeSpan.FromSeconds(1));
+    //    }
+    //}
 }

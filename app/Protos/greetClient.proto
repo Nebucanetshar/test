@@ -5,17 +5,7 @@ option csharp_namespace = "app";
 package greet;
 
 
-service Link {
-  
-  rpc SayHello (Request) returns (Reply){}
+service Link {}
 
-}
 
-message Request {
-  string name = 1;
-  
-}
 
-message Reply {
-  string message = 1;
-}
