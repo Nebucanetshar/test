@@ -50,8 +50,6 @@ namespace grpc {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::grpc.HelloReply> __Marshaller_greet_HelloReply = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::grpc.HelloReply.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::grpc.HelloRequestCount> __Marshaller_greet_HelloRequestCount = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::grpc.HelloRequestCount.Parser));
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::grpc.CounterRequest> __Marshaller_greet_CounterRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::grpc.CounterRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::grpc.CounterResponse> __Marshaller_greet_CounterResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::grpc.CounterResponse.Parser));
@@ -65,18 +63,10 @@ namespace grpc {
         __Marshaller_greet_HelloReply);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::grpc.HelloRequestCount, global::grpc.HelloReply> __Method_SayHelloStream = new grpc::Method<global::grpc.HelloRequestCount, global::grpc.HelloReply>(
+    static readonly grpc::Method<global::grpc.CounterRequest, global::grpc.CounterResponse> __Method_SayHelloStream = new grpc::Method<global::grpc.CounterRequest, global::grpc.CounterResponse>(
         grpc::MethodType.ServerStreaming,
         __ServiceName,
         "SayHelloStream",
-        __Marshaller_greet_HelloRequestCount,
-        __Marshaller_greet_HelloReply);
-
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::grpc.CounterRequest, global::grpc.CounterResponse> __Method_StartCounter = new grpc::Method<global::grpc.CounterRequest, global::grpc.CounterResponse>(
-        grpc::MethodType.ServerStreaming,
-        __ServiceName,
-        "StartCounter",
         __Marshaller_greet_CounterRequest,
         __Marshaller_greet_CounterResponse);
 
@@ -97,13 +87,7 @@ namespace grpc {
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task SayHelloStream(global::grpc.HelloRequestCount request, grpc::IServerStreamWriter<global::grpc.HelloReply> responseStream, grpc::ServerCallContext context)
-      {
-        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
-      }
-
-      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task StartCounter(global::grpc.CounterRequest request, grpc::IServerStreamWriter<global::grpc.CounterResponse> responseStream, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task SayHelloStream(global::grpc.CounterRequest request, grpc::IServerStreamWriter<global::grpc.CounterResponse> responseStream, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -117,8 +101,7 @@ namespace grpc {
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
           .AddMethod(__Method_SayHello, serviceImpl.SayHello)
-          .AddMethod(__Method_SayHelloStream, serviceImpl.SayHelloStream)
-          .AddMethod(__Method_StartCounter, serviceImpl.StartCounter).Build();
+          .AddMethod(__Method_SayHelloStream, serviceImpl.SayHelloStream).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
@@ -129,8 +112,7 @@ namespace grpc {
     public static void BindService(grpc::ServiceBinderBase serviceBinder, GreeterBase serviceImpl)
     {
       serviceBinder.AddMethod(__Method_SayHello, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::grpc.HelloRequest, global::grpc.HelloReply>(serviceImpl.SayHello));
-      serviceBinder.AddMethod(__Method_SayHelloStream, serviceImpl == null ? null : new grpc::ServerStreamingServerMethod<global::grpc.HelloRequestCount, global::grpc.HelloReply>(serviceImpl.SayHelloStream));
-      serviceBinder.AddMethod(__Method_StartCounter, serviceImpl == null ? null : new grpc::ServerStreamingServerMethod<global::grpc.CounterRequest, global::grpc.CounterResponse>(serviceImpl.StartCounter));
+      serviceBinder.AddMethod(__Method_SayHelloStream, serviceImpl == null ? null : new grpc::ServerStreamingServerMethod<global::grpc.CounterRequest, global::grpc.CounterResponse>(serviceImpl.SayHelloStream));
     }
 
   }

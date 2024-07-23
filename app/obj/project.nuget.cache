@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TWYToQ19IpqSeVGQo+lVB138YrhVxODIUpUrhE8MyUEd+QLcJEIh294frsBvBBRjoTG8Vo+Pu5haeh0ijAU08g==",
+  "dgSpecHash": "h9+hJXYOVC21ZkSpfdmbliKlqJgSlEmru8xMTZWj4DuOLU1OqG24eG10Z8MnlgVQi3/bRgWWNVKCC9RdeqHZkw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\reference\\app\\app.csproj",
+  "projectFilePath": "C:\\Users\\user\\source\\visualStudio\\c#\\test\\reference\\app\\app.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\google.api.commonprotos\\2.5.0\\google.api.commonprotos.2.5.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\google.protobuf\\3.27.2\\google.protobuf.3.27.2.nupkg.sha512",

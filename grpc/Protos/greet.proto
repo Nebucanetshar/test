@@ -14,7 +14,7 @@ service Greeter {
 		  get: "/v1/greeter/{name}"
 	  };
   }
-  rpc SayHelloStream (HelloRequestCount) returns (stream HelloReply)
+  rpc SayHelloStream (CounterRequest) returns (stream CounterResponse)
   {
 	  option (google.api.http)={
 		  post:"/v1/greeter"
@@ -22,33 +22,23 @@ service Greeter {
 	  };
   }
 
-  rpc StartCounter (CounterRequest) returns (stream CounterResponse)
-  {
-	  option (google.api.http)={
-		  post:"/v1/greeter"
-		  body:"*"
-	  };
-  }
-}
-
-message HelloRequest {
-  string name = 1;
-  
-}
-
-message HelloRequestCount{
-	string name = 1;
-	int32 count = 2;
-}
-
-message HelloReply {
-  string message = 1;
 }
 
 message CounterRequest{
-	int32 start = 1;
-}
-
-message CounterResponse{
 	int32 count = 1;
 }
+
+message CounterResponse {
+  string message = 1;
+  
+}
+
+message HelloRequest{
+	string name =1;
+}
+
+message HelloReply{
+	string message=1;
+}
+
+

@@ -25,16 +25,16 @@ public class GreeterService : Greeter.GreeterBase
         });
     }
 
-    public override async Task SayHelloStream(HelloRequestCount request, IServerStreamWriter<HelloReply> responseSteam, ServerCallContext context)
+    public override async Task SayHelloStream(CounterRequest request, IServerStreamWriter<CounterResponse> responseSteam, ServerCallContext context) 
     {
         if (request.Count <= 0)
-            throw new RpcException(new Status(StatusCode.InvalidArgument, "Le count doit être plus grand que zéros"));
+            throw new RpcException(new Status(StatusCode.InvalidArgument, "Le compteur doit être plus grand que zéros"));
 
-        _logger.LogInformation($"envoie{request.Count} salut pour {request.Name}");
+        _logger.LogInformation($"l'utilisateur à appuyer {request.Count} fois ");
 
         for (var i = 0; i < request.Count; i++)
         {
-            await responseSteam.WriteAsync(new HelloReply { Message = $"Salut {request.Name} {i + 1}" });
+            await responseSteam.WriteAsync(new CounterResponse { Message = $"tu a réussi à joindre les deux bout {i + 1}" });
             await Task.Delay(TimeSpan.FromSeconds(1));
         }
     }

@@ -1,22 +1,25 @@
 @page "/grpc"
-@inject Link.LinkClient GreetClient
+@inject Link.LinkClient GreetClient 
 @using grpc;
 @using app;
 @using grpc.Services
 
+
 <h3>gRPC Client in Blazor</h3>
 
-<button type="button" @onclick="SendGreeting">appel diffusion grpc</button>
+<button class="btn-grpc" type="button" @onclick="SendGreeting">appel diffusion grpc </button>
 
 <p>@responseMessage</p>
 
 @code {
-    private string responseMessage;
+    private string ?responseMessage;
 
     private async Task SendGreeting()
     {
-        var request = new HelloRequest { Name = "alhann" };
-        var response = await GreeterService.SayHelloStream(/*?*/);
+        var request = new CounterRequest { Count = 1 };
+        HelloReply response = await GreeterService.SayHelloStream(/*?*/);
+
         responseMessage = response.Message;
+
     }
 }

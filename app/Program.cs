@@ -1,7 +1,6 @@
 using app.Components;
-using grpc;
-using Grpc.Net.Client;
 using app;
+using Grpc.Net.Client;
 
 
 public class Program
@@ -31,11 +30,10 @@ public class Program
         app.Run();
 
         //*********** create canal and grpcClient **************
-        
+
         var channel = GrpcChannel.ForAddress("https://localhost:7052");
         var client = new Link.LinkClient(channel);
-    
-    
+
     }
 }
 
