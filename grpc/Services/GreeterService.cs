@@ -25,7 +25,7 @@ public class GreeterService : Greeter.GreeterBase
         });
     }
 
-    public override async Task SayHelloStream(CounterRequest request, IServerStreamWriter<CounterResponse> responseSteam, ServerCallContext context) 
+    public override async Task SayHelloStream(CounterRequest request, IServerStreamWriter<CounterResponse> responseStream, ServerCallContext context) 
     {
         if (request.Count <= 0)
             throw new RpcException(new Status(StatusCode.InvalidArgument, "Le compteur doit être plus grand que zéros"));
@@ -34,23 +34,8 @@ public class GreeterService : Greeter.GreeterBase
 
         for (var i = 0; i < request.Count; i++)
         {
-            await responseSteam.WriteAsync(new CounterResponse { Message = $"tu a réussi à joindre les deux bout {i + 1}" });
+            await responseStream.WriteAsync(new CounterResponse { Message = $"tu a réussi à joindre les deux bout {i + 1}" });
             await Task.Delay(TimeSpan.FromSeconds(1));
         }
     }
-
-    //public override async Task StartCounter(CounterRequest request, IServerStreamWriter<CounterResponse> responseStream, ServerCallContext context)
-    //{
-    //    var count = request.Start;
-
-    //    while (!context.CancellationToken.IsCancellationRequested)
-    //    {
-    //        await responseStream.WriteAsync(new CounterResponse
-    //        {
-    //            Count = ++count
-    //        });
-
-    //        await Task.Delay(TimeSpan.FromSeconds(1));
-    //    }
-    //}
 }

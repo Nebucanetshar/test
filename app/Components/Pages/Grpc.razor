@@ -5,21 +5,21 @@
 @using grpc.Services
 
 
-<h3>gRPC Client in Blazor</h3>
+@* <h3>gRPC Client in Blazor</h3>
 
-<button class="btn-grpc" type="button" @onclick="SendGreeting">appel diffusion grpc </button>
+<button class="btn-grpc" type="button" @onclick="CallBroadcast">appel diffusion grpc</button>
 
 <p>@responseMessage</p>
 
 @code {
     private string ?responseMessage;
 
-    private async Task SendGreeting()
+    private async Task CallBroadcast()
     {
         var request = new CounterRequest { Count = 1 };
-        HelloReply response = await GreeterService.SayHelloStream(/*?*/);
+        HelloReply response = await GreeterService.SayHelloStream(request);
 
         responseMessage = response.Message;
 
     }
-}
+} *@
