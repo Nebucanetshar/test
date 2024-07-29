@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Kd/QX7xjjxHn0NJEc5qd6oYuHE9LhM1YqwDp6kHJ547qE2tGFC8i/3lph+BvWViJC/4yYRZz64bMwXaT7v+xlQ==",
+  "dgSpecHash": "rWXY5ZjAdv5qU0Mxipwj6nyHWx/dRdu0Rh0w72RulcqCSKdMvrlYcBErOQlQT5w+fKEr02tx+CJAfGM6u4JADg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\backwpf\\wpf\\wpf.csproj",
+  "projectFilePath": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\frontwpf\\wpf\\wpf.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -18,3 +18,10 @@ C:\Users\user\source\VisualStudio\c#\test\backwpf\wpf\obj\Debug\net8.0-windows\r
 C:\Users\user\source\VisualStudio\c#\test\backwpf\wpf\obj\Debug\net8.0-windows\wpf.pdb
 C:\Users\user\source\VisualStudio\c#\test\backwpf\wpf\obj\Debug\net8.0-windows\wpf.genruntimeconfig.cache
 C:\Users\user\source\VisualStudio\c#\test\backwpf\wpf\obj\Debug\net8.0-windows\ref\wpf.dll
+C:\Users\user\source\visualStudio\c#\test\frontwpf\wpf\obj\Debug\net8.0-windows\MainWindow.g.cs
+C:\Users\user\source\visualStudio\c#\test\frontwpf\wpf\obj\Debug\net8.0-windows\App.g.cs
+C:\Users\user\source\visualStudio\c#\test\frontwpf\wpf\obj\Debug\net8.0-windows\wpf_MarkupCompile.cache
+C:\Users\user\source\visualStudio\c#\test\frontwpf\wpf\obj\Debug\net8.0-windows\wpf_MarkupCompile.lref
+C:\Users\user\source\visualStudio\c#\test\frontwpf\wpf\obj\Debug\net8.0-windows\wpf.dll
+C:\Users\user\source\visualStudio\c#\test\frontwpf\wpf\obj\Debug\net8.0-windows\refint\wpf.dll
+C:\Users\user\source\visualStudio\c#\test\frontwpf\wpf\obj\Debug\net8.0-windows\wpf.pdb
