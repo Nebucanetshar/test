@@ -16,8 +16,13 @@ namespace wpf;
 /// </summary>
 public partial class MainWindow : Window
 {
-    public MainWindow()  
+    public MainWindow()
     {
         InitializeComponent();
+    }
+
+    private void button_Click(object sender, RoutedEventArgs e)
+    {
+        MessageBox.Show("hello, windows presentaion foundation !");
     }
 }
