@@ -3,10 +3,16 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:wpf"
+        xmlns:local="clr-namespace:wpf.Models"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Button Name="button" Click="button_Click">click me</Button>
+        <Window.DataContext>
+            <local:Person Nom="Boulai" Prenom="Alhann"/>
+        </Window.DataContext>
+        <Grid>
+            <TextBox Text="{Binding Path=Nom}" Width="200" Height="30"/>
+            <TextBox Text="{Binding Path=prenom}" Width="200" Height="30"/>
+
+            <Button x:Name="button" Click="button_Click"/>
     </Grid>
 </Window>
