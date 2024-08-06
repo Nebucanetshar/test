@@ -1,7 +1,10 @@
-﻿namespace wpf.Models;
-
-public class Person
+﻿namespace wpf.Models
 {
-    public string ?Nom {  get; set; }
-    public string ?Prenom { get; set; }
+	public class Person
+	{
+		public string Nom { get; set; }
+		public int Age { get; set; }
+	}
 }
+
+

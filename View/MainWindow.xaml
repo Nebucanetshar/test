@@ -4,15 +4,28 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wpf.Models"
+        xmlns:local="clr-namespace:wpf.ViewModels"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+        
         <Window.DataContext>
             <local:Person Nom="Boulai" Prenom="Alhann"/>
         </Window.DataContext>
+
+        <Window.DataContext>
+            <local:PersonViewModel/>
+            <!--can we use 1 or 2 tag <windowsDataContext> ?-->
+        </Window.DataContext>
+
         <Grid>
             <TextBox Text="{Binding Path=Nom}" Width="200" Height="30"/>
-            <TextBox Text="{Binding Path=prenom}" Width="200" Height="30"/>
+            <TextBox Text="{Binding Path=Age}" Width="200" Height="30"/>
 
             <Button x:Name="button" Click="button_Click"/>
-    </Grid>
+        </Grid>
+
+        <StackPanel>
+            <TextBox Text="{Binding Nom,UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Text="{Binding Age,UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
 </Window>
