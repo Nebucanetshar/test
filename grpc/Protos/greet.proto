@@ -21,8 +21,8 @@ service Greeter {
 		  body:"*"
 	  };
   }
-
 }
+
 
 message CounterRequest{
 	int32 count = 1;

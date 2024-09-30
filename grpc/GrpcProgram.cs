@@ -1,5 +1,5 @@
 using grpc.Services;
-public class Program
+public class GrpcProgram
 {
     public static void Main(string[] args)
     {
