@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option csharp_namespace = "grpc";
+import "google/api/annotations.proto";
+
+package aceg;
+
+service Link{
+	rpc SayHelloStream (CounterRequest) returns (stream CounterResponse)
+	{
+		option (google.api.http)={
+			post: "/v1/greeter"
+			body:"*"
+		};
+	}
+}
+
+message CounterRequest{
+	int32 count =1;
+}
+
+message CounterResponse{
+	string message=1;
+}
