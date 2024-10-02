@@ -348,19 +348,6 @@
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
         }
-      },
-      "app/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "compile": {
-          "bin/placeholder/app.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/app.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
       }
     }
   },
@@ -906,17 +893,11 @@
         "system.runtime.compilerservices.unsafe.nuspec",
         "useSharedDesignerContext.txt"
       ]
-    },
-    "app/1.0.0": {
-      "type": "project",
-      "path": "../app/app.csproj",
-      "msbuildProject": "../app/app.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
       "Grpc.AspNetCore >= 2.57.0",
-      "app >= 1.0.0",
       "google.protobuf >= 3.28.2",
       "grpc.aspNetCore.web >= 2.66.0",
       "grpc.tools >= 2.66.0",
@@ -929,11 +910,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\source\\visualStudio\\c#\\test\\aceg\\grpc\\grpc.csproj",
+      "projectUniqueName": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\aceg\\grpc\\grpc.csproj",
       "projectName": "grpc",
-      "projectPath": "C:\\Users\\user\\source\\visualStudio\\c#\\test\\aceg\\grpc\\grpc.csproj",
+      "projectPath": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\aceg\\grpc\\grpc.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\source\\visualStudio\\c#\\test\\aceg\\grpc\\obj\\",
+      "outputPath": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\aceg\\grpc\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -950,11 +931,7 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {
-            "C:\\Users\\user\\source\\visualStudio\\c#\\test\\aceg\\app\\app.csproj": {
-              "projectPath": "C:\\Users\\user\\source\\visualStudio\\c#\\test\\aceg\\app\\app.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {

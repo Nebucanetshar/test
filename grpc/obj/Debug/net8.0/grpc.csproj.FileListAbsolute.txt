@@ -5,10 +5,6 @@ C:\Users\user\source\VisualStudio\c#\test\aceg\grpc\obj\Debug\net8.0\grpc.Assemb
 C:\Users\user\source\VisualStudio\c#\test\aceg\grpc\obj\Debug\net8.0\grpc.csproj.CoreCompileInputs.cache
 C:\Users\user\source\VisualStudio\c#\test\aceg\grpc\obj\Debug\net8.0\grpc.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\user\source\VisualStudio\c#\test\aceg\grpc\obj\Debug\net8.0\grpc.sourcelink.json
-C:\Users\user\source\visualStudio\c#\test\aceg\grpc\bin\Debug\net8.0\app.deps.json
-C:\Users\user\source\visualStudio\c#\test\aceg\grpc\bin\Debug\net8.0\app.runtimeconfig.json
-C:\Users\user\source\visualStudio\c#\test\aceg\grpc\bin\Debug\net8.0\app.staticwebassets.runtime.json
-C:\Users\user\source\visualStudio\c#\test\aceg\grpc\bin\Debug\net8.0\app.exe
 C:\Users\user\source\visualStudio\c#\test\aceg\grpc\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\user\source\visualStudio\c#\test\aceg\grpc\bin\Debug\net8.0\appsettings.json
 C:\Users\user\source\visualStudio\c#\test\aceg\grpc\bin\Debug\net8.0\grpc.staticwebassets.runtime.json
@@ -26,8 +22,6 @@ C:\Users\user\source\visualStudio\c#\test\aceg\grpc\bin\Debug\net8.0\Grpc.Net.Cl
 C:\Users\user\source\visualStudio\c#\test\aceg\grpc\bin\Debug\net8.0\Grpc.Net.ClientFactory.dll
 C:\Users\user\source\visualStudio\c#\test\aceg\grpc\bin\Debug\net8.0\Grpc.Net.Common.dll
 C:\Users\user\source\visualStudio\c#\test\aceg\grpc\bin\Debug\net8.0\Microsoft.AspNetCore.Grpc.JsonTranscoding.dll
-C:\Users\user\source\visualStudio\c#\test\aceg\grpc\bin\Debug\net8.0\app.dll
-C:\Users\user\source\visualStudio\c#\test\aceg\grpc\bin\Debug\net8.0\app.pdb
 C:\Users\user\source\visualStudio\c#\test\aceg\grpc\obj\Debug\net8.0\grpc.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\user\source\visualStudio\c#\test\aceg\grpc\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\user\source\visualStudio\c#\test\aceg\grpc\obj\Debug\net8.0\staticwebassets.development.json

@@ -1,0 +1,14 @@
+@page "/grpc"
+@inject Merge.MergeClient Merge
+@using grpc;
+@using app;
+@using grpc.Services
+
+
+<h3>gRPC Client in Blazor</h3>
+
+<button class="btn-grpc" type="button" @onclick="CallBroadcast">appel diffusion grpc</button>
+
+<p>@responseMessage</p>
+
+

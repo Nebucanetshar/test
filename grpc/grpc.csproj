@@ -18,11 +18,8 @@
   </ItemGroup>
 
 	<ItemGroup>
-		<Protobuf Include="Protos\Link.proto" GrpcServices="Both" />
+		<Protobuf Include="Protos\Merge.proto" GrpcService="Both"/>
 	</ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\app\app.csproj" />
-  </ItemGroup>
+  
 
 </Project>

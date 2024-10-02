@@ -5,7 +5,7 @@ import "google/api/annotations.proto";
 
 package aceg;
 
-service Link{
+service Merge{
 	rpc SayHelloStream (CounterRequest) returns (stream CounterResponse)
 	{
 		option (google.api.http)={

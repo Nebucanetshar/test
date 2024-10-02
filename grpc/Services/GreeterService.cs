@@ -1,10 +1,7 @@
 using Grpc.Core;
-using grpc;
-using app.Components.Pages;
-
 namespace grpc.Services;
 
-public class GreeterService : Link.LinkBase
+public class GreeterService : Merge.MergeBase
 {
 	private readonly ILogger<GreeterService>_logger;
 	public GreeterService(ILogger<GreeterService> logger)
