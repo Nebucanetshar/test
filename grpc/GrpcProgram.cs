@@ -34,6 +34,8 @@ public class GrpcProgram
 		app.UseRouting();
 		app.UseGrpcWeb(new GrpcWebOptions { DefaultEnabled = true });
 
+		// configuration pour activer grpc-web
+
 		app.UseEndpoints(endpoints =>
 		{
 			endpoints.MapControllers();

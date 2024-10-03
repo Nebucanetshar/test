@@ -10,21 +10,26 @@ namespace app.Components.Pages;
 public partial class Grpc
 {
     private string? responseMessage;
+    private readonly Merge.MergeClient ?_mergeClient;
+
+    // options 2 injection dur services via le contructeur
+    
+    //public Grpc(Merge.MergeClient mergeClient)
+    //{
+    //    _mergeClient = mergeClient;
+
+    //}
 
     private async Task CallBroadcast()
     {
-        //*********** create canal and grpcClient **************
 
         var channel = GrpcChannel.ForAddress("https://localhost:5285");
         var client = new Merge.MergeClient(channel);
-       
 
         var request = new CounterRequest { Count = 1 };
-        var call = client.SayHelloStream(request);
+        var response = client.SayHelloStream(request);
 
-        var response = new CounterResponse();
-        
-        responseMessage = response.Message;
+        //responseMessage = response.Message;
 
     }
 }
