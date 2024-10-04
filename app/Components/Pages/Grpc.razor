@@ -12,6 +12,20 @@
 
 <button class="btn-grpc" type="button" @onclick="CallBroadcast">appel diffusion grpc</button>
 
-<p>@responseMessage</p>
+@if (isLoading)
+{
+    <p>Chargement...</p>
+}
+
+@if (string.IsNullOrEmpty(errorMessage))
+{
+    <p style="color:red">@errorMessage</p>
+}
+
+<p>
+    <strong> Réponse du serveur : </strong>
+</p>
+
+<pre> @responseMessage</pre>
 
 

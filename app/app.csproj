@@ -10,4 +10,9 @@
     <ProjectReference Include="..\grpc\grpc.csproj" />
   </ItemGroup>
 
+	<ItemGroup>
+		<PackageReference Include="Grpc.Net.Client" version="2.66.0"/>
+		<PackageReference Include="Google.Protobuf" version="3.29.0-rc1"/>
+	</ItemGroup>
+
 </Project>

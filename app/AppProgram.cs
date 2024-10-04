@@ -14,6 +14,14 @@ public class AppProgram
         {
             o.Address = new Uri("https://localhost:7091");
         });
+            //ignore les erreurs de certificat auto-signé
+        //.ConfigurePrimaryHttpMessageHandler(() =>
+        //{
+        //    return new HttpClientHandler
+        //    {
+        //        ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator
+        //    };
+        //});
 
 
         builder.Services.AddRazorComponents().AddInteractiveServerComponents();
