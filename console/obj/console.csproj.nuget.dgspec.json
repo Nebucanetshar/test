@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\aceg\\grpc\\grpc.csproj": {}
+    "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\aceg\\console\\console.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\aceg\\grpc\\grpc.csproj": {
+    "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\aceg\\console\\console.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\aceg\\grpc\\grpc.csproj",
-        "projectName": "grpc",
-        "projectPath": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\aceg\\grpc\\grpc.csproj",
+        "projectUniqueName": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\aceg\\console\\console.csproj",
+        "projectName": "console",
+        "projectPath": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\aceg\\console\\console.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\aceg\\grpc\\obj\\",
+        "outputPath": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\aceg\\console\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -45,30 +45,6 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "dependencies": {
-            "Grpc.AspNetCore": {
-              "target": "Package",
-              "version": "[2.57.0, )"
-            },
-            "google.protobuf": {
-              "target": "Package",
-              "version": "[3.28.2, )"
-            },
-            "grpc.aspNetCore.web": {
-              "target": "Package",
-              "version": "[2.66.0, )"
-            },
-            "grpc.tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[2.66.0, )"
-            },
-            "microsoft.aspnetCore.grpc.jsonTranscoding": {
-              "target": "Package",
-              "version": "[8.0.8, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -81,9 +57,6 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

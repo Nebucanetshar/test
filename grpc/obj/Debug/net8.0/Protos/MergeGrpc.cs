@@ -69,7 +69,7 @@ namespace grpc {
     public abstract partial class MergeBase
     {
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task SayHelloStream(global::grpc.CounterRequest request, grpc::IServerStreamWriter<global::grpc.CounterResponse> responseStream, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task SayHelloStream(global::grpc.CounterRequest request, grpc::IAsyncStreamWriter<global::grpc.CounterResponse> responseStream, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }

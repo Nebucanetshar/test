@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("grpc")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("console")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1f2bd7a009137e9f3085197ab2dae5712686d478")]
-[assembly: System.Reflection.AssemblyProductAttribute("grpc")]
-[assembly: System.Reflection.AssemblyTitleAttribute("grpc")]
+[assembly: System.Reflection.AssemblyProductAttribute("console")]
+[assembly: System.Reflection.AssemblyTitleAttribute("console")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Généré par la classe MSBuild WriteCodeFragment.

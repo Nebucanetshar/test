@@ -11,25 +11,31 @@ namespace app.Components.Pages;
 public partial class Grpc
 {
     private readonly Merge.MergeClient ?_mergeClient;
-    private string responseMessage = string.Empty;
+    //private string responseMessage = string.Empty;
     private bool isLoading = false;
     private string errorMessage = string.Empty;
+    public IAsyncStreamReader<CounterResponse> asyncStreamReader;
+    private CounterResponse responseMessage;
+    
 
     // options 2 injection du services via le contructeur
-    
+
     //public Grpc(Merge.MergeClient mergeClient)
     //{
     //    _mergeClient = mergeClient;
 
     //}
 
+    public Grpc() { }
+    //public Grpc(IAsyncStreamReader<CounterResponse> stream)
+    //{
+    //    asyncStreamReader = stream;
+    //}
+
     private async Task CallBroadcast()
     {
         isLoading = true;
         errorMessage =string.Empty;
-        responseMessage = string.Empty;
-        StateHasChanged();
-
         try
         {
             var channel = GrpcChannel.ForAddress("https://localhost:7091");
@@ -38,9 +44,14 @@ public partial class Grpc
             var request = new CounterRequest { Count = 1 };
             using var response = client.SayHelloStream(request);
 
-            await foreach (var message in response.ResponseStream.ReadAllAsync())
+            //await foreach (var message in response.ResponseStream.ReadAllAsync())
+            //{
+            //    responseMessage += message.Message + "\n";
+            //}
+           
+            while (await asyncStreamReader.MoveNext(CancellationToken.None))
             {
-                responseMessage += message.Message + "\n";
+                responseMessage = asyncStreamReader.Current;
             }
         }
 

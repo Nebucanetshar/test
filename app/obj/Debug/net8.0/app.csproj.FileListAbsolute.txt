@@ -46,4 +46,4 @@ C:\Users\user\source\VisualStudio\c#\test\aceg\app\bin\Debug\net8.0\Grpc.Net.Com
 C:\Users\user\source\VisualStudio\c#\test\aceg\app\bin\Debug\net8.0\Microsoft.AspNetCore.Grpc.JsonTranscoding.dll
 C:\Users\user\source\VisualStudio\c#\test\aceg\app\bin\Debug\net8.0\grpc.dll
 C:\Users\user\source\VisualStudio\c#\test\aceg\app\bin\Debug\net8.0\grpc.pdb
-C:\Users\user\source\VisualStudio\c#\test\aceg\app\obj\Debug\net8.0\app.csproj.CopyComplete
+C:\Users\user\source\VisualStudio\c#\test\aceg\app\obj\Debug\net8.0\app.csproj.Up2Date
