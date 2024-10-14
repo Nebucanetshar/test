@@ -42,7 +42,7 @@ public partial class Grpc
             var client = new Merge.MergeClient(channel);
 
             var request = new CounterRequest { Count = 1 };
-            using var response = client.SayHelloStream(request);
+            var response = client.SayHelloStream(request);
 
             //await foreach (var message in response.ResponseStream.ReadAllAsync())
             //{

@@ -47,7 +47,7 @@ public class GrpcProgram
 	public static IHostBuilder CreateHost(string[] args)
 		=> Host.CreateDefaultBuilder(args).ConfigureWebHostDefaults(webBuilder =>
 		{
-			webBuilder.UseStartup<GrpcProgram>(); //.UseUrls("https://localhost:7070");
+			webBuilder.UseStartup<GrpcProgram>().UseUrls("https://localhost:7071");
 
 
         });

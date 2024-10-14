@@ -48,16 +48,6 @@ public class AppProgram
         app.Run();
 
     }
-
-    ////*******************MiddleWare***************************************
-
-    //public void ConfigureServices(IServiceCollection services)
-    //{
-    //    services.AddGrpcClient<Merge.MergeClient>(options =>
-    //    {
-    //        options.Address = new Uri("https://localhost:7091");
-    //    });
-    //}
 }
 
 
