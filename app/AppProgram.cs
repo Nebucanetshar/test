@@ -1,6 +1,7 @@
 using app.Components;
 using app.Components.Layout;
 using grpc;
+using Syncfusion.Blazor;
 
 public class AppProgram
 {
@@ -25,6 +26,7 @@ public class AppProgram
 
 
         builder.Services.AddRazorComponents().AddInteractiveServerComponents();
+        builder.Services.AddSyncfusionBlazor();
 
 
         var app = builder.Build();
