@@ -795,11 +795,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\source\\visualStudio\\c#\\test\\back\\gRpc\\gRpc.csproj",
+      "projectUniqueName": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\Back\\gRpc\\gRpc.csproj",
       "projectName": "gRpc",
-      "projectPath": "C:\\Users\\user\\source\\visualStudio\\c#\\test\\back\\gRpc\\gRpc.csproj",
+      "projectPath": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\Back\\gRpc\\gRpc.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\source\\visualStudio\\c#\\test\\back\\gRpc\\obj\\",
+      "outputPath": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\Back\\gRpc\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -823,6 +823,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -853,7 +858,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

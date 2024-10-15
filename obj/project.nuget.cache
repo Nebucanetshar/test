@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XJaMpViiD0cEOJc0tKX5r2T67JveKq+aRZ3/rkbTEu8qt5coc4yNDwsLB6q7x/u+SArJSdXTCZpjrHY2p5OIhw==",
+  "dgSpecHash": "83moM1uxgXE=",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\source\\visualStudio\\c#\\test\\back\\gRpc\\gRpc.csproj",
+  "projectFilePath": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\Back\\gRpc\\gRpc.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\google.protobuf\\3.23.1\\google.protobuf.3.23.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\grpc.aspnetcore\\2.57.0\\grpc.aspnetcore.2.57.0.nupkg.sha512",
