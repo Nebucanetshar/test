@@ -452,3 +452,8 @@ C:\Users\user\source\VisualStudio\c#\test\aceg\test\obj\Debug\net8.0\test.pdb
 C:\Users\user\source\VisualStudio\c#\test\aceg\test\obj\Debug\net8.0\test.genruntimeconfig.cache
 C:\Users\user\source\VisualStudio\c#\test\aceg\test\obj\Debug\net8.0\ref\test.dll
 C:\Users\user\source\VisualStudio\c#\test\aceg\test\bin\Debug\net8.0\SimpleInjector.dll
+C:\Users\user\source\VisualStudio\c#\test\aceg\test\bin\Debug\net8.0\Grpc.Net.Client.Web.dll
+C:\Users\user\source\VisualStudio\c#\test\aceg\test\bin\Debug\net8.0\Syncfusion.Blazor.Buttons.dll
+C:\Users\user\source\VisualStudio\c#\test\aceg\test\bin\Debug\net8.0\Syncfusion.Blazor.Core.dll
+C:\Users\user\source\VisualStudio\c#\test\aceg\test\bin\Debug\net8.0\Syncfusion.Blazor.Themes.dll
+C:\Users\user\source\VisualStudio\c#\test\aceg\test\bin\Debug\net8.0\Syncfusion.Licensing.dll

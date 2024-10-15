@@ -152,6 +152,19 @@
           }
         }
       },
+      "Grpc.Net.Client.Web/2.66.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Grpc.Net.Client.Web.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Grpc.Net.Client.Web.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "Grpc.Net.ClientFactory/2.57.0": {
         "type": "package",
         "dependencies": {
@@ -2866,6 +2879,7 @@
         "dependencies": {
           "Google.Protobuf": "3.29.0-rc1",
           "Grpc.Net.Client": "2.66.0",
+          "Grpc.Net.Client.Web": "2.66.0",
           "grpc": "1.0.0",
           "syncfusion.blazor.buttons": "27.1.52",
           "syncfusion.blazor.themes": "27.1.52"
@@ -3155,6 +3169,34 @@
         "lib/netstandard2.1/Grpc.Net.Client.dll",
         "lib/netstandard2.1/Grpc.Net.Client.pdb",
         "lib/netstandard2.1/Grpc.Net.Client.xml",
+        "packageIcon.png"
+      ]
+    },
+    "Grpc.Net.Client.Web/2.66.0": {
+      "sha512": "DbvdEi+Cc9f2Eq8pGoh2Ii/Qh2VylgPew0d3DMHBVbqUcdpM2PGp+Q0EQjMnKabFtBzfv+n+gPYrKdT1Uz8muA==",
+      "type": "package",
+      "path": "grpc.net.client.web/2.66.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "grpc.net.client.web.2.66.0.nupkg.sha512",
+        "grpc.net.client.web.nuspec",
+        "lib/net6.0/Grpc.Net.Client.Web.dll",
+        "lib/net6.0/Grpc.Net.Client.Web.pdb",
+        "lib/net6.0/Grpc.Net.Client.Web.xml",
+        "lib/net7.0/Grpc.Net.Client.Web.dll",
+        "lib/net7.0/Grpc.Net.Client.Web.pdb",
+        "lib/net7.0/Grpc.Net.Client.Web.xml",
+        "lib/net8.0/Grpc.Net.Client.Web.dll",
+        "lib/net8.0/Grpc.Net.Client.Web.pdb",
+        "lib/net8.0/Grpc.Net.Client.Web.xml",
+        "lib/netstandard2.0/Grpc.Net.Client.Web.dll",
+        "lib/netstandard2.0/Grpc.Net.Client.Web.pdb",
+        "lib/netstandard2.0/Grpc.Net.Client.Web.xml",
+        "lib/netstandard2.1/Grpc.Net.Client.Web.dll",
+        "lib/netstandard2.1/Grpc.Net.Client.Web.pdb",
+        "lib/netstandard2.1/Grpc.Net.Client.Web.xml",
         "packageIcon.png"
       ]
     },

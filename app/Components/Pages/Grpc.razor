@@ -10,9 +10,13 @@
 
 <h3>gRPC Client in Blazor</h3>
 
-<SfButton class="btn-grpc" type="button" @onclick="CallBroadcast">appel diffusion grpc</SfButton>
+<button class="btn-grpc" type="button" @onclick="CallBroadcast">appel diffusion grpc</button>
 
-<p> response server: @responseMessage</p>
+@*  <SfButton @onclick="CallBroadcast">appel diffusion grpc</SfButton>  *@
+
+<p>responseServer: @responseMessage</p>
+<p> error: @errorMessage</p>
+
     
 
 

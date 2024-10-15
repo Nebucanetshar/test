@@ -28,9 +28,9 @@ class Program : IClassFixture<WebApplicationFactory<AppProgram>>
         var serviceProvider = client.Services;
 
         // On vérifie si Merge.MergeClient est enregistré dans le service provider
-        var isServiceAdded = serviceProvider.GetService<Merge.MergeClient>() != null;
+        var isServiceAdded = serviceProvider.GetService<Merge.MergeClient>();
 
-        if (isServiceAdded)
+        if (isServiceAdded != null)
         {
             // Si le service a bien été ajouté
             Console.WriteLine("Le service Merge.MergeClient a été ajouté au conteneur.");

@@ -47,3 +47,8 @@ C:\Users\user\source\VisualStudio\c#\test\aceg\app\bin\Debug\net8.0\Microsoft.As
 C:\Users\user\source\VisualStudio\c#\test\aceg\app\bin\Debug\net8.0\grpc.dll
 C:\Users\user\source\VisualStudio\c#\test\aceg\app\bin\Debug\net8.0\grpc.pdb
 C:\Users\user\source\VisualStudio\c#\test\aceg\app\obj\Debug\net8.0\app.csproj.Up2Date
+C:\Users\user\source\VisualStudio\c#\test\aceg\app\bin\Debug\net8.0\Syncfusion.Blazor.Buttons.dll
+C:\Users\user\source\VisualStudio\c#\test\aceg\app\bin\Debug\net8.0\Syncfusion.Blazor.Core.dll
+C:\Users\user\source\VisualStudio\c#\test\aceg\app\bin\Debug\net8.0\Syncfusion.Blazor.Themes.dll
+C:\Users\user\source\VisualStudio\c#\test\aceg\app\bin\Debug\net8.0\Syncfusion.Licensing.dll
+C:\Users\user\source\VisualStudio\c#\test\aceg\app\bin\Debug\net8.0\Grpc.Net.Client.Web.dll

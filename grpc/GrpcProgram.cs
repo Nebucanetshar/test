@@ -34,15 +34,15 @@ public class GrpcProgram
 		app.UseRouting();
 		app.UseGrpcWeb(new GrpcWebOptions { DefaultEnabled = true });
 
-		// configuration pour activer grpc-web
+        // configuration pour activer grpc-web
 
-		//app.UseEndpoints(endpoints =>
-		//{
-		//	endpoints.MapControllers();
-		//	endpoints.MapGrpcService<GreeterService>().EnableGrpcWeb();
+        app.UseEndpoints(endpoints =>
+        {
+            endpoints.MapControllers();
+            endpoints.MapGrpcService<GreeterService>().EnableGrpcWeb();
 
-		//});
-	}
+        });
+    }
 				// utilisation de l'url de blazor
 	public static IHostBuilder CreateHost(string[] args)
 		=> Host.CreateDefaultBuilder(args).ConfigureWebHostDefaults(webBuilder =>

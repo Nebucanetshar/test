@@ -478,3 +478,8 @@ C:\Users\user\source\VisualStudio\c#\test\aceg\console\obj\Debug\net8.0\refint\c
 C:\Users\user\source\VisualStudio\c#\test\aceg\console\obj\Debug\net8.0\console.pdb
 C:\Users\user\source\VisualStudio\c#\test\aceg\console\obj\Debug\net8.0\console.genruntimeconfig.cache
 C:\Users\user\source\VisualStudio\c#\test\aceg\console\obj\Debug\net8.0\ref\console.dll
+C:\Users\user\source\VisualStudio\c#\test\aceg\console\bin\Debug\net8.0\Grpc.Net.Client.Web.dll
+C:\Users\user\source\VisualStudio\c#\test\aceg\console\bin\Debug\net8.0\Syncfusion.Blazor.Buttons.dll
+C:\Users\user\source\VisualStudio\c#\test\aceg\console\bin\Debug\net8.0\Syncfusion.Blazor.Core.dll
+C:\Users\user\source\VisualStudio\c#\test\aceg\console\bin\Debug\net8.0\Syncfusion.Blazor.Themes.dll
+C:\Users\user\source\VisualStudio\c#\test\aceg\console\bin\Debug\net8.0\Syncfusion.Licensing.dll

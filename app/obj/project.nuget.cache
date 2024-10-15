@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "g2PhdxdTpW0=",
+  "dgSpecHash": "0h3ypRMtfho=",
   "success": true,
   "projectFilePath": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\aceg\\app\\app.csproj",
   "expectedPackageFiles": [
@@ -12,6 +12,7 @@
     "C:\\Users\\user\\.nuget\\packages\\grpc.aspnetcore.web\\2.66.0\\grpc.aspnetcore.web.2.66.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\grpc.core.api\\2.66.0\\grpc.core.api.2.66.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\grpc.net.client\\2.66.0\\grpc.net.client.2.66.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\grpc.net.client.web\\2.66.0\\grpc.net.client.web.2.66.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\grpc.net.clientfactory\\2.57.0\\grpc.net.clientfactory.2.57.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\grpc.net.common\\2.66.0\\grpc.net.common.2.66.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.authorization\\8.0.0\\microsoft.aspnetcore.authorization.8.0.0.nupkg.sha512",

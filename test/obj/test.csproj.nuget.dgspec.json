@@ -58,6 +58,10 @@
               "target": "Package",
               "version": "[2.66.0, )"
             },
+            "Grpc.Net.Client.Web": {
+              "target": "Package",
+              "version": "[2.66.0, )"
+            },
             "syncfusion.blazor.buttons": {
               "target": "Package",
               "version": "[27.1.52, )"
