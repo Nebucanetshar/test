@@ -284,8 +284,8 @@ namespace grpc {
       return new CounterResponse(this);
     }
 
-        /// <summary>Field number for the "message" field.</summary>
-        public const int MessageFieldNumber = 1;
+    /// <summary>Field number for the "message" field.</summary>
+    public const int MessageFieldNumber = 1;
     private string message_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
