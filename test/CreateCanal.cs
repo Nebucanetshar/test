@@ -11,8 +11,6 @@ namespace test;
 
 public class CreateCanal
 {
-    
-
     [Fact]
     public async Task CreateCanal_Open()
     {
