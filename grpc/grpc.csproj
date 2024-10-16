@@ -15,10 +15,17 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="microsoft.aspnetCore.grpc.jsonTranscoding" Version="8.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.0-rc.2.24474.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.0-rc.2.24474.1">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="npgsql.EntityFrameworkCore.PostgreSql" Version="9.0.0-rc.2" />
+    <PackageReference Include="npgsql.EntityFrameworkCore.PostgreSql.Design" Version="1.1.0" />
   </ItemGroup>
 
 	<ItemGroup>
-		<Protobuf Include="Protos\Merge.proto" GrpcService="Both"/>
+		<Protobuf Include="Protos\Merge.proto" GrpcService="Both" />
 	</ItemGroup>
   
 

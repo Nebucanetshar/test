@@ -6,6 +6,7 @@ using grpc.Services;
 using Grpc.Net.Client;
 using Grpc.Net.Client.Web;
 using Microsoft.AspNetCore.Components;
+using app;
 
 public class AppProgram
 {
@@ -17,7 +18,7 @@ public class AppProgram
 
         builder.Services.AddGrpcClient<Merge.MergeClient>(o =>
         {
-            o.Address = new Uri("https://localhost:7091");
+            o.Address = new Uri("https://localhost:5245");
         });
 
         //ignore les erreurs de certificat auto-signé

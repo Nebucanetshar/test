@@ -50,6 +50,16 @@
               "target": "Package",
               "version": "[2.57.0, )"
             },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.0-rc.2.24474.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.0-rc.2.24474.1, )"
+            },
             "google.protobuf": {
               "target": "Package",
               "version": "[3.28.2, )"
@@ -67,6 +77,14 @@
             "microsoft.aspnetCore.grpc.jsonTranscoding": {
               "target": "Package",
               "version": "[8.0.8, )"
+            },
+            "npgsql.EntityFrameworkCore.PostgreSql": {
+              "target": "Package",
+              "version": "[9.0.0-rc.2, )"
+            },
+            "npgsql.EntityFrameworkCore.PostgreSql.Design": {
+              "target": "Package",
+              "version": "[1.1.0, )"
             }
           },
           "imports": [

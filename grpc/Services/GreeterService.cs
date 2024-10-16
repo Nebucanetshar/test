@@ -9,7 +9,7 @@ public class GreeterService : Merge.MergeBase
 		_logger = logger;
 	}
 
-	public override async Task SayHelloStream(CounterRequest request, IAsyncStreamWriter<CounterResponse> responseStream, ServerCallContext context)
+	public override async Task SayHelloStream(CounterRequest request, IServerStreamWriter<CounterResponse> responseStream, ServerCallContext context)
     {
         if (request.Count <=0)
         {

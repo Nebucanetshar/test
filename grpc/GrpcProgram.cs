@@ -1,3 +1,4 @@
+using grpc;
 using grpc.Services;
 using Microsoft.AspNetCore.Builder;
 
@@ -9,6 +10,12 @@ public class GrpcProgram
 
 		
 		builder.Services.AddGrpc().AddJsonTranscoding();
+
+		//configuration base de donnée 
+		builder.Services.AddDbContext<AppDbContext>(options =>
+		{
+			builder.Configuration.GetConnectionString("MergeBase");
+		});
 
 		var app = builder.Build();
 
@@ -51,6 +58,7 @@ public class GrpcProgram
 
 
         });
+	
 		
 			
 }
