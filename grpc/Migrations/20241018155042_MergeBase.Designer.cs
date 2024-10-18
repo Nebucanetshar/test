@@ -11,7 +11,7 @@ using grpc;
 namespace grpc.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20241016132626_MergeBase")]
+    [Migration("20241018155042_MergeBase")]
     partial class MergeBase
     {
         /// <inheritdoc />
