@@ -27,6 +27,6 @@
 	<ItemGroup>
 		<Protobuf Include="Protos\Merge.proto" GrpcService="Both" />
 	</ItemGroup>
-  
+
 
 </Project>

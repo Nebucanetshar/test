@@ -4,9 +4,12 @@ namespace grpc.Services;
 public class GreeterService : Merge.MergeBase
 {
 	private readonly ILogger<GreeterService>_logger;
-	public GreeterService(ILogger<GreeterService> logger)
+    private readonly AppDbContext _appDbContext;
+	public GreeterService(ILogger<GreeterService> logger ,AppDbContext dbContext)
 	{
 		_logger = logger;
+        _appDbContext = dbContext;
+        
 	}
 
 	public override async Task SayHelloStream(CounterRequest request, IServerStreamWriter<CounterResponse> responseStream, ServerCallContext context)
@@ -23,5 +26,26 @@ public class GreeterService : Merge.MergeBase
             await Task.Delay(TimeSpan.FromSeconds(1));
         }
     }
+    //public override async Task<CreateTodoRequest> CreateTodo(CreateTodoRequest request, ServerCallContext context)
+    //{
+    //    var item = new Counter
+    //    {
+    //        Title = request.Title,
+    //        Description = request.Description,
+    //    };
+
+    //    if (request.Title == string.Empty || request.Description == string.Empty)
+    //    {
+    //        throw new RpcException(new Status(StatusCode.InvalidArgument, "la requête ne peut etre vide"));
+    //    }
+
+    //    await _appDbContext.AddAsync(item);
+    //    await _appDbContext.SaveChangesAsync();
+
+    //    return await Task.FromResult(new CounterResponse
+    //    {
+    //        Id = item.Id,
+    //    });
+    //}
 
 }

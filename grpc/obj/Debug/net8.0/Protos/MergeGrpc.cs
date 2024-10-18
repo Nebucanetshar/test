@@ -49,6 +49,10 @@ namespace grpc {
     static readonly grpc::Marshaller<global::grpc.CounterRequest> __Marshaller_aceg_CounterRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::grpc.CounterRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::grpc.CounterResponse> __Marshaller_aceg_CounterResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::grpc.CounterResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::grpc.CreateTodoRequest> __Marshaller_aceg_CreateTodoRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::grpc.CreateTodoRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::grpc.CreateTodoResponse> __Marshaller_aceg_CreateTodoResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::grpc.CreateTodoResponse.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::grpc.CounterRequest, global::grpc.CounterResponse> __Method_SayHelloStream = new grpc::Method<global::grpc.CounterRequest, global::grpc.CounterResponse>(
@@ -57,6 +61,14 @@ namespace grpc {
         "SayHelloStream",
         __Marshaller_aceg_CounterRequest,
         __Marshaller_aceg_CounterResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::grpc.CreateTodoRequest, global::grpc.CreateTodoResponse> __Method_CreateTodo = new grpc::Method<global::grpc.CreateTodoRequest, global::grpc.CreateTodoResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "CreateTodo",
+        __Marshaller_aceg_CreateTodoRequest,
+        __Marshaller_aceg_CreateTodoResponse);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -70,6 +82,12 @@ namespace grpc {
     {
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::System.Threading.Tasks.Task SayHelloStream(global::grpc.CounterRequest request, grpc::IServerStreamWriter<global::grpc.CounterResponse> responseStream, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::grpc.CreateTodoResponse> CreateTodo(global::grpc.CreateTodoRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -113,6 +131,26 @@ namespace grpc {
       {
         return CallInvoker.AsyncServerStreamingCall(__Method_SayHelloStream, null, options, request);
       }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::grpc.CreateTodoResponse CreateTodo(global::grpc.CreateTodoRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return CreateTodo(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::grpc.CreateTodoResponse CreateTodo(global::grpc.CreateTodoRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_CreateTodo, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::grpc.CreateTodoResponse> CreateTodoAsync(global::grpc.CreateTodoRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return CreateTodoAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::grpc.CreateTodoResponse> CreateTodoAsync(global::grpc.CreateTodoRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_CreateTodo, null, options, request);
+      }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       protected override MergeClient NewInstance(ClientBaseConfiguration configuration)
@@ -127,7 +165,8 @@ namespace grpc {
     public static grpc::ServerServiceDefinition BindService(MergeBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
-          .AddMethod(__Method_SayHelloStream, serviceImpl.SayHelloStream).Build();
+          .AddMethod(__Method_SayHelloStream, serviceImpl.SayHelloStream)
+          .AddMethod(__Method_CreateTodo, serviceImpl.CreateTodo).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
@@ -138,6 +177,7 @@ namespace grpc {
     public static void BindService(grpc::ServiceBinderBase serviceBinder, MergeBase serviceImpl)
     {
       serviceBinder.AddMethod(__Method_SayHelloStream, serviceImpl == null ? null : new grpc::ServerStreamingServerMethod<global::grpc.CounterRequest, global::grpc.CounterResponse>(serviceImpl.SayHelloStream));
+      serviceBinder.AddMethod(__Method_CreateTodo, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::grpc.CreateTodoRequest, global::grpc.CreateTodoResponse>(serviceImpl.CreateTodo));
     }
 
   }

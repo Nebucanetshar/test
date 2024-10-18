@@ -1,0 +1,83 @@
+[33mcommit 52c4a15af124c0b4577109b613086d320741092f[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mabo-aceg008[m[33m, [m[1;31morigin/abo-aceg007[m[33m, [m[1;32mabo-aceg007[m[33m)[m
+Author: nebucanetshar <alhannb@hotmail.com>
+Date:   Wed Oct 16 15:48:53 2024 +0200
+
+    create DataBase name MergeBase
+
+[33mcommit b2eab9613ced68c4468a62b83e826efd8db1e70c[m[33m ([m[1;31morigin/abo-aceg006[m[33m, [m[1;32mabo-aceg006[m[33m)[m
+Author: nebucanetshar <alhannb@hotmail.com>
+Date:   Tue Oct 15 11:49:25 2024 +0200
+
+     modified file.json app and server
+
+[33mcommit 9d3aebb5fa622c6a553b65d4cfa6c123c2d18552[m
+Author: nebucanetshar <alhannb@hotmail.com>
+Date:   Tue Oct 15 11:16:38 2024 +0200
+
+    management git create .gitignore
+
+[33mcommit c232627cf372e9d6fd825db3349027eb62021f89[m
+Author: nebucanetshar <alhannb@hotmail.com>
+Date:   Tue Oct 15 10:44:03 2024 +0200
+
+    modified fichier.json app and server
+
+[33mcommit 07e07cdb37da2eca52ebe800f00e22cd506afc11[m
+Author: nebucanetshar <alhannb@hotmail.com>
+Date:   Tue Oct 15 09:02:36 2024 +0200
+
+     unitaire test for create canal don't works
+
+[33mcommit 7e73136b03d0b3edff899a15239d8944190a21ca[m[33m ([m[1;31morigin/abo-aceg004[m[33m, [m[1;32mabo-aceg004[m[33m)[m
+Author: nebucanetshar <alhannb@hotmail.com>
+Date:   Mon Oct 14 09:04:33 2024 +0200
+
+     add syncfusion template for use <Sfbutton>
+
+[33mcommit 852632140992aa096762820213d0c8db86b65dac[m[33m ([m[1;31morigin/abo-aceg003[m[33m, [m[1;32mabo-aceg003[m[33m)[m
+Author: nebucanetshar <alhannb@hotmail.com>
+Date:   Mon Oct 14 08:44:09 2024 +0200
+
+    checkout to aceg004
+
+[33mcommit fe955efc9e095874002c509aa18d593cd88f242d[m
+Author: nebucanetshar <alhannb@hotmail.com>
+Date:   Fri Oct 11 11:58:36 2024 +0200
+
+    unitaire test and console works for add client in container server
+
+[33mcommit 51852fa362aa620a861c9893efbc744d795f6fe6[m[33m ([m[1;31morigin/abo-aceg002[m[33m, [m[1;32mabo-aceg002[m[33m)[m
+Author: nebucanetshar <alhannb@hotmail.com>
+Date:   Thu Oct 10 20:09:32 2024 +0200
+
+    modified services.cs l.12 add grpc.razor.cs l.52
+
+[33mcommit 1f2bd7a009137e9f3085197ab2dae5712686d478[m
+Author: nebucanetshar <alhannb@hotmail.com>
+Date:   Fri Oct 4 09:10:03 2024 +0200
+
+    Manage endpoint works
+
+[33mcommit 6f8045a6379e429fe058c87c1ec8b8812f92f42d[m[33m ([m[1;31morigin/abo-aceg001[m[33m, [m[1;32mabo-aceg001[m[33m)[m
+Author: nebucanetshar <alhannb@hotmail.com>
+Date:   Thu Oct 3 10:43:06 2024 +0200
+
+    dependancy injection service grpc to client blazor works
+
+[33mcommit 3b0fb710c46248e1ba1e412af4663dd979ec1b90[m
+Author: nebucanetshar <alhannb@hotmail.com>
+Date:   Wed Oct 2 16:36:06 2024 +0200
+
+    link with balzor but no work
+
+[33mcommit 7eaddfbe44eb6dc55eb9e00f0e7d746797d6a7f7[m
+Author: nebucanetshar <alhannb@hotmail.com>
+Date:   Wed Oct 2 12:46:32 2024 +0200
+
+     transcoding server grpc works
+
+[33mcommit 4f64797f145c6f7b34a50bce57d78304d324e1fb[m
+Author: nebucanetshar <alhannb@hotmail.com>
+Date:   Wed Oct 2 09:10:25 2024 +0200
+
+    first commit
