@@ -1,10 +1,12 @@
 @page "/grpc"
 @using grpc;
 @using grpc.Services;
-@inject Counter.CounterClient client
+@inject Counter.CounterClient channel
 
 
 <h3>grpc Client in Blazor</h3>
 
-<button class="btn-grp" type="button"@* @onclick="CallBoadcast" *@>appel de diffusion</button>
-<p> response server@* :@responseMessage *@</p>
+<button class="btn-grpc" type="button"@onclick="CallBroadcast" disabled="@(cts !=null)" >appel de diffusion</button>
+<button class="btn-grpc2" type="button" @onclick="StopCount" disabled="@(cts==null)">stop</button>
+
+<p> response server: @currentCount</p>
