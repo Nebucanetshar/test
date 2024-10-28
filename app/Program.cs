@@ -1,27 +1,63 @@
 using app.Components;
+using app.Components.Pages;
+using grpc;
+using Grpc.Net.Client;
+using Grpc.Net.Client.Web;
+using Microsoft.AspNetCore.Components;
 
-var builder = WebApplication.CreateBuilder(args);
-
-// Add services to the container.
-builder.Services.AddRazorComponents()
-    .AddInteractiveServerComponents();
-
-var app = builder.Build();
-
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
+public class AppProgram
 {
-    app.UseExceptionHandler("/Error", createScopeForErrors: true);
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
+    public void Main (string[] args)
+    {
+        var builder = WebApplication.CreateBuilder(args);
+        
+        // ajout du client grpc dans le conteneur de service blazor 
+        builder.Services.AddGrpcClient<Counter.CounterClient>(o =>
+        {
+            o.Address = new Uri("https://localhost:7226");
+        });
+
+        // configuration du canal grpc avec grpc-web activé
+        builder.Services.AddScoped(services =>
+        {
+            var navigation = services.GetRequiredService<NavigationManager>();
+
+            var baseUrl = navigation.BaseUri;
+
+            var httpClientHandler = new HttpClientHandler();
+
+            var grpcChannel = GrpcChannel.ForAddress(baseUrl, new GrpcChannelOptions
+            {
+                HttpHandler = new GrpcWebHandler(GrpcWebMode.GrpcWeb, httpClientHandler)
+            });
+
+            return new Counter.CounterClient(grpcChannel);
+        });
+
+        // Add services to the container.
+        builder.Services.AddRazorComponents()
+            .AddInteractiveServerComponents();
+
+        var app = builder.Build();
+
+        // Configure the HTTP request pipeline.
+        if (!app.Environment.IsDevelopment())
+        {
+            app.UseExceptionHandler("/Error", createScopeForErrors: true);
+            // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+            app.UseHsts();
+        }
+
+        app.UseHttpsRedirection();
+
+        app.UseStaticFiles();
+        app.UseAntiforgery();
+
+        app.MapRazorComponents<App>()
+            .AddInteractiveServerRenderMode();
+
+        app.Run();
+
+    }
 }
 
-app.UseHttpsRedirection();
-
-app.UseStaticFiles();
-app.UseAntiforgery();
-
-app.MapRazorComponents<App>()
-    .AddInteractiveServerRenderMode();
-
-app.Run();

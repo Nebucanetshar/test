@@ -1,0 +1,10 @@
+@page "/grpc"
+@using grpc;
+@using grpc.Services;
+@inject Counter.CounterClient client
+
+
+<h3>grpc Client in Blazor</h3>
+
+<button class="btn-grp" type="button"@* @onclick="CallBoadcast" *@>appel de diffusion</button>
+<p> response server@* :@responseMessage *@</p>
