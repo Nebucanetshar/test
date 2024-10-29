@@ -6,7 +6,7 @@
 
 <h3>grpc Client in Blazor</h3>
 
-<button class="btn-grpc" type="button"@onclick="CallBroadcast" disabled="@(cts !=null)" >appel de diffusion</button>
-<button class="btn-grpc2" type="button" @onclick="StopCount" disabled="@(cts==null)">stop</button>
+<button class="btn-grpc" type="button"@onclick="CallBroadcast">appel de diffusion</button>
+<button class="btn-grpc2" type="button" @onclick="StopCount">stop</button>
 
 <p> response server: @currentCount</p>

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "app", "app\app.csproj", "{C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "grpc", "grpc\grpc.csproj", "{D417BD96-1BDF-41DC-8EC6-A115DED21FDC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test", "test\test.csproj", "{1D8FE79A-9CD5-4657-8AB3-43FD4857DEA5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{D417BD96-1BDF-41DC-8EC6-A115DED21FDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D417BD96-1BDF-41DC-8EC6-A115DED21FDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D417BD96-1BDF-41DC-8EC6-A115DED21FDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D8FE79A-9CD5-4657-8AB3-43FD4857DEA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D8FE79A-9CD5-4657-8AB3-43FD4857DEA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D8FE79A-9CD5-4657-8AB3-43FD4857DEA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D8FE79A-9CD5-4657-8AB3-43FD4857DEA5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

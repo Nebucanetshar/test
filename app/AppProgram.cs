@@ -17,20 +17,16 @@ public class AppProgram
             o.Address = new Uri("http://localhost:5269");
         });
 
-        // configuration du canal grpc avec grpc-web activé
-        builder.Services.AddScoped(services =>
+        // configuration du canal grpc-web activé(avec un singleton)
+        builder.Services.AddSingleton(services =>
         {
-            var navigation = services.GetRequiredService<NavigationManager>();
+            // obtention de l'url de blazor
+            var navigation = services.GetRequiredService<IConfiguration>();
 
-            var baseUrl = navigation.BaseUri;
+            var baseUrl = navigation["http://localhost:5269"];
 
-            var httpClientHandler = new HttpClientHandler();
-
-            var grpcChannel = GrpcChannel.ForAddress(baseUrl, new GrpcChannelOptions
-            {
-                HttpHandler = new GrpcWebHandler(GrpcWebMode.GrpcWeb, httpClientHandler)
-            });
-
+            var grpcChannel = GrpcChannel.ForAddress(baseUrl); //?
+            
             return new Counter.CounterClient(grpcChannel);
         });
 

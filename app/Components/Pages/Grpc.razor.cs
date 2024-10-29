@@ -7,13 +7,38 @@ namespace app.Components.Pages;
 
 public partial class Grpc 
 {
-    private int currentCount = 0;
+    public int currentCount = 0;
     private CancellationToken? cts;
 
     [Inject]
     public Counter.CounterClient client {  get; set; }
+    public IClient Object { get; }
 
-    private async Task CallBroadcast()
+    public Grpc() { }
+
+    #region test unitaire
+    /// <summary>
+    /// pour la simulation du client avec Moq
+    /// </summary>
+    /// <param name="currentCount"></param>
+    /// <param name="cts"></param>
+    /// <param name="client"></param>
+    /// <param name="channel"></param>
+    public Grpc(int currentCount, CancellationToken? cts, Counter.CounterClient client, Counter.CounterClient channel)
+    {
+        this.currentCount = currentCount;
+        this.cts = cts;
+        this.client = client;
+        this.channel = channel;
+    }
+
+    public Grpc(IClient @object)
+    {
+        Object = @object;
+    }
+    #endregion
+
+    public async Task CallBroadcast()
     {
         cts = new CancellationToken();
 
