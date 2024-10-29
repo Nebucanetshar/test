@@ -43,3 +43,6 @@ C:\Users\user\source\VisualStudio\c#\test\vans\app\obj\Debug\net8.0\refint\app.d
 C:\Users\user\source\VisualStudio\c#\test\vans\app\obj\Debug\net8.0\app.pdb
 C:\Users\user\source\VisualStudio\c#\test\vans\app\obj\Debug\net8.0\app.genruntimeconfig.cache
 C:\Users\user\source\VisualStudio\c#\test\vans\app\obj\Debug\net8.0\ref\app.dll
+C:\Users\user\source\VisualStudio\c#\test\vans\app\bin\Debug\net8.0\Google.Api.CommonProtos.dll
+C:\Users\user\source\VisualStudio\c#\test\vans\app\bin\Debug\net8.0\Microsoft.AspNetCore.Grpc.JsonTranscoding.dll
+C:\Users\user\source\VisualStudio\c#\test\vans\app\obj\Debug\net8.0\app.MvcApplicationPartsAssemblyInfo.cs

@@ -54,6 +54,10 @@
               "target": "Package",
               "version": "[2.57.0, )"
             },
+            "Microsoft.AspNetCore.Grpc.JsonTranscoding": {
+              "target": "Package",
+              "version": "[8.0.10, )"
+            },
             "google.protobuf": {
               "target": "Package",
               "version": "[3.28.3, )"

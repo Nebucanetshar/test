@@ -11,13 +11,7 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("app")]
-[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
-[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3a3111be1b5237c032cdf11524051ded755b0b4a")]
-[assembly: System.Reflection.AssemblyProductAttribute("app")]
-[assembly: System.Reflection.AssemblyTitleAttribute("app")]
-[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+[assembly: Microsoft.AspNetCore.Mvc.ApplicationParts.ApplicationPartAttribute("Microsoft.AspNetCore.Grpc.JsonTranscoding")]
 
 // Généré par la classe MSBuild WriteCodeFragment.
 

@@ -157,6 +157,23 @@
           "build/Grpc.Tools.targets": {}
         }
       },
+      "Microsoft.AspNetCore.Grpc.JsonTranscoding/8.0.10": {
+        "type": "package",
+        "dependencies": {
+          "Google.Api.CommonProtos": "2.5.0",
+          "Google.Protobuf": "3.23.1",
+          "Grpc.AspNetCore.Server": "2.57.0"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.AspNetCore.Grpc.JsonTranscoding.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.AspNetCore.Grpc.JsonTranscoding.dll": {}
+        },
+        "build": {
+          "buildTransitive/Microsoft.AspNetCore.Grpc.JsonTranscoding.targets": {}
+        }
+      },
       "Microsoft.Extensions.DependencyInjection/6.0.0": {
         "type": "package",
         "dependencies": {
@@ -640,6 +657,24 @@
         "tools/windows_x86/protoc.exe"
       ]
     },
+    "Microsoft.AspNetCore.Grpc.JsonTranscoding/8.0.10": {
+      "sha512": "eogOgpC5SsZJ/BDDFp6o5dUyekJG+Az108VjumF7fa7EskGrbSHAafgSkVKhZtlGdCt1FXSlmKiLlUM+lccKWw==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.grpc.jsontranscoding/8.0.10",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "build/Microsoft.AspNetCore.Grpc.JsonTranscoding.targets",
+        "buildTransitive/Microsoft.AspNetCore.Grpc.JsonTranscoding.targets",
+        "content/protos/google/api/annotations.proto",
+        "content/protos/google/api/http.proto",
+        "lib/net8.0/Microsoft.AspNetCore.Grpc.JsonTranscoding.dll",
+        "microsoft.aspnetcore.grpc.jsontranscoding.8.0.10.nupkg.sha512",
+        "microsoft.aspnetcore.grpc.jsontranscoding.nuspec"
+      ]
+    },
     "Microsoft.Extensions.DependencyInjection/6.0.0": {
       "sha512": "k6PWQMuoBDGGHOQTtyois2u4AwyVcIwL2LaSLlTZQm2CYcJ1pxbt6jfAnpWmzENA/wfrYRI/X9DTLoUkE4AsLw==",
       "type": "package",
@@ -883,6 +918,7 @@
     "net8.0": [
       "Google.Api.CommonProtos >= 2.16.0",
       "Grpc.AspNetCore >= 2.57.0",
+      "Microsoft.AspNetCore.Grpc.JsonTranscoding >= 8.0.10",
       "google.protobuf >= 3.28.3"
     ]
   },
@@ -938,6 +974,10 @@
           "Grpc.AspNetCore": {
             "target": "Package",
             "version": "[2.57.0, )"
+          },
+          "Microsoft.AspNetCore.Grpc.JsonTranscoding": {
+            "target": "Package",
+            "version": "[8.0.10, )"
           },
           "google.protobuf": {
             "target": "Package",

@@ -7,14 +7,14 @@ using Microsoft.AspNetCore.Components;
 
 public class AppProgram
 {
-    public void Main (string[] args)
+    public static void Main (string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
         
         // ajout du client grpc dans le conteneur de service blazor 
         builder.Services.AddGrpcClient<Counter.CounterClient>(o =>
         {
-            o.Address = new Uri("https://localhost:7226");
+            o.Address = new Uri("http://localhost:5269");
         });
 
         // configuration du canal grpc avec grpc-web activé
