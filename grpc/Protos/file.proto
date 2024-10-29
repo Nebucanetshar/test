@@ -1,12 +1,22 @@
 syntax = "proto3";
 
 option csharp_namespace = "grpc";
+import "google/api/annotations.proto";
 
 package greet;
 
 service Counter{
 
-	rpc StartCounter(CounterRequest) returns (stream CounterResponse);
+	rpc StartCounter(CounterRequest) returns (stream CounterResponse)
+	{
+		option (google.api.http)={
+			post:"/v1/greeter"
+			body:"*"
+		};
+
+	}
+	
+	
 }
 
 message CounterRequest{

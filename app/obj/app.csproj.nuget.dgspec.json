@@ -124,9 +124,17 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Google.Api.CommonProtos": {
+              "target": "Package",
+              "version": "[2.16.0, )"
+            },
             "Grpc.AspNetCore": {
               "target": "Package",
               "version": "[2.57.0, )"
+            },
+            "google.protobuf": {
+              "target": "Package",
+              "version": "[3.28.3, )"
             }
           },
           "imports": [

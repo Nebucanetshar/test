@@ -24,13 +24,14 @@ namespace grpc {
     static FileReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChFQcm90b3MvZmlsZS5wcm90bxIFZ3JlZXQiHwoOQ291bnRlclJlcXVlc3QS",
-            "DQoFc3RhcnQYASABKAUiIAoPQ291bnRlclJlc3BvbnNlEg0KBWNvdW50GAEg",
-            "ASgFMkoKB0NvdW50ZXISPwoMU3RhcnRDb3VudGVyEhUuZ3JlZXQuQ291bnRl",
-            "clJlcXVlc3QaFi5ncmVldC5Db3VudGVyUmVzcG9uc2UwAUIHqgIEZ3JwY2IG",
-            "cHJvdG8z"));
+            "ChFQcm90b3MvZmlsZS5wcm90bxIFZ3JlZXQaHGdvb2dsZS9hcGkvYW5ub3Rh",
+            "dGlvbnMucHJvdG8iHwoOQ291bnRlclJlcXVlc3QSDQoFc3RhcnQYASABKAUi",
+            "IAoPQ291bnRlclJlc3BvbnNlEg0KBWNvdW50GAEgASgFMmIKB0NvdW50ZXIS",
+            "VwoMU3RhcnRDb3VudGVyEhUuZ3JlZXQuQ291bnRlclJlcXVlc3QaFi5ncmVl",
+            "dC5Db3VudGVyUmVzcG9uc2UiFoLT5JMCECILL3YxL2dyZWV0ZXI6ASowAUIH",
+            "qgIEZ3JwY2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { },
+          new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::grpc.CounterRequest), global::grpc.CounterRequest.Parser, new[]{ "Start" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::grpc.CounterResponse), global::grpc.CounterResponse.Parser, new[]{ "Count" }, null, null, null, null)
