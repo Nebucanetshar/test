@@ -9,6 +9,12 @@ public class GrpcProgram
 
         // Add services to the container.
         builder.Services.AddGrpc().AddJsonTranscoding();
+        
+        // configuration base de donnée 
+        builder.Services.AddDbContext<AppDbContext>(options =>
+        {
+            builder.Configuration.GetConnectionString("vans");
+        });
 
         var app = builder.Build();
 

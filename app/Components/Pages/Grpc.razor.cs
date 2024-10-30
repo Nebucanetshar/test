@@ -5,10 +5,13 @@ using Microsoft.AspNetCore.Components;
 
 namespace app.Components.Pages;
 
-public partial class Grpc 
+public partial class Grpc : ICounterResponseStream
 {
     public int currentCount = 0;
     private CancellationToken? cts;
+    private CounterResponse ResponseMessage;
+    private AsyncServerStreamingCall<CounterResponse> _inner;
+    public IAsyncStreamReader<CounterResponse> ResponseStream => _inner.ResponseStream;
 
     [Inject]
     public Counter.CounterClient client {  get; set; }
@@ -40,18 +43,24 @@ public partial class Grpc
 
     public async Task CallBroadcast()
     {
-        cts = new CancellationToken();
-
-        var request = new CounterRequest { Start = currentCount };
-        var response = client.StartCounter(request);
-
         try
         {
-            await foreach (var message in response.ResponseStream.ReadAllAsync())
+            cts = new CancellationToken();
+
+            var request = new CounterRequest { Start = currentCount };
+            var response = client.StartCounter(request);
+            
+            //await foreach (var message in response.ResponseStream.ReadAllAsync())
+            //{
+            //    currentCount = message.Count;
+            //    StateHasChanged();
+            //}
+
+            while (await response.ResponseStream.MoveNext(CancellationToken.None))
             {
-                currentCount = message.Count;
-                StateHasChanged();
+                ResponseMessage = ResponseStream.Current;
             }
+                
         }
         catch (RpcException ex) when (ex.StatusCode == StatusCode.Cancelled) { }
     }
