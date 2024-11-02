@@ -59,3 +59,13 @@ C:\Users\user\source\VisualStudio\c#\test\vans\app\bin\Debug\net8.0\Microsoft.Ex
 C:\Users\user\source\VisualStudio\c#\test\vans\app\bin\Debug\net8.0\Npgsql.dll
 C:\Users\user\source\VisualStudio\c#\test\vans\app\bin\Debug\net8.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
 C:\Users\user\source\VisualStudio\c#\test\vans\app\bin\Debug\net8.0\Npgsql.EntityFrameworkCore.PostgreSQL.Design.dll
+C:\Users\user\source\VisualStudio\c#\test\vans\app\bin\Debug\net8.0\Microsoft.AspNetCore.Authorization.dll
+C:\Users\user\source\VisualStudio\c#\test\vans\app\bin\Debug\net8.0\Microsoft.AspNetCore.Components.dll
+C:\Users\user\source\VisualStudio\c#\test\vans\app\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Forms.dll
+C:\Users\user\source\VisualStudio\c#\test\vans\app\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Web.dll
+C:\Users\user\source\VisualStudio\c#\test\vans\app\bin\Debug\net8.0\Microsoft.AspNetCore.Metadata.dll
+C:\Users\user\source\VisualStudio\c#\test\vans\app\bin\Debug\net8.0\Microsoft.JSInterop.dll
+C:\Users\user\source\VisualStudio\c#\test\vans\app\bin\Debug\net8.0\Syncfusion.Blazor.Buttons.dll
+C:\Users\user\source\VisualStudio\c#\test\vans\app\bin\Debug\net8.0\Syncfusion.Blazor.Core.dll
+C:\Users\user\source\VisualStudio\c#\test\vans\app\bin\Debug\net8.0\Syncfusion.Blazor.Themes.dll
+C:\Users\user\source\VisualStudio\c#\test\vans\app\bin\Debug\net8.0\Syncfusion.Licensing.dll

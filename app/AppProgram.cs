@@ -4,6 +4,7 @@ using grpc;
 using Grpc.Net.Client;
 using Grpc.Net.Client.Web;
 using Microsoft.AspNetCore.Components;
+using Syncfusion.Blazor;
 
 public class AppProgram
 {
@@ -48,8 +49,9 @@ public class AppProgram
         });
 
         // Add services to the container.
-        builder.Services.AddRazorComponents()
-            .AddInteractiveServerComponents();
+        builder.Services.AddRazorComponents().AddInteractiveServerComponents();
+        builder.Services.AddSyncfusionBlazor();
+
 
         var app = builder.Build();
 

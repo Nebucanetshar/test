@@ -57,6 +57,14 @@
             "Grpc.Net.Client.Web": {
               "target": "Package",
               "version": "[2.66.0, )"
+            },
+            "Syncfusion.Blazor.Buttons": {
+              "target": "Package",
+              "version": "[27.1.57, )"
+            },
+            "Syncfusion.Blazor.Themes": {
+              "target": "Package",
+              "version": "[27.1.57, )"
             }
           },
           "imports": [

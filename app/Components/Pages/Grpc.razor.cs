@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Components;
 
 namespace app.Components.Pages;
 
-public partial class Grpc : ICounterResponseStream
+public partial class Grpc :  ICounterResponseStream 
 {
     public int currentCount = 0;
     private CancellationToken? cts;
@@ -15,11 +15,12 @@ public partial class Grpc : ICounterResponseStream
 
     [Inject]
     public Counter.CounterClient client {  get; set; }
-    public IClient Object { get; }
 
     public Grpc() { }
 
     #region test unitaire
+
+    public IClient Object { get; }
     /// <summary>
     /// pour la simulation du client avec Moq
     /// </summary>
