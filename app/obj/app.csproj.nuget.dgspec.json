@@ -58,6 +58,10 @@
               "target": "Package",
               "version": "[2.66.0, )"
             },
+            "Microsoft.AspNetCore.Components": {
+              "target": "Package",
+              "version": "[8.0.10, )"
+            },
             "Syncfusion.Blazor.Buttons": {
               "target": "Package",
               "version": "[27.1.57, )"

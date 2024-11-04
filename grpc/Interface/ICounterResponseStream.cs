@@ -3,5 +3,11 @@ namespace grpc;
 
 public interface ICounterResponseStream
 {
-    IAsyncStreamReader<CounterResponse> ResponseStream { get; }
+    IAsyncStreamReader<CounterResponse> ResponseStream
+    {
+        get
+        {
+            return ResponseStream;
+        }
+    }
 }

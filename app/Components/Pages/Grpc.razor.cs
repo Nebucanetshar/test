@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Components;
 
 namespace app.Components.Pages;
 
-public partial class Grpc :  ICounterResponseStream 
+public partial class Grpc : ComponentBase, ICounterResponseStream  
 {
     public int currentCount = 0;
     private CancellationToken? cts;
@@ -14,7 +14,8 @@ public partial class Grpc :  ICounterResponseStream
     public IAsyncStreamReader<CounterResponse> ResponseStream => _inner.ResponseStream;
 
     [Inject]
-    public Counter.CounterClient client {  get; set; }
+    public Counter.CounterClient client { get; set; }
+    
 
     public Grpc() { }
 
@@ -42,7 +43,15 @@ public partial class Grpc :  ICounterResponseStream
     }
     #endregion
 
-    public async Task CallBroadcast()
+    protected override async Task OnInitializedAsync()
+    {
+        Console.WriteLine("Initialisation du composant et démarrage de l'écoute du flux");
+        // Appelle la méthode d'écoute de streaming
+        await CallBroadcast(CancellationToken.None);
+        Console.WriteLine("Le composant a terminer son initailisation et l'écoute est en cours");
+    }
+
+    public async Task CallBroadcast(CancellationToken cancellationToken)
     {
         try
         {
@@ -50,7 +59,7 @@ public partial class Grpc :  ICounterResponseStream
 
             var request = new CounterRequest { Start = currentCount };
             var response = client.StartCounter(request);
-            
+
             //await foreach (var message in response.ResponseStream.ReadAllAsync())
             //{
             //    currentCount = message.Count;
@@ -63,11 +72,17 @@ public partial class Grpc :  ICounterResponseStream
             }
                 
         }
-        catch (RpcException ex) when (ex.StatusCode == StatusCode.Cancelled) { }
+        catch (RpcException ex) when (ex.StatusCode == StatusCode.Cancelled)
+        {
+            Console.WriteLine("Streming canceled");
+        }
+
     }
 
     private void StopCount()
     {
         cts = null;
     }
+
+    
 }
