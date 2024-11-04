@@ -47,17 +47,17 @@ public partial class Grpc : ComponentBase, ICounterResponseStream
     {
         Console.WriteLine("Initialisation du composant et démarrage de l'écoute du flux");
         // Appelle la méthode d'écoute de streaming
-        await CallBroadcast(CancellationToken.None);
+        await CallBroadcast();
         Console.WriteLine("Le composant a terminer son initailisation et l'écoute est en cours");
     }
 
-    public async Task CallBroadcast(CancellationToken cancellationToken)
+    public async Task CallBroadcast()
     {
         try
         {
             cts = new CancellationToken();
 
-            var request = new CounterRequest { Start = currentCount };
+            var request = new CounterRequest { Start = 0 };
             var response = client.StartCounter(request);
 
             //await foreach (var message in response.ResponseStream.ReadAllAsync())

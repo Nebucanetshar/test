@@ -10,6 +10,7 @@
         "dependencies": {
           "Grpc.Net.Client": "2.66.0",
           "Grpc.Net.Client.Web": "2.66.0",
+          "Microsoft.AspNetCore.Components": "8.0.10",
           "Syncfusion.Blazor.Buttons": "27.1.57",
           "Syncfusion.Blazor.Themes": "27.1.57",
           "grpc": "1.0.0"
