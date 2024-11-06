@@ -2,6 +2,8 @@
 using grpc;
 using Grpc.Core;
 using Microsoft.AspNetCore.Components;
+using System.Diagnostics;
+
 
 namespace app.Components.Pages;
 
@@ -45,19 +47,18 @@ public partial class Grpc : ComponentBase, ICounterResponseStream
 
     protected override async Task OnInitializedAsync()
     {
-        Console.WriteLine("Initialisation du composant et démarrage de l'écoute du flux");
-        // Appelle la méthode d'écoute de streaming
+        Trace.TraceInformation("Le composant a terminer son initialisation et l'écoute est en cours");
         await CallBroadcast();
-        Console.WriteLine("Le composant a terminer son initailisation et l'écoute est en cours");
-    }
 
+    }
     public async Task CallBroadcast()
     {
+
         try
         {
             cts = new CancellationToken();
 
-            var request = new CounterRequest { Start = 0 };
+            var request = new CounterRequest { Start = currentCount };
             var response = client.StartCounter(request);
 
             //await foreach (var message in response.ResponseStream.ReadAllAsync())
@@ -74,7 +75,7 @@ public partial class Grpc : ComponentBase, ICounterResponseStream
         }
         catch (RpcException ex) when (ex.StatusCode == StatusCode.Cancelled)
         {
-            Console.WriteLine("Streming canceled");
+            Trace.TraceInformation("streaming cancelled");
         }
 
     }
