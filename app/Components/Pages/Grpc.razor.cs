@@ -45,12 +45,12 @@ public partial class Grpc : ComponentBase, ICounterResponseStream
     }
     #endregion
 
-    protected override async Task OnInitializedAsync()
-    {
-        Trace.TraceInformation("Le composant a terminer son initialisation et l'écoute est en cours");
-        await CallBroadcast();
+    //protected override async Task OnInitializedAsync()
+    //{
+    //    Trace.TraceInformation("Le composant a terminer son initialisation et l'écoute est en cours");
+    //    await CallBroadcast();
 
-    }
+    //}
     public async Task CallBroadcast()
     {
 
@@ -73,11 +73,7 @@ public partial class Grpc : ComponentBase, ICounterResponseStream
             }
                 
         }
-        catch (RpcException ex) when (ex.StatusCode == StatusCode.Cancelled)
-        {
-            Trace.TraceInformation("streaming cancelled");
-        }
-
+        catch (RpcException ex) when (ex.StatusCode == StatusCode.Cancelled) { }
     }
 
     private void StopCount()
