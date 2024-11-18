@@ -11,31 +11,24 @@ public class GrpcProgram
     {
         var builder = WebApplication.CreateBuilder(args);
 
-        // Add services to the container.
+        // configuration du transcoding
         builder.Services.AddGrpc().AddJsonTranscoding();
         
-        // configuration base de donnée 
+        // configuration de la base de donnée 
         builder.Services.AddDbContext<AppDbContext>(options =>
         {
             builder.Configuration.GetConnectionString("vans");
         });
+        
         //configuration du TLS 
-        builder.WebHost.ConfigureKestrel(options =>
-        {
-            options.ListenLocalhost(5269, listenOptions =>
-            {
-                try
-                {
-                    listenOptions.UseHttps("certificat.pfx", "A1996b4860150*");
-                }
-                catch(Exception ex) 
-                {
-                    Trace.TraceInformation($"erreur lors du chargement du certicat : {ex.Message}");
-                }
-                
-                listenOptions.Protocols = Microsoft.AspNetCore.Server.Kestrel.Core.HttpProtocols.Http2;
-            });
-        });
+        //builder.WebHost.ConfigureKestrel(options =>
+        //{
+        //    options.ListenLocalhost(5269, listenOptions =>
+        //    {
+        //        listenOptions.UseHttps("certificat.pfx", "A1996b4860150*");
+        //        listenOptions.Protocols = Microsoft.AspNetCore.Server.Kestrel.Core.HttpProtocols.Http2;
+        //    });
+        //});
 
         var app = builder.Build();
 

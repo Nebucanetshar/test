@@ -11,14 +11,24 @@ public class AppProgram
     public static void Main (string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
-        
-        // ajout du client grpc dans le conteneur de service blazor 
-       builder.Services.AddGrpcClient<Counter.CounterClient>(o =>
-        {
-            o.Address = new Uri("http://localhost:5269");
-        });
 
-        //// configuration du canal grpc-web activé(avec un singleton)
+        // ajout du client grpc dans le conteneur de service blazor 
+        builder.Services.AddGrpcClient<Counter.CounterClient>(o =>
+         {
+             o.Address = new Uri("http://localhost:7226");
+         });
+
+        ///<summary>
+        ///sans utilisation de grpcWebHandler(gestion appels)
+        ///</summary>
+        // .ConfigurePrimaryHttpMessageHandler(() =>
+        //{
+        //    return new GrpcWebHandler(GrpcWebMode.GrpcWeb, new HttpClientHandler());
+        //});
+
+        ///<summary>
+        ///configuration du canal grpc-web activé(avec un singleton)
+        ///</summary> 
         //builder.Services.AddSingleton(services =>
         //{
         //    // obtention de l'url de blazor
@@ -31,7 +41,9 @@ public class AppProgram
         //    return new Counter.CounterClient(grpcChannel);
         //});
 
-        // configuration du canal grpc-web activé(avec addScoped)
+        ///<summary>
+        ///configuration du canal grpc-web activé(avec addScoped)
+        ///</summary>
         builder.Services.AddScoped(services =>
         {
             var navigation = services.GetRequiredService<NavigationManager>();
@@ -48,7 +60,7 @@ public class AppProgram
             return new Counter.CounterClient(grpcChannel);
         });
 
-        // Add services to the container.
+
         builder.Services.AddRazorComponents().AddInteractiveServerComponents();
         builder.Services.AddSyncfusionBlazor();
 

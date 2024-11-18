@@ -26,10 +26,10 @@ namespace grpc {
           string.Concat(
             "ChFQcm90b3MvZmlsZS5wcm90bxIFZ3JlZXQaHGdvb2dsZS9hcGkvYW5ub3Rh",
             "dGlvbnMucHJvdG8iHwoOQ291bnRlclJlcXVlc3QSDQoFc3RhcnQYASABKAUi",
-            "IAoPQ291bnRlclJlc3BvbnNlEg0KBWNvdW50GAEgASgFMmAKB0NvdW50ZXIS",
-            "VQoMU3RhcnRDb3VudGVyEhUuZ3JlZXQuQ291bnRlclJlcXVlc3QaFi5ncmVl",
-            "dC5Db3VudGVyUmVzcG9uc2UiFILT5JMCDiIJL3YxL2dyZWV0OgEqMAFCB6oC",
-            "BGdycGNiBnByb3RvMw=="));
+            "IAoPQ291bnRlclJlc3BvbnNlEg0KBWNvdW50GAEgASgFMmIKB0NvdW50ZXIS",
+            "VwoMU3RhcnRDb3VudGVyEhUuZ3JlZXQuQ291bnRlclJlcXVlc3QaFi5ncmVl",
+            "dC5Db3VudGVyUmVzcG9uc2UiFoLT5JMCECILL3YxL2dyZWV0ZXI6ASowAUIH",
+            "qgIEZ3JwY2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

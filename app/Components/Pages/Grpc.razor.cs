@@ -12,11 +12,11 @@ public partial class Grpc : ComponentBase, ICounterResponseStream
     public int currentCount = 0;
     private CancellationToken? cts;
     private CounterResponse ResponseMessage;
-    private AsyncServerStreamingCall<CounterResponse> _inner;
+    public AsyncServerStreamingCall<CounterResponse> _inner;
     public IAsyncStreamReader<CounterResponse> ResponseStream => _inner.ResponseStream;
 
     [Inject]
-    public Counter.CounterClient client { get; set; }
+    public Counter.CounterClient client { get;  set; }
     
 
     public Grpc() { }
@@ -53,25 +53,27 @@ public partial class Grpc : ComponentBase, ICounterResponseStream
     //}
     public async Task CallBroadcast()
     {
-
         try
         {
             cts = new CancellationToken();
-
-            var request = new CounterRequest { Start = currentCount };
-            var response = client.StartCounter(request);
-
-            //await foreach (var message in response.ResponseStream.ReadAllAsync())
-            //{
-            //    currentCount = message.Count;
-            //    StateHasChanged();
-            //}
-
-            while (await response.ResponseStream.MoveNext(CancellationToken.None))
+           
+            if (cts != null)
             {
-                ResponseMessage = ResponseStream.Current;
+                CounterRequest request = new CounterRequest { Start = currentCount };
+                var response = client.StartCounter(request);
+
+                //await foreach (var message in response.ResponseStream.ReadAllAsync())
+                //{
+                //    currentCount = message.Count;
+                //    StateHasChanged();
+                //}
+
+                while (await response.ResponseStream.MoveNext(CancellationToken.None))
+                {
+                    ResponseMessage = ResponseStream.Current;
+                }
             }
-                
+
         }
         catch (RpcException ex) when (ex.StatusCode == StatusCode.Cancelled) { }
     }
