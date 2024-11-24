@@ -2,6 +2,18 @@
   "version": 3,
   "targets": {
     "net8.0": {
+      "Fluxor/6.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.1"
+        },
+        "compile": {
+          "lib/net8.0/Fluxor.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Fluxor.dll": {}
+        }
+      },
       "Google.Api.CommonProtos/2.16.0": {
         "type": "package",
         "dependencies": {
@@ -2025,6 +2037,7 @@
           "Microsoft.AspNetCore.Components": "8.0.10",
           "Syncfusion.Blazor.Buttons": "27.1.57",
           "Syncfusion.Blazor.Themes": "27.1.57",
+          "fluxor": "6.1.0",
           "grpc": "1.0.0"
         },
         "compile": {
@@ -2063,6 +2076,21 @@
     }
   },
   "libraries": {
+    "Fluxor/6.1.0": {
+      "sha512": "yRH9z2oYps/vkmWjQHy3fVxMHl1GimejT1RJiVvChhi1YmflCrav7kHM8TtTqPsz/HKcoSCwEu4P09PDhvuWZA==",
+      "type": "package",
+      "path": "fluxor/6.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fluxor-small-logo.png",
+        "fluxor.6.1.0.nupkg.sha512",
+        "fluxor.nuspec",
+        "lib/net6.0/Fluxor.dll",
+        "lib/net7.0/Fluxor.dll",
+        "lib/net8.0/Fluxor.dll"
+      ]
+    },
     "Google.Api.CommonProtos/2.16.0": {
       "sha512": "37MuZrE9AAqHAdYgFLoTHydAiXDRriQZGVKEg6fr6ASnrY5GtauYXnQrGk5x2K3NmYzEXe+wkpaPVmxjb3NKjg==",
       "type": "package",

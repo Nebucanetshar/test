@@ -19,7 +19,7 @@ public class AppProgram
          });
 
         ///<summary>
-        ///sans utilisation de grpcWebHandler(gestion appels)
+        ///grpc web activé sans canal, accepte un délégué qui retourne un HttpMessageHandler (encapsulation des appels)
         ///</summary>
         // .ConfigurePrimaryHttpMessageHandler(() =>
         //{
@@ -58,7 +58,7 @@ public class AppProgram
             });
 
             return new Counter.CounterClient(grpcChannel);
-        });
+       });
 
 
         builder.Services.AddRazorComponents().AddInteractiveServerComponents();

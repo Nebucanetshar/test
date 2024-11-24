@@ -69,6 +69,10 @@
             "Syncfusion.Blazor.Themes": {
               "target": "Package",
               "version": "[27.1.57, )"
+            },
+            "fluxor": {
+              "target": "Package",
+              "version": "[6.1.0, )"
             }
           },
           "imports": [

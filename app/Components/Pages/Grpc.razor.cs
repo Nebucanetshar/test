@@ -51,37 +51,5 @@ public partial class Grpc : ComponentBase, ICounterResponseStream
     //    await CallBroadcast();
 
     //}
-    public async Task CallBroadcast()
-    {
-        try
-        {
-            cts = new CancellationToken();
-           
-            if (cts != null)
-            {
-                CounterRequest request = new CounterRequest { Start = currentCount };
-                var response = client.StartCounter(request);
 
-                //await foreach (var message in response.ResponseStream.ReadAllAsync())
-                //{
-                //    currentCount = message.Count;
-                //    StateHasChanged();
-                //}
-
-                while (await response.ResponseStream.MoveNext(CancellationToken.None))
-                {
-                    ResponseMessage = ResponseStream.Current;
-                }
-            }
-
-        }
-        catch (RpcException ex) when (ex.StatusCode == StatusCode.Cancelled) { }
-    }
-
-    private void StopCount()
-    {
-        cts = null;
-    }
-
-    
 }
