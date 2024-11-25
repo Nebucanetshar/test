@@ -1,4 +1,5 @@
 
+using Fluxor;
 using grpc;
 using Grpc.Core;
 using Microsoft.AspNetCore.Components;
@@ -45,11 +46,46 @@ public partial class Grpc : ComponentBase, ICounterResponseStream
     }
     #endregion
 
-    //protected override async Task OnInitializedAsync()
-    //{
-    //    Trace.TraceInformation("Le composant a terminer son initialisation et l'écoute est en cours");
-    //    await CallBroadcast();
+    protected override async Task OnInitializedAsync()
+    {
+        Trace.TraceInformation("Le composant a terminer son initialisation et l'écoute est en cours");
+        await CallBroadcast();
 
-    //}
+    }
+
+    public async Task CallBroadcast()
+    {
+        try
+        {
+            cts = new CancellationToken();
+
+            
+                var request = new CounterRequest
+                {
+                    Start = 0
+                };
+
+                var response = client.StartCounter(request);
+
+                //await foreach (var message in response.ResponseStream.ReadAllAsync())
+                //{
+                //    currentCount = message.Count;
+                //    StateHasChanged();
+                //}
+
+                while (await response.ResponseStream.MoveNext(CancellationToken.None))
+                {
+                    ResponseMessage = ResponseStream.Current;
+                }
+            
+
+        }
+        catch (RpcException ex) when (ex.StatusCode == StatusCode.Cancelled) { }
+    }
+
+    private void StopCount()
+    {
+        cts = null;
+    }
 
 }
