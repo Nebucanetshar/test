@@ -20,22 +20,22 @@ public class GrpcProgram
             builder.Configuration.GetConnectionString("vans");
         });
         //configuration du TLS 
-        builder.WebHost.ConfigureKestrel(options =>
-        {
-            options.ListenLocalhost(5269, listenOptions =>
-            {
-                try
-                {
-                    listenOptions.UseHttps("certificat.pfx", "A1996b4860150*");
-                }
-                catch(Exception ex) 
-                {
-                    Trace.TraceInformation($"erreur lors du chargement du certicat : {ex.Message}");
-                }
+        //builder.WebHost.ConfigureKestrel(options =>
+        //{
+        //    options.ListenLocalhost(5269, listenOptions =>
+        //    {
+        //        try
+        //        {
+        //            listenOptions.UseHttps("certificat.pfx", "A1996b4860150*");
+        //        }
+        //        catch(Exception ex) 
+        //        {
+        //            Trace.TraceInformation($"erreur lors du chargement du certicat : {ex.Message}");
+        //        }
                 
-                listenOptions.Protocols = Microsoft.AspNetCore.Server.Kestrel.Core.HttpProtocols.Http2;
-            });
-        });
+        //        listenOptions.Protocols = Microsoft.AspNetCore.Server.Kestrel.Core.HttpProtocols.Http2;
+        //    });
+        //});
 
         var app = builder.Build();
 
