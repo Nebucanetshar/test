@@ -8,7 +8,7 @@ using System.Diagnostics;
 
 namespace app.Components.Pages;
 
-public partial class Grpc : ComponentBase, ICounterResponseStream  
+public partial class Grpc : ComponentBase, ICounterResponseStream
 {
     public int currentCount = 0;
     private CancellationToken? cts;
@@ -17,10 +17,32 @@ public partial class Grpc : ComponentBase, ICounterResponseStream
     public IAsyncStreamReader<CounterResponse> ResponseStream => _inner.ResponseStream;
 
     [Inject]
-    public Counter.CounterClient client { get;  set; }
-    
+    public Counter.CounterClient client { get; set; }
+
 
     public Grpc() { }
+
+    ///<summary>
+    ///configuration du canal grpc-web activé(avec addScoped)
+    ///</summary>
+    // builder.Services.AddScoped(services =>
+    // {
+    //     var navigation = services.GetRequiredService<NavigationManager>();
+
+    //var baseUrl = navigation.BaseUri;
+
+    //var httpClientHandler = new HttpClientHandler();
+
+    //var grpcChannel = GrpcChannel.ForAddress(baseUrl, new GrpcChannelOptions
+    //{
+    //    //journal d'observation requête 
+    //    LoggerFactory = LoggerFactory.Create(builder => builder.AddConsole()),
+
+    //    HttpHandler = new GrpcWebHandler(GrpcWebMode.GrpcWeb, httpClientHandler)
+    //});
+
+    //     return new Counter.CounterClient(grpcChannel);
+    //});
 
     #region test unitaire
 
@@ -59,10 +81,11 @@ public partial class Grpc : ComponentBase, ICounterResponseStream
         {
             cts = new CancellationToken();
 
-            
+            if (cts != null)
+            {
                 var request = new CounterRequest
                 {
-                    Start = 0
+                    Start = currentCount
                 };
 
                 var response = client.StartCounter(request);
@@ -77,8 +100,7 @@ public partial class Grpc : ComponentBase, ICounterResponseStream
                 {
                     ResponseMessage = ResponseStream.Current;
                 }
-            
-
+            }
         }
         catch (RpcException ex) when (ex.StatusCode == StatusCode.Cancelled) { }
     }
