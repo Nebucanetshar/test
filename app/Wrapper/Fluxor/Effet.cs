@@ -1,50 +1,32 @@
-﻿//using Fluxor;
-//using Grpc.Core;
-//using grpc;
-//using Microsoft.AspNetCore.Components;
+﻿using Fluxor;
+using Grpc.Core;
+using grpc;
+using Microsoft.AspNetCore.Components;
 
-//namespace app;
+namespace app;
 
-//public class Effet
-//{
-//    public CancellationToken? cts;
-//    public CounterResponse? ResponseMessage;
-//    public AsyncServerStreamingCall<CounterResponse> _inner;
-//    public IAsyncStreamReader<CounterResponse> ResponseStream => _inner.ResponseStream;
+public class Effet
+{
 
-//    [Inject]
-//    public Counter.CounterClient client { get; set; }
+    private IgrpcCounterServiceClient _grpcCounterServiceClient;
+
+    
+
+    public Effet(IgrpcCounterServiceClient server)
+    {
+        _grpcCounterServiceClient = server;
+    }
 
 
-//    [EffectMethod]
-//    public async Task CallBroadcast(ActionInput action, IDispatcher dispatcher)
-//    {
-//        try
-//        {
-//            cts = new CancellationToken();
+    [EffectMethod]
+    public async Task CallBroadcast(ActionInput action, IDispatcher dispatcher)
+    {
+        try
+        {
+            var response = await _grpcCounterServiceClient.StarCounter(action.Request);
+            dispatcher.Dispatch(new ActionOutput(response.Content));
 
-//            if (cts != null)
-//            {
-//                var response = client.StartCounter(action.Request);
-
-//                //await foreach (var message in response.ResponseStream.ReadAllAsync())
-//                //{
-//                //    currentCount = message.Count;
-//                //    StateHasChanged();
-//                //}
-
-//                while (await response.ResponseStream.MoveNext(CancellationToken.None))
-//                {
-//                    ResponseMessage = ResponseStream.Current;
-//                }
-//            }
-
-//        }
-//        catch (RpcException ex) when (ex.StatusCode == StatusCode.Cancelled) { }
-//    }
-
-//    private void StopCount()
-//    {
-//        cts = null;
-//    }
-//}
+        }
+        catch (RpcException ex) when (ex.StatusCode == StatusCode.Cancelled) { }
+    }
+}

@@ -1,4 +1,6 @@
 ﻿using grpc;
+using Grpc.Core;
+using System.Runtime.CompilerServices;
 
 namespace app;
 
@@ -15,11 +17,12 @@ public class ActionInput
 
 public class ActionOutput
 {
-    public ResultResponseViewModel? ResponseServer { get; set; }
+    public AsyncServerStreamingCall<CounterResponse> _inner;
+    public IAsyncStreamReader<CounterResponse> ResponseStream => _inner.ResponseStream;
+    private CounterResponse ResponseMessage;
 
-    public ActionOutput(ResultResponseViewModel responseServer)
+    public ActionOutput()
     {
-        ResponseServer = responseServer;
-        
+        ResponseMessage = new CounterResponse();
     }
 }
