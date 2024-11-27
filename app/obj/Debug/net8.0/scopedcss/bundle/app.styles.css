@@ -156,7 +156,7 @@ main[b-1ha3gri8ot] {
     .nav-item:last-of-type[b-zf415b4rb4] {
         padding-bottom: 1rem;
     }
-
+    /*play with them */
     .nav-item[b-zf415b4rb4]  .nav-link {
         color: #d7d7d7;
         background: none;
@@ -174,8 +174,9 @@ main[b-1ha3gri8ot] {
     color: white;
 }
 
+/*play with them */
 .nav-item[b-zf415b4rb4]  .nav-link:hover {
-    background-color: black
+    background-color: #d7d7d7;
     color: white;
 }
 

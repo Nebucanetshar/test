@@ -1,113 +1,93 @@
 
-using Fluxor;
-using grpc;
-using Grpc.Core;
-using Microsoft.AspNetCore.Components;
-using System.Diagnostics;
+//using Fluxor;
+//using grpc;
+//using Grpc.Core;
+//using Microsoft.AspNetCore.Components;
+//using System.Diagnostics;
 
 
-namespace app.Components.Pages;
+//namespace app.Components.Pages;
 
-public partial class Grpc : ComponentBase, ICounterResponseStream
-{
-    public int currentCount = 0;
-    private CancellationToken? cts;
-    private CounterResponse ResponseMessage;
-    public AsyncServerStreamingCall<CounterResponse> _inner;
-    public IAsyncStreamReader<CounterResponse> ResponseStream => _inner.ResponseStream;
+//public partial class Grpc : ComponentBase, ICounterResponseStream
+//{
+//    public int currentCount = 0;
+//    private CancellationToken? cts;
+//    private CounterResponse ResponseMessage;
+//    public AsyncServerStreamingCall<CounterResponse> _inner;
+//    public IAsyncStreamReader<CounterResponse> ResponseStream => _inner.ResponseStream;
 
-    [Inject]
-    public Counter.CounterClient client { get; set; }
+//    [Inject]
+//    public Counter.CounterClient client { get; set; }
 
 
-    public Grpc() { }
+//    public Grpc() { }
 
-    ///<summary>
-    ///configuration du canal grpc-web activé(avec addScoped)
-    ///</summary>
-    // builder.Services.AddScoped(services =>
-    // {
-    //     var navigation = services.GetRequiredService<NavigationManager>();
 
-    //var baseUrl = navigation.BaseUri;
 
-    //var httpClientHandler = new HttpClientHandler();
+//    #region test unitaire
 
-    //var grpcChannel = GrpcChannel.ForAddress(baseUrl, new GrpcChannelOptions
-    //{
-    //    //journal d'observation requête 
-    //    LoggerFactory = LoggerFactory.Create(builder => builder.AddConsole()),
+//    public IClient Object { get; }
+//    /// <summary>
+//    /// pour la simulation du client avec Moq
+//    /// </summary>
+//    /// <param name="currentCount"></param>
+//    /// <param name="cts"></param>
+//    /// <param name="client"></param>
+//    /// <param name="channel"></param>
+//    public Grpc(int currentCount, CancellationToken? cts, Counter.CounterClient client, Counter.CounterClient channel)
+//    {
+//        this.currentCount = currentCount;
+//        this.cts = cts;
+//        this.client = client;
+//        this.channel = channel;
+//    }
 
-    //    HttpHandler = new GrpcWebHandler(GrpcWebMode.GrpcWeb, httpClientHandler)
-    //});
+//    public Grpc(IClient @object)
+//    {
+//        Object = @object;
+//    }
+//    #endregion
 
-    //     return new Counter.CounterClient(grpcChannel);
-    //});
+//    protected override async Task OnInitializedAsync()
+//    {
+//        Trace.TraceInformation("Le composant a terminer son initialisation et l'écoute est en cours");
+//        await CallBroadcast();
 
-    #region test unitaire
+//    }
 
-    public IClient Object { get; }
-    /// <summary>
-    /// pour la simulation du client avec Moq
-    /// </summary>
-    /// <param name="currentCount"></param>
-    /// <param name="cts"></param>
-    /// <param name="client"></param>
-    /// <param name="channel"></param>
-    public Grpc(int currentCount, CancellationToken? cts, Counter.CounterClient client, Counter.CounterClient channel)
-    {
-        this.currentCount = currentCount;
-        this.cts = cts;
-        this.client = client;
-        this.channel = channel;
-    }
+//    public async Task CallBroadcast()
+//    {
+//        try
+//        {
+//            cts = new CancellationToken();
 
-    public Grpc(IClient @object)
-    {
-        Object = @object;
-    }
-    #endregion
+//            if (cts != null)
+//            {
+//                var request = new CounterRequest
+//                {
+//                    Start = currentCount
+//                };
 
-    protected override async Task OnInitializedAsync()
-    {
-        Trace.TraceInformation("Le composant a terminer son initialisation et l'écoute est en cours");
-        await CallBroadcast();
+//                var response = client.StartCounter(request);
 
-    }
+//                //await foreach (var message in response.ResponseStream.ReadAllAsync())
+//                //{
+//                //    currentCount = message.Count;
+//                //    StateHasChanged();
+//                //}
 
-    public async Task CallBroadcast()
-    {
-        try
-        {
-            cts = new CancellationToken();
+//                while (await response.ResponseStream.MoveNext(CancellationToken.None))
+//                {
+//                    ResponseMessage = ResponseStream.Current;
+//                }
+//            }
+//        }
+//        catch (RpcException ex) when (ex.StatusCode == StatusCode.Cancelled) { }
+//    }
 
-            if (cts != null)
-            {
-                var request = new CounterRequest
-                {
-                    Start = currentCount
-                };
+//    private void StopCount()
+//    {
+//        cts = null;
+//    }
 
-                var response = client.StartCounter(request);
-
-                //await foreach (var message in response.ResponseStream.ReadAllAsync())
-                //{
-                //    currentCount = message.Count;
-                //    StateHasChanged();
-                //}
-
-                while (await response.ResponseStream.MoveNext(CancellationToken.None))
-                {
-                    ResponseMessage = ResponseStream.Current;
-                }
-            }
-        }
-        catch (RpcException ex) when (ex.StatusCode == StatusCode.Cancelled) { }
-    }
-
-    private void StopCount()
-    {
-        cts = null;
-    }
-
-}
+//}

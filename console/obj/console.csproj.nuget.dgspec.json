@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\vans\\console\\console.csproj": {}
+    "C:\\Users\\user\\source\\visualStudio\\c#\\test\\vans\\console\\console.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\vans\\app\\app.csproj": {
+    "C:\\Users\\user\\source\\visualStudio\\c#\\test\\vans\\app\\app.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\vans\\app\\app.csproj",
+        "projectUniqueName": "C:\\Users\\user\\source\\visualStudio\\c#\\test\\vans\\app\\app.csproj",
         "projectName": "app",
-        "projectPath": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\vans\\app\\app.csproj",
+        "projectPath": "C:\\Users\\user\\source\\visualStudio\\c#\\test\\vans\\app\\app.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\vans\\app\\obj\\",
+        "outputPath": "C:\\Users\\user\\source\\visualStudio\\c#\\test\\vans\\app\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -29,8 +29,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\vans\\grpc\\grpc.csproj": {
-                "projectPath": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\vans\\grpc\\grpc.csproj"
+              "C:\\Users\\user\\source\\visualStudio\\c#\\test\\vans\\grpc\\grpc.csproj": {
+                "projectPath": "C:\\Users\\user\\source\\visualStudio\\c#\\test\\vans\\grpc\\grpc.csproj"
               }
             }
           }
@@ -98,14 +98,14 @@
         }
       }
     },
-    "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\vans\\console\\console.csproj": {
+    "C:\\Users\\user\\source\\visualStudio\\c#\\test\\vans\\console\\console.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\vans\\console\\console.csproj",
+        "projectUniqueName": "C:\\Users\\user\\source\\visualStudio\\c#\\test\\vans\\console\\console.csproj",
         "projectName": "console",
-        "projectPath": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\vans\\console\\console.csproj",
+        "projectPath": "C:\\Users\\user\\source\\visualStudio\\c#\\test\\vans\\console\\console.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\vans\\console\\obj\\",
+        "outputPath": "C:\\Users\\user\\source\\visualStudio\\c#\\test\\vans\\console\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -123,8 +123,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\vans\\app\\app.csproj": {
-                "projectPath": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\vans\\app\\app.csproj"
+              "C:\\Users\\user\\source\\visualStudio\\c#\\test\\vans\\app\\app.csproj": {
+                "projectPath": "C:\\Users\\user\\source\\visualStudio\\c#\\test\\vans\\app\\app.csproj"
               }
             }
           }
@@ -163,14 +163,14 @@
         }
       }
     },
-    "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\vans\\grpc\\grpc.csproj": {
+    "C:\\Users\\user\\source\\visualStudio\\c#\\test\\vans\\grpc\\grpc.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\vans\\grpc\\grpc.csproj",
+        "projectUniqueName": "C:\\Users\\user\\source\\visualStudio\\c#\\test\\vans\\grpc\\grpc.csproj",
         "projectName": "grpc",
-        "projectPath": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\vans\\grpc\\grpc.csproj",
+        "projectPath": "C:\\Users\\user\\source\\visualStudio\\c#\\test\\vans\\grpc\\grpc.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\vans\\grpc\\obj\\",
+        "outputPath": "C:\\Users\\user\\source\\visualStudio\\c#\\test\\vans\\grpc\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
