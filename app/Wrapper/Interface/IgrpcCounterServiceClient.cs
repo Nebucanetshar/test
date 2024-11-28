@@ -1,11 +1,11 @@
 ﻿using Microsoft.AspNetCore.Components;
 using grpc;
+using Grpc.Core;
 
 namespace app;
 
 public interface IgrpcCounterServiceClient
-{
-    [Inject]
-    public Counter.CounterClient client { get; set; }
-    Task<ResponseWrapperViewModel<Counter.CounterClient>> StarCounter(CounterRequest request);
+{ 
+    
+    Task<ResponseWrapperViewModel<Counter.CounterClient>> StartCounter(CounterRequest request);
 }

@@ -17,12 +17,10 @@ public class ActionInput
 
 public class ActionOutput
 {
-    public AsyncServerStreamingCall<CounterResponse> _inner;
-    public IAsyncStreamReader<CounterResponse> ResponseStream => _inner.ResponseStream;
-    private CounterResponse ResponseMessage;
-
-    public ActionOutput()
+    public CounterResponse Response { get; }
+    
+    public ActionOutput(CounterResponse response)
     {
-        ResponseMessage = new CounterResponse();
+        Response = response;
     }
 }

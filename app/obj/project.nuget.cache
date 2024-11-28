@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Gzlgj0gaZSc=",
+  "dgSpecHash": "OwGp60j7IgQ=",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\source\\visualStudio\\c#\\test\\vans\\app\\app.csproj",
+  "projectFilePath": "C:\\Users\\user\\source\\visualSTudio\\c#\\test\\vans\\app\\app.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\fluxor\\6.1.0\\fluxor.6.1.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\google.api.commonprotos\\2.16.0\\google.api.commonprotos.2.16.0.nupkg.sha512",
