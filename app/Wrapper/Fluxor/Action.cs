@@ -17,9 +17,9 @@ public class ActionInput
 
 public class ActionOutput
 {
-    public CounterResponse Response { get; }
+    public AsyncServerStreamingCall<CounterResponse> Response { get; }
     
-    public ActionOutput(CounterResponse response)
+    public ActionOutput(AsyncServerStreamingCall<CounterResponse> response)
     {
         Response = response;
     }

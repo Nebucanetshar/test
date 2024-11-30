@@ -3,14 +3,18 @@ using Microsoft.EntityFrameworkCore;
 
 namespace grpc;
 
-public class CounterServer:Counter.CounterBase
+
+public class CounterServer: Counter.CounterBase
 {
     private readonly AppDbContext _appDbContext;
+    private readonly Counter.CounterClient _client;
 
-    public CounterServer(AppDbContext appDbContext)
+    public CounterServer(AppDbContext appDbContext, Counter.CounterClient client)
     {
         _appDbContext = appDbContext;
+        _client = client;
     }
+
     public override async Task StartCounter(CounterRequest request, IServerStreamWriter<CounterResponse> response, ServerCallContext context)
     {
         var count = request.Start;

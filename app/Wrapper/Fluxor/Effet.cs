@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Components;
 
 namespace app;
 
-public class Effet
+public class Effet 
 {
     public AsyncServerStreamingCall<CounterResponse> _inner;
     public IAsyncStreamReader<CounterResponse> ResponseStream => _inner.ResponseStream;
@@ -28,8 +28,8 @@ public class Effet
             {
                 ResponseMessage = ResponseStream.Current;
             }
-                
-            dispatcher.Dispatch(new ActionOutput(response._inner)); // find property asyncServerStreamCall compatible with response
+
+            dispatcher.Dispatch(new ActionOutput(response)); // find property asyncServerStreamCall compatible with response
 
         }
         catch (RpcException ex) when (ex.StatusCode == StatusCode.Cancelled) { }

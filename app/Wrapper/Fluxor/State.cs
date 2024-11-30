@@ -1,16 +1,16 @@
 ﻿using Fluxor;
+using grpc;
+using Grpc.Core;
 
 namespace app;
 
 [FeatureState]
 public record class State
 {
-    public ResultResponseViewModel? response { get; set; }
-    public int data { get; private set; }
-
+    public List<AsyncServerStreamingCall<CounterResponse>> Response { get; set; }
     public State()
     {
-        response = new ResultResponseViewModel(data);
+        Response = new List<AsyncServerStreamingCall<CounterResponse>>();
     }
 
 }
