@@ -12,6 +12,9 @@ public class ActionInput
     {
         this.request = request;
     }
+
+    public ActionInput() { }
+
 }
 
 public class ActionOutput

@@ -3,19 +3,16 @@ using Microsoft.EntityFrameworkCore;
 
 namespace grpc;
 
+public interface IGrpcClient
+{
+    Task Stream(CounterRequest request, IServerStreamWriter<CounterResponse> response, ServerCallContext context);
+}
 
-public class CounterServer: Counter.CounterBase
+public class CounterServer : IGrpcClient
 {
     private readonly AppDbContext _appDbContext;
-    private readonly Counter.CounterClient _client;
-
-    public CounterServer(AppDbContext appDbContext, Counter.CounterClient client)
-    {
-        _appDbContext = appDbContext;
-        _client = client;
-    }
-
-    public override async Task StartCounter(CounterRequest request, IServerStreamWriter<CounterResponse> response, ServerCallContext context)
+    
+    public async Task Stream(CounterRequest request, IServerStreamWriter<CounterResponse> response, ServerCallContext context)
     {
         var count = request.Start;
 
@@ -41,3 +38,23 @@ public class CounterServer: Counter.CounterBase
         }
     }
 }
+
+public class GrpcService : Counter.CounterBase
+{
+    private readonly IGrpcClient _grpcClient;
+    public GrpcService(IGrpcClient grpcClient)
+    {
+        _grpcClient = grpcClient;
+    }
+
+    public override async Task StartCounter(CounterRequest request, IServerStreamWriter<CounterResponse> response, ServerCallContext context)
+    {
+        await _grpcClient.Stream(request, response, context);
+    }
+
+}
+
+    
+
+    
+

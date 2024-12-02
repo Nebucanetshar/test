@@ -1,4 +1,4 @@
-using app;
+using app.Wrapper.Fluxor;
 using app.Components;
 using Fluxor;
 using grpc;
@@ -12,7 +12,7 @@ public class AppProgram
     public static void Main (string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
-        var services =builder.Services;
+        
 
         // ajout du client grpc dans le conteneur de service blazor 
         builder.Services.AddGrpcClient<Counter.CounterClient>(o =>
@@ -65,7 +65,13 @@ public class AppProgram
             return new Counter.CounterClient(grpcChannel);
         });
 
-        services.AddFluxor(o =>
+        ///< summary >
+        /// configuration du canal grpc - web activé pour Fluxor(avec addScoped)
+        ///</ summary >
+        builder.Services.AddScoped<IGrpcClient,CounterServer>();
+        builder.Services.AddScoped<Effet>();
+
+        builder.Services.AddFluxor(o =>
         {
             o.ScanAssemblies(typeof(AppProgram).Assembly);
         });

@@ -19,8 +19,9 @@ public partial class Grpc
     public async Task Cliked()
     {
         var request = new ActionInput(Request);
+        ///<summary>
+        ///respect du paradigme Fluxor pour l'exécution de l'effet de manière cohérante 
+        ///</summary> 
         dispatcher.Dispatch(request);
     }
-
-
 }
