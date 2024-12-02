@@ -2,10 +2,10 @@
 using grpc;
 using Grpc.Core;
 
-namespace app;
+namespace app.Wrapper.Fluxor;
 
 [FeatureState]
-public record class State
+public record class State 
 {
     public List<AsyncServerStreamingCall<CounterResponse>> Response { get; set; }
     public State()

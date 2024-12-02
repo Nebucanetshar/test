@@ -2,16 +2,15 @@
 using Grpc.Core;
 using System.Runtime.CompilerServices;
 
-namespace app;
+namespace app.Wrapper.Fluxor;
 
 public class ActionInput 
 {
-    
-    public CounterRequest Request = new CounterRequest { Start = 0 };
+    public CounterRequest request { get; set; }
 
     public ActionInput(CounterRequest request)
     {
-        Request = request;
+        this.request = request;
     }
 }
 

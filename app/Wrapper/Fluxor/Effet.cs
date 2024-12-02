@@ -3,7 +3,7 @@ using Grpc.Core;
 using grpc;
 using Microsoft.AspNetCore.Components;
 
-namespace app;
+namespace app.Wrapper.Fluxor;
 
 public class Effet 
 {
@@ -22,7 +22,7 @@ public class Effet
     {
         try
         {
-            var response = client.StartCounter(action.Request);
+            var response = client.StartCounter(action.request);
 
             while(await response.ResponseStream.MoveNext(CancellationToken.None))
             {

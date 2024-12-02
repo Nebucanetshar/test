@@ -1,21 +1,18 @@
 @page "/grpc"
+@using global::Grpc.Core
 @using grpc
 @using grpc.Services
 @using Microsoft.AspNetCore.Components
-@inject Counter.CounterClient channel
+@using Fluxor
+@inject IState<AsyncServerStreamingCall<CounterResponse>> State
 
 
 <h3>gRpc Client in Blazor</h3>
 
-@* <button class="btn-grpc1" type="button"@onclick="CallBroadcast">appel de diffusion</button>
-<button class="btn-grpc2" type="button" @onclick="StopCount">stop</button> *@
+<SfButton Content="appeL diffusion" @onclick="Cliked" />
 
-<NavLink href="grpc">
-    <SfButton Content="appeL diffusion" @* @onclick="CallBroadcast" *@/>
-    <SfButton Content="stop"@* @onclick="StopCount" *@/> 
-</NavLink>
+<p> response server: @State.Value.ResponseStream.Current</p>
 
-<p> response server: @* @ResponseMessage *@</p>  
 
 
 

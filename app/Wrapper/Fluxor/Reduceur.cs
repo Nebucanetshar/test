@@ -2,9 +2,9 @@
 using grpc;
 using Grpc.Core;
 
-namespace app;
+namespace app.Wrapper.Fluxor;
 
-public static class Reduceur
+public static class Reduceur 
 {
     [ReducerMethod]
     public static State ExecuteState(State state, ActionOutput action)
