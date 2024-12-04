@@ -14,6 +14,34 @@
           "lib/net8.0/Fluxor.dll": {}
         }
       },
+      "Fluxor.Blazor.Web/6.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Fluxor": "6.1.0",
+          "Microsoft.AspNetCore.Components.Web": "8.0.8",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.1"
+        },
+        "compile": {
+          "lib/net8.0/Fluxor.Blazor.Web.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Fluxor.Blazor.Web.dll": {}
+        }
+      },
+      "Fluxor.Blazor.Web.ReduxDevTools/6.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Fluxor.Blazor.Web": "6.1.0",
+          "Microsoft.AspNetCore.Components.Web": "8.0.8",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.1"
+        },
+        "compile": {
+          "lib/net8.0/Fluxor.Blazor.Web.ReduxDevTools.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Fluxor.Blazor.Web.ReduxDevTools.dll": {}
+        }
+      },
       "Google.Api.CommonProtos/2.16.0": {
         "type": "package",
         "dependencies": {
@@ -2067,6 +2095,36 @@
         "lib/net6.0/Fluxor.dll",
         "lib/net7.0/Fluxor.dll",
         "lib/net8.0/Fluxor.dll"
+      ]
+    },
+    "Fluxor.Blazor.Web/6.1.0": {
+      "sha512": "tpbP8uwNQEg8uRkScxFz09a+jhRmyktBusIITLcp9ayET4MWKsqaJMsxTOHidsNF2OYylAnXbujZkFedZtihxQ==",
+      "type": "package",
+      "path": "fluxor.blazor.web/6.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fluxor-blazor-logo-small.png",
+        "fluxor.blazor.web.6.1.0.nupkg.sha512",
+        "fluxor.blazor.web.nuspec",
+        "lib/net6.0/Fluxor.Blazor.Web.dll",
+        "lib/net7.0/Fluxor.Blazor.Web.dll",
+        "lib/net8.0/Fluxor.Blazor.Web.dll"
+      ]
+    },
+    "Fluxor.Blazor.Web.ReduxDevTools/6.1.0": {
+      "sha512": "a9iCEGmThfRhFyuOzpgzXWepRVGOYymDKFj6p7qHmAmCBi5DucxQDEgRtDDEFK1H33Y38lJMDWDvyf+mwdRJhA==",
+      "type": "package",
+      "path": "fluxor.blazor.web.reduxdevtools/6.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fluxor-blazor-reduxdevtools-small.png",
+        "fluxor.blazor.web.reduxdevtools.6.1.0.nupkg.sha512",
+        "fluxor.blazor.web.reduxdevtools.nuspec",
+        "lib/net6.0/Fluxor.Blazor.Web.ReduxDevTools.dll",
+        "lib/net7.0/Fluxor.Blazor.Web.ReduxDevTools.dll",
+        "lib/net8.0/Fluxor.Blazor.Web.ReduxDevTools.dll"
       ]
     },
     "Google.Api.CommonProtos/2.16.0": {
@@ -6585,6 +6643,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "Fluxor.Blazor.Web.ReduxDevTools >= 6.1.0",
       "Grpc.Net.Client >= 2.66.0",
       "Grpc.Net.Client.Web >= 2.66.0",
       "Microsoft.AspNetCore.Components >= 8.0.10",
@@ -6643,6 +6702,10 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "Fluxor.Blazor.Web.ReduxDevTools": {
+            "target": "Package",
+            "version": "[6.1.0, )"
+          },
           "Grpc.Net.Client": {
             "target": "Package",
             "version": "[2.66.0, )"

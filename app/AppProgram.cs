@@ -6,6 +6,8 @@ using Grpc.Net.Client;
 using Grpc.Net.Client.Web;
 using Microsoft.AspNetCore.Components;
 using Syncfusion.Blazor;
+using Fluxor.Blazor.Web.ReduxDevTools;
+
 
 public class AppProgram
 {
@@ -46,36 +48,39 @@ public class AppProgram
         ///< summary >
         /// configuration du canal grpc - web activé(avec addScoped)
         ///</ summary >
-        builder.Services.AddScoped(services =>
-        {
-            var navigation = services.GetRequiredService<NavigationManager>();
+        //builder.Services.AddScoped(services =>
+        //{
+        //    var navigation = services.GetRequiredService<NavigationManager>();
 
-            var baseUrl = navigation.BaseUri;
+        //    var baseUrl = navigation.BaseUri;
 
-            var httpClientHandler = new HttpClientHandler();
+        //    var httpClientHandler = new HttpClientHandler();
 
-            var grpcChannel = GrpcChannel.ForAddress(baseUrl, new GrpcChannelOptions
-            {
-                //journal d'observation requête 
-                LoggerFactory = LoggerFactory.Create(builder => builder.AddConsole()),
+        //    var grpcChannel = GrpcChannel.ForAddress(baseUrl, new GrpcChannelOptions
+        //    {
+        //        //journal d'observation requête
+        //        LoggerFactory = LoggerFactory.Create(builder => builder.AddConsole()),
 
-                HttpHandler = new GrpcWebHandler(GrpcWebMode.GrpcWeb, httpClientHandler)
-            });
+        //        HttpHandler = new GrpcWebHandler(GrpcWebMode.GrpcWeb, httpClientHandler)
+        //    });
 
-            return new Counter.CounterClient(grpcChannel);
-        });
+        //    return new Counter.CounterClient(grpcChannel);
+        //});
 
         ///< summary >
         /// configuration du canal grpc - web activé pour Fluxor(avec addScoped)
         ///</ summary >
-        builder.Services.AddScoped<IGrpcClient,CounterServer>();
-        builder.Services.AddScoped<Effet>();
-
         builder.Services.AddFluxor(o =>
         {
             o.ScanAssemblies(typeof(AppProgram).Assembly);
-        });
+            o.UseReduxDevTools(); // permet d'utiliser les outils de developpement Redux
 
+        });
+        builder.Services.AddScoped<IGrpcClient, CounterServer>();
+        builder.Services.AddScoped<IFeatures<State>, Feature>();
+        builder.Services.AddScoped<Effet>();
+
+        #region Programme généré 
         builder.Services.AddRazorComponents().AddInteractiveServerComponents();
         builder.Services.AddSyncfusionBlazor();
 
@@ -99,7 +104,7 @@ public class AppProgram
 
 
         app.Run();
-
+        #endregion
     }
 }
 

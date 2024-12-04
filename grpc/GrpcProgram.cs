@@ -22,7 +22,7 @@ public class GrpcProgram
         {
             builder.Configuration.GetConnectionString("vans");
         });
-        
+
         //configuration du TLS 
         //builder.WebHost.ConfigureKestrel(options =>
         //{
@@ -32,7 +32,7 @@ public class GrpcProgram
         //        listenOptions.Protocols = Microsoft.AspNetCore.Server.Kestrel.Core.HttpProtocols.Http2;
         //    });
         //});
-
+        #region Programme généré 
         var app = builder.Build();
 
         // Configure the HTTP request pipeline.
@@ -42,6 +42,7 @@ public class GrpcProgram
 
 
         app.Run();
+        #endregion
     }
 }
 

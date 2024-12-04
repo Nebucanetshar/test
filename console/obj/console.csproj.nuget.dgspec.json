@@ -50,6 +50,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Fluxor.Blazor.Web.ReduxDevTools": {
+              "target": "Package",
+              "version": "[6.1.0, )"
+            },
             "Grpc.Net.Client": {
               "target": "Package",
               "version": "[2.66.0, )"
