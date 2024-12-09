@@ -23,13 +23,18 @@ public class Effet
         try
         {
             var response = client.StartCounter(action.request);
+            
+            var handler = new GrpcFlux 
+            { 
+                Stream = response // replace AsyncServerStreamingCall because no compatible with Fluxor
+            };
 
             while(await response.ResponseStream.MoveNext(CancellationToken.None))
             {
                 ResponseMessage = ResponseStream.Current;
             }
 
-            dispatcher.Dispatch(new ActionOutput(response)); // find property asyncServerStreamCall compatible with response
+            dispatcher.Dispatch(new ActionOutput(handler)); 
 
         }
         catch (RpcException ex) when (ex.StatusCode == StatusCode.Cancelled) { }

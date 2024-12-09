@@ -10,11 +10,17 @@ namespace app.Components.Pages;
 
 public partial class Grpc 
 {
+
     [Inject]
-    private IDispatcher dispatcher { get; set; }
+    public IDispatcher dispatcher { get; set; }
     public CounterRequest Request = new CounterRequest { Start = 0 };
 
     public Grpc() { }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await Cliked();
+    }
 
     public async Task Cliked()
     {

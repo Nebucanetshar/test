@@ -7,6 +7,7 @@ using Grpc.Net.Client.Web;
 using Microsoft.AspNetCore.Components;
 using Syncfusion.Blazor;
 using Fluxor.Blazor.Web.ReduxDevTools;
+using Grpc.Core;
 
 
 public class AppProgram
@@ -21,6 +22,21 @@ public class AppProgram
          {
              o.Address = new Uri("http://localhost:7226");
          });
+
+        ///< summary >
+        /// configuration du canal grpc - web activé pour Fluxor(avec addScoped)
+        ///</ summary >
+        //builder.Services.AddSingleton<GrpcChannel>(GrpcChannel.ForAddress("http://localhost:7226"));
+        builder.Services.AddFluxor(o =>
+        {
+            o.ScanAssemblies(typeof(AppProgram).Assembly); //permet de trouver automatiquement les reducers, effects ect..
+            o.UseReduxDevTools(); // permet d'utiliser les outils de developpement Redux
+
+        });
+        builder.Services.AddScoped<IGrpcClient, CounterServer>();
+
+        //builder.Services.AddScoped<IFeatures<State>, Feature>();
+        builder.Services.AddScoped<Effet>();
 
         ///<summary>
         ///grpc web activé sans canal, accepte un délégué qui retourne un HttpMessageHandler (encapsulation des appels)
@@ -67,18 +83,7 @@ public class AppProgram
         //    return new Counter.CounterClient(grpcChannel);
         //});
 
-        ///< summary >
-        /// configuration du canal grpc - web activé pour Fluxor(avec addScoped)
-        ///</ summary >
-        builder.Services.AddFluxor(o =>
-        {
-            o.ScanAssemblies(typeof(AppProgram).Assembly);
-            o.UseReduxDevTools(); // permet d'utiliser les outils de developpement Redux
 
-        });
-        builder.Services.AddScoped<IGrpcClient, CounterServer>();
-        builder.Services.AddScoped<IFeatures<State>, Feature>();
-        builder.Services.AddScoped<Effet>();
 
         #region Programme généré 
         builder.Services.AddRazorComponents().AddInteractiveServerComponents();

@@ -149,3 +149,5 @@ C:\Users\user\source\VisualStudio\c#\test\vans\test\bin\Debug\net8.0\Syncfusion.
 C:\Users\user\source\VisualStudio\c#\test\vans\test\bin\Debug\net8.0\Syncfusion.Licensing.dll
 C:\Users\user\source\visualStudio\c#\test\vans\test\bin\Debug\net8.0\Grpc.AspNetCore.Web.dll
 C:\Users\user\source\visualStudio\c#\test\vans\test\bin\Debug\net8.0\Fluxor.dll
+C:\Users\user\source\visualStudio\c#\test\vans\test\bin\Debug\net8.0\Fluxor.Blazor.Web.dll
+C:\Users\user\source\visualStudio\c#\test\vans\test\bin\Debug\net8.0\Fluxor.Blazor.Web.ReduxDevTools.dll

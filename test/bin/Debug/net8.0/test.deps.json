@@ -43,6 +43,32 @@
           }
         }
       },
+      "Fluxor.Blazor.Web/6.1.0": {
+        "dependencies": {
+          "Fluxor": "6.1.0",
+          "Microsoft.AspNetCore.Components.Web": "8.0.10",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2"
+        },
+        "runtime": {
+          "lib/net8.0/Fluxor.Blazor.Web.dll": {
+            "assemblyVersion": "6.1.0.0",
+            "fileVersion": "6.1.0.0"
+          }
+        }
+      },
+      "Fluxor.Blazor.Web.ReduxDevTools/6.1.0": {
+        "dependencies": {
+          "Fluxor.Blazor.Web": "6.1.0",
+          "Microsoft.AspNetCore.Components.Web": "8.0.10",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2"
+        },
+        "runtime": {
+          "lib/net8.0/Fluxor.Blazor.Web.ReduxDevTools.dll": {
+            "assemblyVersion": "6.1.0.0",
+            "fileVersion": "6.1.0.0"
+          }
+        }
+      },
       "Google.Api.CommonProtos/2.16.0": {
         "dependencies": {
           "Google.Protobuf": "3.28.3"
@@ -1470,6 +1496,7 @@
       "xunit.runner.visualstudio/2.5.3": {},
       "app/1.0.0": {
         "dependencies": {
+          "Fluxor.Blazor.Web.ReduxDevTools": "6.1.0",
           "Grpc.Net.Client": "2.66.0",
           "Grpc.Net.Client.Web": "2.66.0",
           "Microsoft.AspNetCore.Components": "8.0.10",
@@ -1531,6 +1558,20 @@
       "sha512": "sha512-yRH9z2oYps/vkmWjQHy3fVxMHl1GimejT1RJiVvChhi1YmflCrav7kHM8TtTqPsz/HKcoSCwEu4P09PDhvuWZA==",
       "path": "fluxor/6.1.0",
       "hashPath": "fluxor.6.1.0.nupkg.sha512"
+    },
+    "Fluxor.Blazor.Web/6.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tpbP8uwNQEg8uRkScxFz09a+jhRmyktBusIITLcp9ayET4MWKsqaJMsxTOHidsNF2OYylAnXbujZkFedZtihxQ==",
+      "path": "fluxor.blazor.web/6.1.0",
+      "hashPath": "fluxor.blazor.web.6.1.0.nupkg.sha512"
+    },
+    "Fluxor.Blazor.Web.ReduxDevTools/6.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-a9iCEGmThfRhFyuOzpgzXWepRVGOYymDKFj6p7qHmAmCBi5DucxQDEgRtDDEFK1H33Y38lJMDWDvyf+mwdRJhA==",
+      "path": "fluxor.blazor.web.reduxdevtools/6.1.0",
+      "hashPath": "fluxor.blazor.web.reduxdevtools.6.1.0.nupkg.sha512"
     },
     "Google.Api.CommonProtos/2.16.0": {
       "type": "package",

@@ -12,16 +12,17 @@ public class ActionInput
     {
         this.request = request;
     }
-
+    #region test unitaire
     public ActionInput() { }
+    #endregion
 
 }
 
 public class ActionOutput
 {
-    public AsyncServerStreamingCall<CounterResponse> Response { get; }
+    public GrpcFlux Response { get; }
     
-    public ActionOutput(AsyncServerStreamingCall<CounterResponse> response)
+    public ActionOutput(GrpcFlux response)
     {
         Response = response;
     }
