@@ -7,9 +7,8 @@ using System.Diagnostics;
 
 namespace app.Components.Pages;
 
-public partial class Grpc : ComponentBase, ICounterResponseStream  
-{
-    public int currentCount = 0;
+public partial class Grpc : ComponentBase
+{ 
     private CancellationToken? cts;
     private CounterResponse ResponseMessage;
     private AsyncServerStreamingCall<CounterResponse> _inner;
@@ -17,7 +16,7 @@ public partial class Grpc : ComponentBase, ICounterResponseStream
 
     [Inject]
     public Counter.CounterClient client { get; set; }
-    
+
 
     public Grpc() { }
 
@@ -33,7 +32,7 @@ public partial class Grpc : ComponentBase, ICounterResponseStream
     /// <param name="channel"></param>
     public Grpc(int currentCount, CancellationToken? cts, Counter.CounterClient client, Counter.CounterClient channel)
     {
-        this.currentCount = currentCount;
+        
         this.cts = cts;
         this.client = client;
         this.channel = channel;
@@ -45,45 +44,30 @@ public partial class Grpc : ComponentBase, ICounterResponseStream
     }
     #endregion
 
-    protected override async Task OnInitializedAsync()
-    {
-        Trace.TraceInformation("Le composant a terminer son initialisation et l'écoute est en cours");
-        await CallBroadcast();
+    //protected override async Task OnInitializedAsync()
+    //{
+    //    Trace.TraceInformation("Le composant a terminer son initialisation et l'écoute est en cours");
+    //    await CallBroadcast();
 
-    }
-    public async Task CallBroadcast()
+    //}
+    private async Task CallBroadcast()
     {
-
         try
-        {
-            cts = new CancellationToken();
-
-            var request = new CounterRequest { Start = currentCount };
+        { 
+            var request = new CounterRequest { Start = 1 };
             var response = client.StartCounter(request);
-
-            //await foreach (var message in response.ResponseStream.ReadAllAsync())
-            //{
-            //    currentCount = message.Count;
-            //    StateHasChanged();
-            //}
 
             while (await response.ResponseStream.MoveNext(CancellationToken.None))
             {
                 ResponseMessage = ResponseStream.Current;
             }
-                
-        }
-        catch (RpcException ex) when (ex.StatusCode == StatusCode.Cancelled)
-        {
-            Trace.TraceInformation("streaming cancelled");
-        }
 
+        }
+        catch (RpcException ex) when (ex.StatusCode == StatusCode.Cancelled) { }
     }
 
     private void StopCount()
     {
         cts = null;
     }
-
-    
 }

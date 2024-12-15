@@ -5,6 +5,7 @@ using Grpc.Net.Client;
 using Grpc.Net.Client.Web;
 using Microsoft.AspNetCore.Components;
 using Syncfusion.Blazor;
+using Microsoft.AspNetCore.StaticFiles;
 
 public class AppProgram
 {
@@ -12,8 +13,9 @@ public class AppProgram
     {
         var builder = WebApplication.CreateBuilder(args);
         
+
         // ajout du client grpc dans le conteneur de service blazor 
-       builder.Services.AddGrpcClient<Counter.CounterClient>(o =>
+        builder.Services.AddGrpcClient<Counter.CounterClient>(o =>
         {
             o.Address = new Uri("http://localhost:5269");
         });
@@ -48,6 +50,9 @@ public class AppProgram
             return new Counter.CounterClient(grpcChannel);
         });
 
+        
+       
+        #region program généré
         // Add services to the container.
         builder.Services.AddRazorComponents().AddInteractiveServerComponents();
         builder.Services.AddSyncfusionBlazor();
@@ -68,11 +73,12 @@ public class AppProgram
         app.UseStaticFiles();
         app.UseAntiforgery();
 
-        app.MapRazorComponents<App>().AddInteractiveServerRenderMode();
+        app.MapRazorComponents<App>();
 
 
         app.Run();
 
     }
+    #endregion
 }
 

@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\app.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\vans\\app\\wwwroot\\_framework\\blazor.web.js",
+      "PackagePath": "staticwebassets\\_framework\\blazor.web.js"
+    },
+    {
       "Id": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\vans\\app\\wwwroot\\app.css",
       "PackagePath": "staticwebassets\\app.css"
     },
