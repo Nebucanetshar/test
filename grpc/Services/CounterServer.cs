@@ -1,7 +1,7 @@
 ﻿using Grpc.Core;
 using Microsoft.EntityFrameworkCore;
 
-namespace grpc;
+namespace grpc.Services;
 
 public class CounterServer:Counter.CounterBase
 {

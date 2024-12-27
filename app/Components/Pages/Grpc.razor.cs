@@ -3,6 +3,7 @@ using grpc;
 using Grpc.Core;
 using Microsoft.AspNetCore.Components;
 using System.Diagnostics;
+using Microsoft.JSInterop;
 
 
 namespace app.Components.Pages;
@@ -16,45 +17,42 @@ public partial class Grpc : ComponentBase
 
     [Inject]
     public Counter.CounterClient client { get; set; }
-
+    
+    //[Inject]
+    //public IJSRuntime runtime { get; set; }
 
     public Grpc() { }
 
-    #region test unitaire
-
-    public IClient Object { get; }
-    /// <summary>
-    /// pour la simulation du client avec Moq
-    /// </summary>
-    /// <param name="currentCount"></param>
-    /// <param name="cts"></param>
-    /// <param name="client"></param>
-    /// <param name="channel"></param>
-    public Grpc(int currentCount, CancellationToken? cts, Counter.CounterClient client, Counter.CounterClient channel)
-    {
-        
-        this.cts = cts;
-        this.client = client;
-        this.channel = channel;
-    }
-
-    public Grpc(IClient @object)
-    {
-        Object = @object;
-    }
-    #endregion
-
+    #region SetCallBroadcastWithoutButton
     //protected override async Task OnInitializedAsync()
     //{
     //    Trace.TraceInformation("Le composant a terminer son initialisation et l'écoute est en cours");
     //    await CallBroadcast();
-
     //}
+    #endregion
+
+
+    #region JSManagement 
+    //private async Task TriggerJsFunction()
+    //{
+    //   await runtime.InvokeVoidAsync("invokeDotnetMethod");
+    //}
+    
+    //[JSInvokable("CallBroadcastJs")]
+    //public static Task<string> CallBroadcastJs()
+    //{
+    //    return Task.FromResult("Hello from.Net");
+    //}
+    #endregion
+
+
+    #region CallBroadcast
     private async Task CallBroadcast()
     {
         try
         { 
             var request = new CounterRequest { Start = 1 };
+            
             var response = client.StartCounter(request);
 
             while (await response.ResponseStream.MoveNext(CancellationToken.None))
@@ -70,4 +68,5 @@ public partial class Grpc : ComponentBase
     {
         cts = null;
     }
+    #endregion
 }

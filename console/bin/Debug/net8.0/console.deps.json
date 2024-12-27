@@ -158,7 +158,7 @@
           "Microsoft.AspNetCore.Components.Forms": "8.0.10",
           "Microsoft.Extensions.DependencyInjection": "8.0.1",
           "Microsoft.Extensions.Primitives": "8.0.0",
-          "Microsoft.JSInterop": "8.0.10",
+          "Microsoft.JSInterop": "8.0.11",
           "System.IO.Pipelines": "8.0.0"
         },
         "runtime": {
@@ -386,11 +386,11 @@
           "System.Text.Encodings.Web": "4.5.0"
         }
       },
-      "Microsoft.JSInterop/8.0.10": {
+      "Microsoft.JSInterop/8.0.11": {
         "runtime": {
           "lib/net8.0/Microsoft.JSInterop.dll": {
             "assemblyVersion": "8.0.0.0",
-            "fileVersion": "8.0.1024.46804"
+            "fileVersion": "8.0.1124.52116"
           }
         }
       },
@@ -1149,6 +1149,7 @@
           "Grpc.Net.Client.Web": "2.66.0",
           "Microsoft.AspNetCore.Components": "8.0.10",
           "Microsoft.AspNetCore.StaticFiles": "2.2.0",
+          "Microsoft.JSInterop": "8.0.11",
           "Syncfusion.Blazor.Buttons": "27.1.57",
           "Syncfusion.Blazor.Themes": "27.1.57",
           "grpc": "1.0.0"
@@ -1479,12 +1480,12 @@
       "path": "microsoft.extensions.webencoders/2.2.0",
       "hashPath": "microsoft.extensions.webencoders.2.2.0.nupkg.sha512"
     },
-    "Microsoft.JSInterop/8.0.10": {
+    "Microsoft.JSInterop/8.0.11": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-VxiFlNValVtpRQomua6h1FOUBK0fiyQbNIh+PMRs9DMHczOHIZpLJmm5LO5h9voBXjW+V/cUE8aNH2GcWps40A==",
-      "path": "microsoft.jsinterop/8.0.10",
-      "hashPath": "microsoft.jsinterop.8.0.10.nupkg.sha512"
+      "sha512": "sha512-UYSbAkNGTWVUne3I04/9IRQel3Bt1Ww6Y5cjvZEZ89rWhBD1yWu7YDotvQS62V6mgSfFaXXPGrCUm1VG824QXw==",
+      "path": "microsoft.jsinterop/8.0.11",
+      "hashPath": "microsoft.jsinterop.8.0.11.nupkg.sha512"
     },
     "Microsoft.Net.Http.Headers/2.2.0": {
       "type": "package",

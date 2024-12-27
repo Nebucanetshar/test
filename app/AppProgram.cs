@@ -1,11 +1,10 @@
 using app.Components;
-using app.Components.Pages;
 using grpc;
 using Grpc.Net.Client;
 using Grpc.Net.Client.Web;
 using Microsoft.AspNetCore.Components;
 using Syncfusion.Blazor;
-using Microsoft.AspNetCore.StaticFiles;
+
 
 public class AppProgram
 {
@@ -69,11 +68,12 @@ public class AppProgram
         }
 
         app.UseHttpsRedirection();
+        
 
         app.UseStaticFiles();
         app.UseAntiforgery();
 
-        app.MapRazorComponents<App>();
+        app.MapRazorComponents<App>().AddInteractiveServerRenderMode();
 
 
         app.Run();

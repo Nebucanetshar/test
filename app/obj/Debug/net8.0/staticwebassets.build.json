@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ftsJQuBiGjib5W69Nzh1TlRbVSyge08xL+CBuBbDseA=",
+  "Hash": "0uZeB7zz/yboAmGOrKpMU1lfsV7aGBrpb1HwrE5ANrQ=",
   "Source": "app",
   "BasePath": "_content/app",
   "Mode": "Default",
@@ -1169,25 +1169,6 @@
       "OriginalItemSpec": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\vans\\app\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\app.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\vans\\app\\wwwroot\\_framework\\blazor.web.js",
-      "SourceId": "app",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\vans\\app\\wwwroot\\",
-      "BasePath": "_content/app",
-      "RelativePath": "_framework/blazor.web.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\_framework\\blazor.web.js"
-    },
-    {
       "Identity": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\vans\\app\\wwwroot\\app.css",
       "SourceId": "app",
       "SourceType": "Discovered",
@@ -1262,6 +1243,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.png"
+    },
+    {
+      "Identity": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\vans\\app\\wwwroot\\JS\\DotNetInvoke.js",
+      "SourceId": "app",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\vans\\app\\wwwroot\\",
+      "BasePath": "_content/app",
+      "RelativePath": "JS/DotNetInvoke.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\JS\\DotNetInvoke.js"
     }
   ]
 }
