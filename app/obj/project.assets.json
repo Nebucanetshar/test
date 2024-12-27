@@ -706,7 +706,7 @@
           }
         }
       },
-      "Microsoft.JSInterop/8.0.10": {
+      "Microsoft.JSInterop/8.0.11": {
         "type": "package",
         "compile": {
           "lib/net8.0/Microsoft.JSInterop.dll": {
@@ -3216,10 +3216,10 @@
         "microsoft.extensions.webencoders.nuspec"
       ]
     },
-    "Microsoft.JSInterop/8.0.10": {
-      "sha512": "VxiFlNValVtpRQomua6h1FOUBK0fiyQbNIh+PMRs9DMHczOHIZpLJmm5LO5h9voBXjW+V/cUE8aNH2GcWps40A==",
+    "Microsoft.JSInterop/8.0.11": {
+      "sha512": "UYSbAkNGTWVUne3I04/9IRQel3Bt1Ww6Y5cjvZEZ89rWhBD1yWu7YDotvQS62V6mgSfFaXXPGrCUm1VG824QXw==",
       "type": "package",
-      "path": "microsoft.jsinterop/8.0.10",
+      "path": "microsoft.jsinterop/8.0.11",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3227,7 +3227,7 @@
         "THIRD-PARTY-NOTICES.TXT",
         "lib/net8.0/Microsoft.JSInterop.dll",
         "lib/net8.0/Microsoft.JSInterop.xml",
-        "microsoft.jsinterop.8.0.10.nupkg.sha512",
+        "microsoft.jsinterop.8.0.11.nupkg.sha512",
         "microsoft.jsinterop.nuspec"
       ]
     },
@@ -6866,6 +6866,7 @@
       "Grpc.Net.Client.Web >= 2.66.0",
       "Microsoft.AspNetCore.Components >= 8.0.10",
       "Microsoft.AspNetCore.StaticFiles >= 2.2.0",
+      "Microsoft.JSInterop >= 8.0.11",
       "Syncfusion.Blazor.Buttons >= 27.1.57",
       "Syncfusion.Blazor.Themes >= 27.1.57",
       "grpc >= 1.0.0"
@@ -6935,6 +6936,10 @@
           "Microsoft.AspNetCore.StaticFiles": {
             "target": "Package",
             "version": "[2.2.0, )"
+          },
+          "Microsoft.JSInterop": {
+            "target": "Package",
+            "version": "[8.0.11, )"
           },
           "Syncfusion.Blazor.Buttons": {
             "target": "Package",

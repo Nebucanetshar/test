@@ -3,15 +3,19 @@
 @using grpc.Services
 @using Microsoft.AspNetCore.Components
 @using System.Diagnostics
-@inject Counter.CounterClient channel
+
 
 <h3>grpc Client in Blazor</h3>
 
-@* <button class="btn-grpc" type="button" data-blazor-event="true" @onclick="CallBroadcast">appel de diffusion</button>
-<button class="btn-grpc2" type="button" @onclick="StopCount">stop</button> *@
-
-<SfButton @onclick="CallBroadcast">appel de diffusion</SfButton>
+<!-- #ComponentCallBroadcast -->
+@* <SfButton @onclick="CallBroadcast">appel de diffusion</SfButton>
 <SfButton @onclick="StopCount"> stop</SfButton>
 
-<p> response server: @ResponseMessage</p>
+<p> response server: @ResponseMessage</p>  *@
+<!-- #endregion -->
+
+
+<SfButton @onclick="TriggerJsFunction"> JsFunction</SfButton>
+
+
 
