@@ -1,5 +1,6 @@
 using app.Components;
 using grpc;
+using grpc.Services;
 using Grpc.Net.Client;
 using Grpc.Net.Client.Web;
 using Microsoft.AspNetCore.Components;
@@ -68,8 +69,6 @@ public class AppProgram
         }
 
         app.UseHttpsRedirection();
-        
-
         app.UseStaticFiles();
         app.UseAntiforgery();
 
