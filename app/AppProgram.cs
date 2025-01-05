@@ -17,21 +17,9 @@ public class AppProgram
         // ajout du client grpc dans le conteneur de service blazor 
         builder.Services.AddGrpcClient<Counter.CounterClient>(o =>
         {
-            o.Address = new Uri("http://localhost:5269");
+            o.Address = new Uri("https://localhost:7226");
         });
 
-        //// configuration du canal grpc-web activé(avec un singleton)
-        //builder.Services.AddSingleton(services =>
-        //{
-        //    // obtention de l'url de blazor
-        //    var navigation = services.GetRequiredService<IConfiguration>();
-
-        //    var baseUrl = navigation["http://localhost:5269"];
-
-        //    var grpcChannel = GrpcChannel.ForAddress(baseUrl); //?
-
-        //    return new Counter.CounterClient(grpcChannel);
-        //});
 
         // configuration du canal grpc-web activé(avec addScoped)
         builder.Services.AddScoped(services =>
@@ -44,14 +32,15 @@ public class AppProgram
 
             var grpcChannel = GrpcChannel.ForAddress(baseUrl, new GrpcChannelOptions
             {
-                HttpHandler = new GrpcWebHandler(GrpcWebMode.GrpcWeb, httpClientHandler)
+                HttpHandler = new GrpcWebHandler(GrpcWebMode.GrpcWeb, httpClientHandler),
+                LoggerFactory = LoggerFactory.Create(builder => builder.AddConsole().SetMinimumLevel(LogLevel.Debug))
             });
 
             return new Counter.CounterClient(grpcChannel);
         });
 
-        
-       
+
+
         #region program généré
         // Add services to the container.
         builder.Services.AddRazorComponents().AddInteractiveServerComponents();
@@ -73,10 +62,7 @@ public class AppProgram
         app.UseAntiforgery();
 
         app.MapRazorComponents<App>().AddInteractiveServerRenderMode();
-
-
         app.Run();
-
     }
     #endregion
 }
