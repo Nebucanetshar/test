@@ -1,5 +1,7 @@
 ﻿using Grpc.Core;
+using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.EntityFrameworkCore;
+using System.Diagnostics;
 
 namespace grpc.Services;
 
@@ -15,25 +17,41 @@ public class CounterServer:Counter.CounterBase
     {
         var count = request.Start;
 
-        while (!context.CancellationToken.IsCancellationRequested)
+        //envoie un premier message dans l'immédiat 
+        await response.WriteAsync(new CounterResponse
         {
-            ++count;
+            Count = request.Start
+        });
 
-            var counter = new Items
+        try
+        {
+            while (!context.CancellationToken.IsCancellationRequested)
             {
-                CurrentCount = count,
-                Timestamp = DateTime.UtcNow,
-            };
+                // cas ou le token d'annulation est déclencher 
+                if (context.CancellationToken.IsCancellationRequested)
+                {
+                    Trace.TraceInformation("requête annulé par le client ou delai dépassé");
+                }
+                ++count;
 
-            _appDbContext.Items.Add(counter);
-            await _appDbContext.SaveChangesAsync();
+                var counter = new Items
+                {
+                    CurrentCount = count,
+                    Timestamp = DateTime.UtcNow,
+                };
 
-            await response.WriteAsync(new CounterResponse
-            {
-                Count = count
-            });
+                _appDbContext.Items.Add(counter);
+                await _appDbContext.SaveChangesAsync();
 
-            await Task.Delay(TimeSpan.FromSeconds(1));
+                await response.WriteAsync(new CounterResponse
+                {
+                    Count = count
+                });
+
+                await Task.Delay(TimeSpan.FromSeconds(1));
+            }
         }
+        // annulation attendu 
+        catch (OperationCanceledException) { }
     }
 }

@@ -18,6 +18,13 @@ public class GrpcProgram
             builder.Configuration.GetConnectionString("vans");
         });
 
+        //configuration de délais de requête 
+        builder.Services.AddGrpc(options =>
+        {
+            options.MaxReceiveMessageSize = 1024;
+            options.MaxSendMessageSize = 1024;
+        });
+
         // configuration du kestrel pour activé le protocols Http2
         builder.WebHost.ConfigureKestrel(options =>
         {

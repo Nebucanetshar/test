@@ -16,7 +16,7 @@ public class AppProgram
 
         AppContext.SetSwitch("System.Net.Http.SocketsHttpHandler.Http2Support", true);
 
-        // ajout du client grpc dans le conteneur de service blazor 
+        // ajout du client grpc dans le conteneur de service blazor avec certicat auto-signé 
         builder.Services.AddGrpcClient<Counter.CounterClient>(o =>
         {
             o.Address = new Uri("https://localhost:7226");

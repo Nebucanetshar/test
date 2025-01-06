@@ -41,10 +41,11 @@ public partial class Grpc : ComponentBase
     public async Task CallBroadcast()
     {
         try
-        { 
-            var request = new CounterRequest { Start = 1 };
+        {
+            var CallOption = new CallOptions(deadline: DateTime.UtcNow.AddSeconds(20));
             
-            var response = client.StartCounter(request);
+            var request = new CounterRequest { Start = 1 };
+            var response = client.StartCounter(request,CallOption);
 
             while (await response.ResponseStream.MoveNext(CancellationToken.None))
             {
