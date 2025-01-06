@@ -4,6 +4,7 @@ using grpc.Services;
 using Grpc.Net.Client;
 using Grpc.Net.Client.Web;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Syncfusion.Blazor;
 
 
@@ -12,16 +13,23 @@ public class AppProgram
     public static void Main (string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
-        
+
+        AppContext.SetSwitch("System.Net.Http.SocketsHttpHandler.Http2Support", true);
 
         // ajout du client grpc dans le conteneur de service blazor 
         builder.Services.AddGrpcClient<Counter.CounterClient>(o =>
         {
             o.Address = new Uri("https://localhost:7226");
+        }).ConfigurePrimaryHttpMessageHandler(() =>
+        {
+            return new HttpClientHandler
+            {
+                ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator
+            };
         });
 
 
-        // configuration du canal grpc-web activé(avec addScoped)
+        // configuration du canal grpc-web (avec addScoped)
         builder.Services.AddScoped(services =>
         {
             var navigation = services.GetRequiredService<NavigationManager>();

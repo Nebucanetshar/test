@@ -23,21 +23,12 @@ public partial class Grpc : ComponentBase
 
     public Grpc() { }
 
-    #region SetCallBroadcastWithoutButton
-    //protected override async Task OnInitializedAsync()
-    //{
-    //    Trace.TraceInformation("Le composant a terminer son initialisation et l'écoute est en cours");
-    //    await CallBroadcast();
-    //}
-    #endregion
-
-
     #region JSManagement 
     //private async Task TriggerJsFunction()
     //{
-    //   await runtime.InvokeVoidAsync("invokeDotnetMethod");
+    //    await runtime.InvokeVoidAsync("invokeDotnetMethod");
     //}
-    
+
     //[JSInvokable("CallBroadcastJs")]
     //public static Task<string> CallBroadcastJs()
     //{
@@ -47,7 +38,7 @@ public partial class Grpc : ComponentBase
 
 
     #region CallBroadcast
-    private async Task CallBroadcast()
+    public async Task CallBroadcast()
     {
         try
         { 
@@ -57,9 +48,11 @@ public partial class Grpc : ComponentBase
 
             while (await response.ResponseStream.MoveNext(CancellationToken.None))
             {
-                ResponseMessage = ResponseStream.Current;
+                if (response.ResponseStream.Current != null) // si le flux gRpc n'est pas vide
+                {
+                    ResponseMessage = ResponseStream.Current;
+                }
             }
-
         }
         catch (RpcException ex) when (ex.StatusCode == StatusCode.Cancelled) { }
     }

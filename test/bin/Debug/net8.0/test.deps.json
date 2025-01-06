@@ -81,6 +81,14 @@
           }
         }
       },
+      "Grpc.AspNetCore.Web/2.67.0": {
+        "runtime": {
+          "lib/net8.0/Grpc.AspNetCore.Web.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.67.0.0"
+          }
+        }
+      },
       "Grpc.Core.Api/2.66.0": {
         "runtime": {
           "lib/netstandard2.1/Grpc.Core.Api.dll": {
@@ -1531,6 +1539,7 @@
         "dependencies": {
           "Google.Api.CommonProtos": "2.16.0",
           "Grpc.AspNetCore": "2.57.0",
+          "Grpc.AspNetCore.Web": "2.67.0",
           "Microsoft.AspNetCore.Grpc.JsonTranscoding": "8.0.10",
           "Microsoft.EntityFrameworkCore": "8.0.10",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "8.0.10",
@@ -1600,6 +1609,13 @@
       "sha512": "sha512-Ucl50YKMMRaP/ikx20v6tDGdNaRzeiujmw8kmAFy3/4f8+d1mDY8wn3vcXpIflX4IE+WvZQOTHz5r/3/GutbQw==",
       "path": "grpc.aspnetcore.server.clientfactory/2.57.0",
       "hashPath": "grpc.aspnetcore.server.clientfactory.2.57.0.nupkg.sha512"
+    },
+    "Grpc.AspNetCore.Web/2.67.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Cc0HEeD6mQcqhA1UazfTxfOaBJo36YNi5L8xHPA6SnOo7BI7lUKHs3kp2+eAYLcB6TzPZgV7artmb1V2uL5PDQ==",
+      "path": "grpc.aspnetcore.web/2.67.0",
+      "hashPath": "grpc.aspnetcore.web.2.67.0.nupkg.sha512"
     },
     "Grpc.Core.Api/2.66.0": {
       "type": "package",
