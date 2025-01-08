@@ -71,3 +71,5 @@ C:\Users\user\source\VisualStudio\c#\test\vans\app\bin\Debug\net8.0\Syncfusion.B
 C:\Users\user\source\VisualStudio\c#\test\vans\app\bin\Debug\net8.0\Syncfusion.Licensing.dll
 C:\Users\user\source\VisualStudio\c#\test\vans\app\bin\Debug\net8.0\Grpc.AspNetCore.Web.dll
 C:\Users\user\source\VisualStudio\c#\test\vans\app\bin\Debug\net8.0\Microsoft.AspNetCore.Server.Kestrel.Transport.Abstractions.dll
+C:\Users\user\source\visualStudio\c#\test\vans\app\bin\Debug\net8.0\Grpc.AspNetCore.Server.Reflection.dll
+C:\Users\user\source\visualStudio\c#\test\vans\app\bin\Debug\net8.0\Grpc.Reflection.dll

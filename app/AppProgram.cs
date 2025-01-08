@@ -16,7 +16,9 @@ public class AppProgram
 
         AppContext.SetSwitch("System.Net.Http.SocketsHttpHandler.Http2Support", true);
 
-        // ajout du client grpc dans le conteneur de service blazor avec certicat auto-signé 
+        ///<summary>
+        ///ajout du client grpc dans le conteneur de service blazor avec certicat auto-signé via mmc
+        ///</summary> 
         builder.Services.AddGrpcClient<Counter.CounterClient>(o =>
         {
             o.Address = new Uri("https://localhost:7226");
@@ -26,6 +28,16 @@ public class AppProgram
             {
                 ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator
             };
+        });
+
+        //configuration du kestrel pour activé le protocols Http2
+        builder.WebHost.ConfigureKestrel(options =>
+        {
+            options.ListenLocalhost(7020, listenOptions =>
+            {
+                listenOptions.Protocols = HttpProtocols.Http2;
+                listenOptions.UseHttps();
+            });
         });
 
 

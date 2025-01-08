@@ -42,10 +42,11 @@ public partial class Grpc : ComponentBase
     {
         try
         {
-            var CallOption = new CallOptions(deadline: DateTime.UtcNow.AddSeconds(20));
+            //mise en place d'un delais de requête 
+            //var CallOption = new CallOptions(deadline: DateTime.UtcNow.AddSeconds(20));
             
             var request = new CounterRequest { Start = 1 };
-            var response = client.StartCounter(request,CallOption);
+            var response = client.StartCounter(request);
 
             while (await response.ResponseStream.MoveNext(CancellationToken.None))
             {

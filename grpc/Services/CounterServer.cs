@@ -17,41 +17,32 @@ public class CounterServer:Counter.CounterBase
     {
         var count = request.Start;
 
-        //envoie un premier message dans l'immédiat 
-        await response.WriteAsync(new CounterResponse
+        while (!context.CancellationToken.IsCancellationRequested)
         {
-            Count = request.Start
-        });
+            ++count;
 
-        try
-        {
-            while (!context.CancellationToken.IsCancellationRequested)
+            var counter = new Items
             {
-                // cas ou le token d'annulation est déclencher 
-                if (context.CancellationToken.IsCancellationRequested)
-                {
-                    Trace.TraceInformation("requête annulé par le client ou delai dépassé");
-                }
-                ++count;
+                CurrentCount = count,
+                Timestamp = DateTime.UtcNow,
+            };
 
-                var counter = new Items
-                {
-                    CurrentCount = count,
-                    Timestamp = DateTime.UtcNow,
-                };
+            _appDbContext.Items.Add(counter);
+            await _appDbContext.SaveChangesAsync();
 
-                _appDbContext.Items.Add(counter);
-                await _appDbContext.SaveChangesAsync();
+            await response.WriteAsync(new CounterResponse
+            {
+                Count = count
+            });
 
-                await response.WriteAsync(new CounterResponse
-                {
-                    Count = count
-                });
+            await Task.Delay(TimeSpan.FromSeconds(1));
 
-                await Task.Delay(TimeSpan.FromSeconds(1));
+            // cas ou le token d'annulation est déclencher 
+            if (context.CancellationToken.IsCancellationRequested)
+            {
+                Trace.TraceInformation("requête annulé par le client ou delai dépassé");
             }
         }
-        // annulation attendu 
-        catch (OperationCanceledException) { }
+
     }
 }
