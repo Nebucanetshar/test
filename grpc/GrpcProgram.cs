@@ -48,6 +48,8 @@ public class GrpcProgram
         app.UseRouting();
 
         app.MapGrpcService<CounterServer>(); //.EnableGrpcWeb();
+        
+        //configuration ReflectionService pour visualisé gRpcui
         if (app.Environment.IsDevelopment())
         {
             app.MapGrpcReflectionService();

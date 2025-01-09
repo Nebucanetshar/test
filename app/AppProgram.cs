@@ -40,24 +40,39 @@ public class AppProgram
             });
         });
 
+        //configuration du canal gRpc original(avec addScoped)
+        builder.Services.AddScoped(o =>
+        {
+            var httpClient = new HttpClient
+            {
+                BaseAddress = new Uri("https://localhost:7226")
+            };
+
+            var gRpcChannel = GrpcChannel.ForAddress(httpClient.BaseAddress, new GrpcChannelOptions
+            {
+                HttpClient = httpClient
+            });
+            return new Counter.CounterClient(gRpcChannel);
+        });
+
 
         // configuration du canal grpc-web (avec addScoped)
-        builder.Services.AddScoped(services =>
-        {
-            var navigation = services.GetRequiredService<NavigationManager>();
+        //builder.Services.AddScoped(services =>
+        //{
+        //    var navigation = services.GetRequiredService<NavigationManager>();
 
-            var baseUrl = navigation.BaseUri;
+        //    var baseUrl = navigation.BaseUri;
 
-            var httpClientHandler = new HttpClientHandler();
+        //    var httpClientHandler = new HttpClientHandler();
 
-            var grpcChannel = GrpcChannel.ForAddress(baseUrl, new GrpcChannelOptions
-            {
-                HttpHandler = new GrpcWebHandler(GrpcWebMode.GrpcWeb, httpClientHandler),
-                LoggerFactory = LoggerFactory.Create(builder => builder.AddConsole().SetMinimumLevel(LogLevel.Debug))
-            });
+        //    var grpcChannel = GrpcChannel.ForAddress(baseUrl, new GrpcChannelOptions
+        //    {
+        //        HttpHandler = new GrpcWebHandler(GrpcWebMode.GrpcWeb, httpClientHandler),
+        //        LoggerFactory = LoggerFactory.Create(builder => builder.AddConsole().SetMinimumLevel(LogLevel.Debug))
+        //    });
 
-            return new Counter.CounterClient(grpcChannel);
-        });
+        //    return new Counter.CounterClient(grpcChannel);
+        //});
 
 
 
