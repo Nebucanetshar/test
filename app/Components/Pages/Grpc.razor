@@ -6,13 +6,13 @@
 @rendermode InteractiveServer
 
 
-<h3>grpc Client in Blazor</h3>
+<h3>gRpc Client in Blazor</h3>
 
 
-<SfButton @onclick="CallBroadcast">appel de diffusion</SfButton>
-<SfButton @onclick="StopCount"> stop</SfButton>
+<SfButton CssClass="e-success" @onclick="CallBroadcast">appel de diffusion</SfButton>
+<SfButton CssClass="e-danger" @onclick="StopCount"> stop</SfButton>
 
-<p> response server: @ResponseMessage</p> 
+<p> response server: @CurrentCount</p> 
 
 @* <button @onclick="TriggerJsFunction"> JsFunction</button> *@
 

@@ -14,8 +14,6 @@ public class AppProgram
     {
         var builder = WebApplication.CreateBuilder(args);
 
-        AppContext.SetSwitch("System.Net.Http.SocketsHttpHandler.Http2Support", true);
-
         ///<summary>
         ///ajout du client grpc dans le conteneur de service blazor avec certicat auto-signé via mmc
         ///</summary> 
@@ -50,7 +48,8 @@ public class AppProgram
 
             var gRpcChannel = GrpcChannel.ForAddress(httpClient.BaseAddress, new GrpcChannelOptions
             {
-                HttpClient = httpClient
+                HttpClient = httpClient,
+                LoggerFactory = LoggerFactory.Create(builder => builder.AddConsole().SetMinimumLevel(LogLevel.Debug))
             });
             return new Counter.CounterClient(gRpcChannel);
         });

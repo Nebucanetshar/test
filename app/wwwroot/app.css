@@ -50,12 +50,12 @@ h1:focus {
     border-color: #929292;
 }
 
-.btn-grpc {
+.btn-gRpc-call{
     background-color: aqua;
     border-color: black;
 }
 
-.btn-grpc2 {
+.btn-gRpc-stop {
     background-color: red;
     border-color: black
 }

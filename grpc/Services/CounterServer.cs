@@ -40,7 +40,7 @@ public class CounterServer:Counter.CounterBase
             // cas ou le token d'annulation est déclencher 
             if (context.CancellationToken.IsCancellationRequested)
             {
-                Trace.TraceInformation("requête annulé par le client ou delai dépassé");
+                Trace.TraceInformation("requête annulé par le client");
             }
         }
 

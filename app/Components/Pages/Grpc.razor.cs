@@ -9,20 +9,24 @@ using Microsoft.JSInterop;
 namespace app.Components.Pages;
 
 public partial class Grpc : ComponentBase
-{ 
-    private CancellationToken? cts;
+{
+    public int CurrentCount = 0;
+    
+    private bool _isRunning = false;
+    private CancellationTokenSource? _cancellation;
+    
     private CounterResponse ResponseMessage;
-    private AsyncServerStreamingCall<CounterResponse> _inner;
+    public AsyncServerStreamingCall<CounterResponse> _inner;
     public IAsyncStreamReader<CounterResponse> ResponseStream => _inner.ResponseStream;
 
     [Inject]
     public Counter.CounterClient client { get; set; }
-    
+
     //[Inject]
     //public IJSRuntime runtime { get; set; }
 
     public Grpc() { }
-
+    
     #region JSManagement 
     //private async Task TriggerJsFunction()
     //{
@@ -40,28 +44,36 @@ public partial class Grpc : ComponentBase
     #region CallBroadcast
     public async Task CallBroadcast()
     {
+        _isRunning = true;
+        _cancellation = new CancellationTokenSource();
+        var token = _cancellation.Token;
+       
         try
         {
-            //mise en place d'un delais de requête 
-            //var CallOption = new CallOptions(deadline: DateTime.UtcNow.AddSeconds(20));
-            
-            var request = new CounterRequest { Start = 1 };
+            var request = new CounterRequest { Start = CurrentCount };
             var response = client.StartCounter(request);
 
-            while (await response.ResponseStream.MoveNext(CancellationToken.None))
+            await foreach (var broadcast in response.ResponseStream.ReadAllAsync().WithCancellation(token))
             {
-                if (response.ResponseStream.Current != null) // si le flux gRpc n'est pas vide
-                {
-                    ResponseMessage = ResponseStream.Current;
-                }
+                CurrentCount = broadcast.Count;
+                StateHasChanged();
             }
+
+            //while (await response.ResponseStream.MoveNext(CancellationToken.None))
+            //{
+            //    ResponseMessage = ResponseStream.Current;
+            //}
         }
         catch (RpcException ex) when (ex.StatusCode == StatusCode.Cancelled) { }
     }
 
-    private void StopCount()
+    public void StopCount()
     {
-        cts = null;
+        if (_isRunning && _cancellation != null)
+        {
+            _cancellation.Cancel();
+        }
     }
+        
     #endregion
 }
