@@ -1,8 +1,5 @@
 @page "/grpc"
-@using grpc
-@using grpc.Services;
 @using Microsoft.AspNetCore.Components
-@using System.Diagnostics
 @rendermode InteractiveServer
 
 
@@ -12,9 +9,9 @@
 <SfButton CssClass="e-success" @onclick="CallBroadcast">appel de diffusion</SfButton>
 <SfButton CssClass="e-danger" @onclick="StopCount"> stop</SfButton>
 
-<p> response server: @CurrentCount</p> 
+<p> response server: @ResponseMessage</p> 
 
-@* <button @onclick="TriggerJsFunction"> JsFunction</button> *@
+
 
 
 

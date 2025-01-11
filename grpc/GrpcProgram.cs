@@ -11,8 +11,10 @@ public class GrpcProgram
     {
         var builder = WebApplication.CreateBuilder(args);
 
-        // added for trancoding json-grpc 
+        // ajout du transcoding json-grpc avec annotation google 
         builder.Services.AddGrpc(); //.AddJsonTranscoding();
+
+        //configuration ReflectionService pour visualisé gRpcui
         builder.Services.AddGrpcReflection();
         
         // configuration base de donnée 
@@ -21,27 +23,6 @@ public class GrpcProgram
             builder.Configuration.GetConnectionString("vans");
         });
 
-        //configuration de délais de requête 
-        //builder.Services.AddGrpc(options =>
-        //{
-        //    options.MaxReceiveMessageSize = 1024;
-        //    options.MaxSendMessageSize = 1024;
-        //});
-
-        //configuration du kestrel pour activé le protocols Http2
-        //builder.WebHost.ConfigureKestrel(options =>
-        //{
-        //    options.ListenLocalhost(7226, listenOptions =>
-        //    {
-        //        listenOptions.Protocols = HttpProtocols.Http2;
-        //        listenOptions.UseHttps();
-        //    });
-        //});
-
-        //builder.Logging.ClearProviders();
-        //builder.Logging.AddConsole();
-        //builder.Logging.SetMinimumLevel(LogLevel.Debug);
-
         var app = builder.Build();
 
         app.UseGrpcWeb();
@@ -49,11 +30,11 @@ public class GrpcProgram
 
         app.MapGrpcService<CounterServer>(); //.EnableGrpcWeb();
         
-        //configuration ReflectionService pour visualisé gRpcui
+        
         if (app.Environment.IsDevelopment())
-        {
+        
             app.MapGrpcReflectionService();
-        }
+        
         
         app.MapGet("/", () => "le server gRpc works succefully");
 

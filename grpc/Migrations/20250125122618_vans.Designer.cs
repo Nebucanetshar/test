@@ -12,7 +12,7 @@ using grpc;
 namespace grpc.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20241031091038_vans")]
+    [Migration("20250125122618_vans")]
     partial class vans
     {
         /// <inheritdoc />

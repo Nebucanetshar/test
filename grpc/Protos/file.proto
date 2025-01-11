@@ -15,8 +15,6 @@ service Counter{
 		};
 
 	}
-	
-	
 }
 
 message CounterRequest{

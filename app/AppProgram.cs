@@ -14,9 +14,7 @@ public class AppProgram
     {
         var builder = WebApplication.CreateBuilder(args);
 
-        ///<summary>
-        ///ajout du client grpc dans le conteneur de service blazor avec certicat auto-signé via mmc
-        ///</summary> 
+        //ajout du client grpc dans le conteneur de service blazor avec certicat auto-signé via mmc
         builder.Services.AddGrpcClient<Counter.CounterClient>(o =>
         {
             o.Address = new Uri("https://localhost:7226");
