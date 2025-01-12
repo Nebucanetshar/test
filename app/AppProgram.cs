@@ -33,10 +33,38 @@ public class AppProgram
             o.UseReduxDevTools(); // permet d'utiliser les outils de developpement Redux
 
         });
-        builder.Services.AddScoped<IGrpcClient, CounterServer>();
 
+        //configuration du TLS 
+        //builder.WebHost.ConfigureKestrel(options =>
+        //{
+        //    options.ListenLocalhost(5269, listenOptions =>
+        //    {
+        //        listenOptions.UseHttps("certificat.pfx", "A1996b4860150*");
+        //        listenOptions.Protocols = Microsoft.AspNetCore.Server.Kestrel.Core.HttpProtocols.Http2;
+        //    });
+        //});
+
+        //builder.Services.AddScoped<IGrpcClient, CounterServer>();
         //builder.Services.AddScoped<IFeatures<State>, Feature>();
-        builder.Services.AddScoped<Effet>();
+        
+        ///<summary>
+        ///utilisation et configuration du grpc standard 
+        ///</summary>
+        builder.Services.AddScoped(o =>
+        {
+            var httpClient = new HttpClient
+            {
+                BaseAddress = new Uri("https://localhost:7226")
+            };
+
+            var gRpcChannel = GrpcChannel.ForAddress(httpClient.BaseAddress, new GrpcChannelOptions
+            {
+                HttpClient = httpClient,
+                LoggerFactory = LoggerFactory.Create(builder => builder.AddConsole().SetMinimumLevel(LogLevel.Debug))
+            });
+
+            return new Counter.CounterClient(gRpcChannel);
+        });
 
         ///<summary>
         ///grpc web activé sans canal, accepte un délégué qui retourne un HttpMessageHandler (encapsulation des appels)

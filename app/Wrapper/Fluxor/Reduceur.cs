@@ -6,26 +6,20 @@ namespace app.Wrapper.Fluxor;
 
 public static class Reduceur
 {
-    //[ReducerMethod]
-    //public static State ExecuteState(State state, ActionOutput action)
-    //{
-    //    var updateResponses = new List<AsyncServerStreamingCall<CounterResponse>>(state.Response)
-    //    {
-    //        action.Response
-    //    };
-    //    return state with
-    //    {
-    //        Response = updateResponses
-    //    };
-
-    //}
-
     [ReducerMethod]
-    public static State ReceiveStreamData(State state, ActionOutput action) 
+    public static State ExecuteState(State state, ActionOutput action)
+    {
+        var updateResponses = new List<AsyncServerStreamingCall<CounterResponse>>(state.Flux)
+        {
+            action.Response
+        };
+        return state with
+        {
+            Flux = updateResponses
+        };
+
+    }
+
     
-        => state with
-            {
-                Flux = action.Response
-            };
 
 }

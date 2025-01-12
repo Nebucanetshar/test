@@ -7,6 +7,7 @@ namespace app.Wrapper.Fluxor;
 
 public class Effet 
 {
+    public CancellationTokenSource Cancellation = new CancellationTokenSource();
     public AsyncServerStreamingCall<CounterResponse> _inner;
     public IAsyncStreamReader<CounterResponse> ResponseStream => _inner.ResponseStream;
     public CounterResponse ResponseMessage;
@@ -22,21 +23,19 @@ public class Effet
     {
         try
         {
-            var response = client.StartCounter(action.request);
+            _inner = client.StartCounter(action.request);
             
-            var handler = new GrpcFlux 
-            { 
-                Stream = response // replace AsyncServerStreamingCall because no compatible with Fluxor
-            };
-
-            while(await response.ResponseStream.MoveNext(CancellationToken.None))
+          
+            while(await _inner.ResponseStream.MoveNext(Cancellation.Token))
             {
                 ResponseMessage = ResponseStream.Current;
             }
 
-            dispatcher.Dispatch(new ActionOutput(handler)); 
+            dispatcher.Dispatch(new ActionOutput(_inner)); 
 
         }
         catch (RpcException ex) when (ex.StatusCode == StatusCode.Cancelled) { }
     }
+
+   
 }

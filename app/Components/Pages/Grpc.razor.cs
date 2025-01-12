@@ -14,20 +14,22 @@ public partial class Grpc
     [Inject]
     public IDispatcher dispatcher { get; set; }
     public CounterRequest Request = new CounterRequest { Start = 0 };
+    public CancellationTokenSource Cancellation = new CancellationTokenSource();
 
     public Grpc() { }
 
-    protected override async Task OnInitializedAsync()
-    {
-        await Cliked();
-    }
 
-    public async Task Cliked()
+    public void Cliked()
     {
         var request = new ActionInput(Request);
         ///<summary>
         ///respect du paradigme Fluxor pour l'exécution de l'effet de manière cohérante 
         ///</summary> 
         dispatcher.Dispatch(request);
+    }
+
+    public void Stop()
+    {
+        Cancellation.Cancel();
     }
 }

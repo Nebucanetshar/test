@@ -1,6 +1,6 @@
 ﻿using grpc;
 using Grpc.Core;
-using System.Runtime.CompilerServices;
+
 
 namespace app.Wrapper.Fluxor;
 
@@ -20,9 +20,9 @@ public class ActionInput
 
 public class ActionOutput
 {
-    public GrpcFlux Response { get; }
+    public AsyncServerStreamingCall<CounterResponse> Response { get; }
     
-    public ActionOutput(GrpcFlux response)
+    public ActionOutput(AsyncServerStreamingCall<CounterResponse> response)
     {
         Response = response;
     }
