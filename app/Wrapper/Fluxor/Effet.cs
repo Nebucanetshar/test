@@ -17,8 +17,7 @@ public class Effet
 
     public Effet() { }
     
-
-    [EffectMethod]
+    
     public async Task CallBroadcast(ActionInput action, IDispatcher dispatcher)
     {
         try

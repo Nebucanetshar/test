@@ -9,17 +9,31 @@ public static class Reduceur
     [ReducerMethod]
     public static State ExecuteState(State state, ActionOutput action)
     {
-        var updateResponses = new List<AsyncServerStreamingCall<CounterResponse>>(state.Flux)
+        var updateResponses = new List<AsyncServerStreamingCall<CounterResponse>>(state._Flux)
         {
             action.Response
         };
-        return state with
+        // renvoie un nouvel état avec la liste mis a jour 
+        return new State
         {
-            Flux = updateResponses
+            _Flux = updateResponses
         };
-
     }
+}
+
+        //}
+        //[ReducerMethod]
+        //public class MessageReduceur : Reducer<State,ActionOutput>
+        //{
+        //    public override State Reduce(State state, ActionOutput action)
+        //    {
+        //        var updateMessages = state._Flux.Append(action.Response);
+        //        return new State(updateMessages);
+        //    }
+        //}
+
+
+
+
 
     
-
-}

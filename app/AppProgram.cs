@@ -27,6 +27,8 @@ public class AppProgram
         /// configuration du canal grpc - web activé pour Fluxor(avec addScoped)
         ///</ summary >
         //builder.Services.AddSingleton<GrpcChannel>(GrpcChannel.ForAddress("http://localhost:7226"));
+        
+        
         builder.Services.AddFluxor(o =>
         {
             o.ScanAssemblies(typeof(AppProgram).Assembly); //permet de trouver automatiquement les reducers, effects ect..
@@ -48,23 +50,23 @@ public class AppProgram
         //builder.Services.AddScoped<IFeatures<State>, Feature>();
         
         ///<summary>
-        ///utilisation et configuration du grpc standard 
+        ///utilisation et configuration du canal avec grpc standard 
         ///</summary>
-        builder.Services.AddScoped(o =>
-        {
-            var httpClient = new HttpClient
-            {
-                BaseAddress = new Uri("https://localhost:7226")
-            };
+        //builder.Services.AddScoped(o =>
+        //{
+        //    var httpClient = new HttpClient
+        //    {
+        //        BaseAddress = new Uri("https://localhost:7226")
+        //    };
 
-            var gRpcChannel = GrpcChannel.ForAddress(httpClient.BaseAddress, new GrpcChannelOptions
-            {
-                HttpClient = httpClient,
-                LoggerFactory = LoggerFactory.Create(builder => builder.AddConsole().SetMinimumLevel(LogLevel.Debug))
-            });
+        //    var gRpcChannel = GrpcChannel.ForAddress(httpClient.BaseAddress, new GrpcChannelOptions
+        //    {
+        //        HttpClient = httpClient,
+        //        LoggerFactory = LoggerFactory.Create(builder => builder.AddConsole().SetMinimumLevel(LogLevel.Debug))
+        //    });
 
-            return new Counter.CounterClient(gRpcChannel);
-        });
+        //    return new Counter.CounterClient(gRpcChannel);
+        //});
 
         ///<summary>
         ///grpc web activé sans canal, accepte un délégué qui retourne un HttpMessageHandler (encapsulation des appels)
