@@ -1,4 +1,6 @@
 ﻿using Grpc.Core;
+using Microsoft.EntityFrameworkCore;
+using System.Diagnostics;
 
 namespace grpc.Services;
 
@@ -9,8 +11,8 @@ public interface IGrpcClient
 
 public class GrpcService : IGrpcClient
 {
-    public readonly AppDbContext _appDbContext;
-
+    public static IConfiguration configuration;
+    public AppDbContext _appDbContext = new AppDbContext(configuration);
     public GrpcService() { }
 
     public async Task Stream(CounterRequest request, IServerStreamWriter<CounterResponse> response, ServerCallContext context)
@@ -21,38 +23,34 @@ public class GrpcService : IGrpcClient
         {
             ++count;
 
-            var counter = new Items
-            {
-                CurrentCount = count,
-                Timestamp = DateTime.UtcNow,
-            };
-
-            _appDbContext.Items.Add(counter);
-            await _appDbContext.SaveChangesAsync();
-
             await response.WriteAsync(new CounterResponse
             {
                 Count = count
             });
 
             await Task.Delay(TimeSpan.FromSeconds(1));
+
+            try
+            {
+                var items = await _appDbContext.Items.ToListAsync();
+                await _appDbContext.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                Trace.TraceInformation($"la collect n'a pas était effectuée {ex.Message}");
+            }
         }
     }
 }
 
 public class CounterServer: Counter.CounterBase
 {
-    public readonly IGrpcClient _grpcClient;
-    public CounterServer() { }
+
+    public GrpcService _grpcClient = new GrpcService();
  
     public override async Task StartCounter(CounterRequest request, IServerStreamWriter<CounterResponse> response, ServerCallContext context)
     {
         await _grpcClient.Stream(request, response, context);
+       
     }
-
 }
-
-    
-
-    
-
