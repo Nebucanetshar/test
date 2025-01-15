@@ -19,5 +19,8 @@ public class AppDbContext:DbContext
         options.UseNpgsql(_configuration.GetConnectionString("vans"));
     }
 
-
+    internal async Task SaveChangesAsync(List<Items> items) { }
+    
+       
+    
 }

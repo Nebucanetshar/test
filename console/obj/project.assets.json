@@ -6671,7 +6671,8 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "app >= 1.0.0"
+      "app >= 1.0.0",
+      "grpc >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -6704,6 +6705,9 @@
           "projectReferences": {
             "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\vans\\app\\app.csproj": {
               "projectPath": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\vans\\app\\app.csproj"
+            },
+            "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\vans\\grpc\\grpc.csproj": {
+              "projectPath": "C:\\Users\\user\\source\\VisualStudio\\c#\\test\\vans\\grpc\\grpc.csproj"
             }
           }
         }

@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\app\app.csproj" />
+    <ProjectReference Include="..\grpc\grpc.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
