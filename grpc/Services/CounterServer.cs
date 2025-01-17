@@ -1,6 +1,7 @@
 ﻿using Grpc.Core;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
+using grpc.Models;
 
 namespace grpc.Services;
 
@@ -11,19 +12,22 @@ public interface IGrpcClient
 
 public class GrpcService : IGrpcClient
 {
+    public CounterState state = new CounterState();
     public GrpcService() { }
 
     public async Task Stream(CounterRequest request, IServerStreamWriter<CounterResponse> response, ServerCallContext context)
     {
-        var count = request.Start;
+        int start = request.Start;
+        state.SetCount(start);
+
 
         while (!context.CancellationToken.IsCancellationRequested)
         {
-            ++count;
+            state.Increment();
 
             await response.WriteAsync(new CounterResponse
             {
-                Count = count
+                Count = state.GetCount()
             });
 
             await Task.Delay(TimeSpan.FromSeconds(1));
@@ -31,10 +35,12 @@ public class GrpcService : IGrpcClient
     }
 }
 
-public class CounterServer: Counter.CounterBase
+public class CounterServer : Counter.CounterBase
 {
     public readonly AppDbContext _appDbContext;
     public GrpcService _grpcClient = new GrpcService();
+    
+    public CounterState state = new CounterState();
 
     public CounterServer(AppDbContext context)
     {
@@ -47,8 +53,21 @@ public class CounterServer: Counter.CounterBase
 
         try
         {
-            await _appDbContext.Items.ToListAsync();
-            await _appDbContext.SaveChangesAsync();
+            var items = new Items
+            {
+                CurrentCount = state,
+                Timestamp = DateTime.UtcNow,
+            };
+
+            _appDbContext.Items.Add(items);
+            try
+            {
+                await _appDbContext.SaveChangesAsync();
+            }
+            catch (DbUpdateException ex)
+            {
+                Trace.TraceInformation($"Erreur : {ex.InnerException?.Message}");
+            }
         }
         catch (Exception ex)
         {
