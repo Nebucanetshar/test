@@ -4,7 +4,7 @@ public class CounterState
 {
     
     private int _count;
-    private readonly object _lock = new object();
+    private readonly object _lock = new object(); // thread-safe ??
 
     public int GetCount()
     {
@@ -19,14 +19,6 @@ public class CounterState
         lock(_lock)
         {
             _count++;
-        }
-    }
-
-    public void SetCount(int value)
-    {
-        lock (_lock)
-        {
-            _count = value;
         }
     }
 

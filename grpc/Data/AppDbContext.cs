@@ -15,17 +15,7 @@ public class AppDbContext:DbContext
     {
         _configuration = configuration;
     }
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
-    {
-        ////configuration de la relation entre Items et CounterState 
-        //modelBuilder.Entity<Items>()
-        //    .HasOne(e => e.CurrentCount)
-        //    .WithOne()
-        //    .HasForeignKey<Items>(e => e.Id);
-
-        //configuration de l'entity CounterState sans clé primaire 
-        modelBuilder.Entity<CounterState>().HasNoKey();
-    }
+  
     protected override void OnConfiguring(DbContextOptionsBuilder options)
     {
         options.UseNpgsql(_configuration.GetConnectionString("vans"));

@@ -14,8 +14,7 @@ public class GrpcProgram
         // configuration du transcoding
         builder.Services.AddGrpc();//.AddJsonTranscoding();
         
-        //journal d'obervation 
-        builder.Logging.AddConsole();
+        
         
         // configuration de la base de donnée 
         builder.Services.AddDbContext<AppDbContext>(options =>

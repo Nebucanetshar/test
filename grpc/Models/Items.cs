@@ -7,6 +7,6 @@ namespace grpc;
 public class Items
 {
     [Key] public int Id { get; set; }
-    [ForeignKey("ForeignKeyId")] [NotMapped] public CounterState? CurrentCount { get; set; }
+    public int CurrentCount { get; set; }
     public DateTime Timestamp { get; set; }
 }
