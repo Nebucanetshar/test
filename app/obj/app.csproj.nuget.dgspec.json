@@ -156,6 +156,10 @@
               "target": "Package",
               "version": "[2.66.0, )"
             },
+            "Linq2db.AspNet": {
+              "target": "Package",
+              "version": "[5.4.1, )"
+            },
             "Microsoft.AspNetCore.Grpc.JsonTranscoding": {
               "target": "Package",
               "version": "[8.0.10, )"
@@ -181,6 +185,14 @@
             "google.protobuf": {
               "target": "Package",
               "version": "[3.28.3, )"
+            },
+            "linq2db": {
+              "target": "Package",
+              "version": "[5.4.1, )"
+            },
+            "linq2db.PostgreSQL": {
+              "target": "Package",
+              "version": "[5.4.1, )"
             }
           },
           "imports": [

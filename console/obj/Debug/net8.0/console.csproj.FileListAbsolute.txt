@@ -65,3 +65,5 @@ C:\Users\user\source\visualStudio\c#\test\vans\console\bin\Debug\net8.0\Grpc.Asp
 C:\Users\user\source\visualStudio\c#\test\vans\console\bin\Debug\net8.0\Fluxor.dll
 C:\Users\user\source\visualStudio\c#\test\vans\console\bin\Debug\net8.0\Fluxor.Blazor.Web.dll
 C:\Users\user\source\visualStudio\c#\test\vans\console\bin\Debug\net8.0\Fluxor.Blazor.Web.ReduxDevTools.dll
+C:\Users\user\source\visualStudio\c#\test\vans\console\bin\Debug\net8.0\linq2db.dll
+C:\Users\user\source\visualStudio\c#\test\vans\console\bin\Debug\net8.0\linq2db.AspNet.dll

@@ -15,6 +15,9 @@
 		<PackageReference Include="google.protobuf" Version="3.28.3" />
 		<PackageReference Include="Grpc.AspNetCore" Version="2.57.0" />
 		<PackageReference Include="Grpc.AspNetCore.Web" Version="2.66.0" />
+		<PackageReference Include="linq2db" Version="5.4.1" />
+		<PackageReference Include="Linq2db.AspNet" Version="5.4.1" />
+		<PackageReference Include="linq2db.PostgreSQL" Version="5.4.1" />
 		<PackageReference Include="Microsoft.AspNetCore.Grpc.JsonTranscoding" Version="8.0.10" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.10" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.10">

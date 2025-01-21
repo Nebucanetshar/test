@@ -167,6 +167,33 @@
         }
       },
       "Grpc.Tools/2.57.0": {},
+      "linq2db/5.4.1": {
+        "runtime": {
+          "lib/net6.0/linq2db.dll": {
+            "assemblyVersion": "5.4.1.0",
+            "fileVersion": "5.4.1.0"
+          }
+        }
+      },
+      "linq2db.AspNet/5.4.1": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection": "8.0.1",
+          "Microsoft.Extensions.Logging.Abstractions": "8.0.2",
+          "linq2db": "5.4.1"
+        },
+        "runtime": {
+          "lib/net6.0/linq2db.AspNet.dll": {
+            "assemblyVersion": "5.4.1.0",
+            "fileVersion": "5.4.1.0"
+          }
+        }
+      },
+      "linq2db.PostgreSQL/5.4.1": {
+        "dependencies": {
+          "Npgsql": "8.0.5",
+          "linq2db": "5.4.1"
+        }
+      },
       "Microsoft.AspNetCore.Authorization/8.0.10": {
         "dependencies": {
           "Microsoft.AspNetCore.Metadata": "8.0.10",
@@ -1140,11 +1167,14 @@
           "Google.Api.CommonProtos": "2.16.0",
           "Grpc.AspNetCore": "2.57.0",
           "Grpc.AspNetCore.Web": "2.66.0",
+          "linq2db.AspNet": "5.4.1",
           "Microsoft.AspNetCore.Grpc.JsonTranscoding": "8.0.10",
           "Microsoft.EntityFrameworkCore": "8.0.10",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "8.0.10",
           "Npgsql.EntityFrameworkCore.PostgreSQL.Design": "1.1.0",
-          "Google.Protobuf": "3.28.3"
+          "Google.Protobuf": "3.28.3",
+          "linq2db": "5.4.1",
+          "linq2db.PostgreSQL": "5.4.1"
         },
         "runtime": {
           "grpc.dll": {
@@ -1265,6 +1295,27 @@
       "sha512": "sha512-H/R3AqavrrWTPsKeEQjSlXFIkqaZ4gMVmtL6dzLg00xup1Fx9jZT9ACxGDv3t83HMmazJLM5rO3k2jfT4Ox58Q==",
       "path": "grpc.tools/2.57.0",
       "hashPath": "grpc.tools.2.57.0.nupkg.sha512"
+    },
+    "linq2db/5.4.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-qyH32MbFK6T55KsEcQYTbPFfkOa1Mo65lY/Zo8SFVMy0pwkQBCTnA/RUxyG5+l3D/mgfPz85PH3upDrtklSMrw==",
+      "path": "linq2db/5.4.1",
+      "hashPath": "linq2db.5.4.1.nupkg.sha512"
+    },
+    "linq2db.AspNet/5.4.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lf38TAUoKVbOj1k33HVjen73pzfivCkMQ0gBaogDGXGKzTXhyXj15n+0A2dyTGiwMphYBcxbeP8HNikQff2lzw==",
+      "path": "linq2db.aspnet/5.4.1",
+      "hashPath": "linq2db.aspnet.5.4.1.nupkg.sha512"
+    },
+    "linq2db.PostgreSQL/5.4.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-UCZrvZJKkBw2I8Q28QCNlj3T0h1ck8wPdgHv+R8c21BJiMasBwuy81IIbC3ntz51lN8AH9o6Te6oePD/p7FkMQ==",
+      "path": "linq2db.postgresql/5.4.1",
+      "hashPath": "linq2db.postgresql.5.4.1.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authorization/8.0.10": {
       "type": "package",

@@ -1,28 +1,29 @@
 using grpc;
 using grpc.Services;
-using Grpc.AspNetCore.Web;
-using System.Diagnostics;
-
-using Microsoft.AspNetCore.Server.Kestrel.Core;
+using LinqToDB.AspNet;
+using LinqToDB;
 
 public class GrpcProgram
 {
-    public static void Main (string[] args)
+    public static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
+        var services = builder.Services;
+        var configuration = builder.Configuration;
+        
+        var connectionString = configuration.GetConnectionString("linQ") ?? throw new InvalidOperationException("arg");
 
-        // configuration du transcoding
-        builder.Services.AddGrpc();//.AddJsonTranscoding();
-        
-        
-        
-        // configuration de la base de donnée 
-        builder.Services.AddDbContext<AppDbContext>(options =>
-        {
-            builder.Configuration.GetConnectionString("vans");
-        });
+        // configuration du service gRpc et transcoding si utilisation du protocol http.1.1
+        services.AddGrpc();//.AddJsonTranscoding();
 
-        
+
+        //configuration DI de la base de donnée avec LinqToDb
+        services.AddLinqToDBContext<AppDataConnection>((provider, options) =>
+
+         options.UsePostgreSQL(connectionString));
+
+
+
         #region Programme généré 
         var app = builder.Build();
 

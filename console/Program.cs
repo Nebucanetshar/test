@@ -1,4 +1,7 @@
-﻿namespace console;
+﻿using LinqToDB;
+using Microsoft.Extensions.Options;
+
+namespace console;
 
 public class Program
 {
