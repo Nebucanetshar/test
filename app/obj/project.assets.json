@@ -225,6 +225,19 @@
           "build/_._": {}
         }
       },
+      "Humanizer.Core/2.14.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Humanizer.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Humanizer.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "linq2db/5.4.1": {
         "type": "package",
         "compile": {
@@ -271,6 +284,23 @@
         },
         "build": {
           "build/_._": {}
+        }
+      },
+      "linq2db.Tools/5.4.1": {
+        "type": "package",
+        "dependencies": {
+          "Humanizer.Core": "2.14.1",
+          "linq2db": "5.4.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/linq2db.Tools.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/linq2db.Tools.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.AspNetCore.Authorization/8.0.10": {
@@ -743,10 +773,10 @@
           "System.Xml.XDocument": "4.3.0"
         }
       },
-      "Npgsql/8.0.5": {
+      "Npgsql/9.0.2": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Extensions.Logging.Abstractions": "8.0.0"
+          "Microsoft.Extensions.Logging.Abstractions": "8.0.2"
         },
         "compile": {
           "lib/net8.0/Npgsql.dll": {
@@ -2111,9 +2141,11 @@
           "Google.Api.CommonProtos": "2.16.0",
           "Grpc.AspNetCore": "2.57.0",
           "Grpc.AspNetCore.Web": "2.66.0",
+          "Linq2Db.Tools": "5.4.1",
           "Linq2db.AspNet": "5.4.1",
           "Microsoft.AspNetCore.Grpc.JsonTranscoding": "8.0.10",
           "Microsoft.EntityFrameworkCore": "8.0.10",
+          "Npgsql": "9.0.2",
           "Npgsql.EntityFrameworkCore.postgreSql": "8.0.10",
           "Npgsql.EntityFrameworkCore.postgreSql.Design": "1.1.0",
           "google.protobuf": "3.28.3",
@@ -2546,6 +2578,24 @@
         "tools/windows_x86/protoc.exe"
       ]
     },
+    "Humanizer.Core/2.14.1": {
+      "sha512": "lQKvtaTDOXnoVJ20ibTuSIOf2i0uO0MPbDhd1jm238I+U/2ZnRENj0cktKZhtchBMtCUSRQ5v4xBCUbKNmyVMw==",
+      "type": "package",
+      "path": "humanizer.core/2.14.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "humanizer.core.2.14.1.nupkg.sha512",
+        "humanizer.core.nuspec",
+        "lib/net6.0/Humanizer.dll",
+        "lib/net6.0/Humanizer.xml",
+        "lib/netstandard1.0/Humanizer.dll",
+        "lib/netstandard1.0/Humanizer.xml",
+        "lib/netstandard2.0/Humanizer.dll",
+        "lib/netstandard2.0/Humanizer.xml",
+        "logo.png"
+      ]
+    },
     "linq2db/5.4.1": {
       "sha512": "qyH32MbFK6T55KsEcQYTbPFfkOa1Mo65lY/Zo8SFVMy0pwkQBCTnA/RUxyG5+l3D/mgfPz85PH3upDrtklSMrw==",
       "type": "package",
@@ -2651,6 +2701,26 @@
         "tools/System.Threading.Channels.dll",
         "tools/System.Threading.Tasks.Extensions.dll",
         "tools/linq2db.dll"
+      ]
+    },
+    "linq2db.Tools/5.4.1": {
+      "sha512": "H3conuJi6+gAvKb+W3qEQU5mH8Zo97VOY40Lbo3l0ZLRF+/BPpRKaKfcu0ZSTLLPEdzD4/QgoQ6NYOtJZVDD6Q==",
+      "type": "package",
+      "path": "linq2db.tools/5.4.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "MIT-LICENSE.txt",
+        "README.md",
+        "images/icon.png",
+        "lib/net45/linq2db.Tools.dll",
+        "lib/net45/linq2db.Tools.xml",
+        "lib/net46/linq2db.Tools.dll",
+        "lib/net46/linq2db.Tools.xml",
+        "lib/netstandard2.0/linq2db.Tools.dll",
+        "lib/netstandard2.0/linq2db.Tools.xml",
+        "linq2db.tools.5.4.1.nupkg.sha512",
+        "linq2db.tools.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Authorization/8.0.10": {
@@ -3297,25 +3367,19 @@
         "netstandard.library.nuspec"
       ]
     },
-    "Npgsql/8.0.5": {
-      "sha512": "zRG5V8cyeZLpzJlKzFKjEwkRMYIYnHWJvEor2lWXeccS2E1G2nIWYYhnukB51iz5XsWSVEtqg3AxTWM0QJ6vfg==",
+    "Npgsql/9.0.2": {
+      "sha512": "hCbO8box7i/XXiTFqCJ3GoowyLqx3JXxyrbOJ6om7dr+eAknvBNhhUHeJVGAQo44sySZTfdVffp4BrtPeLZOAA==",
       "type": "package",
-      "path": "npgsql/8.0.5",
+      "path": "npgsql/9.0.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "README.md",
         "lib/net6.0/Npgsql.dll",
         "lib/net6.0/Npgsql.xml",
-        "lib/net7.0/Npgsql.dll",
-        "lib/net7.0/Npgsql.xml",
         "lib/net8.0/Npgsql.dll",
         "lib/net8.0/Npgsql.xml",
-        "lib/netstandard2.0/Npgsql.dll",
-        "lib/netstandard2.0/Npgsql.xml",
-        "lib/netstandard2.1/Npgsql.dll",
-        "lib/netstandard2.1/Npgsql.xml",
-        "npgsql.8.0.5.nupkg.sha512",
+        "npgsql.9.0.2.nupkg.sha512",
         "npgsql.nuspec",
         "postgresql.png"
       ]

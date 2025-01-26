@@ -6,6 +6,4 @@ namespace grpc;
 public class AppDataConnection : DataConnection
 {
     public AppDataConnection(DataOptions<AppDataConnection> options) : base(ProviderName.PostgreSQL,"Host=LocalHost; Database=linQ; UserName=postgres; Password=A1996b4860150*") { }
-
-    public ITable<Items> Items => this.GetTable<Items>();
 }

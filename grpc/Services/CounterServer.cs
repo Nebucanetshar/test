@@ -43,7 +43,7 @@ public class GrpcService : IGrpcClient
             try
             {
                 var result = await _connection
-                    .GetTable<Items>()
+                    .GetTable<ToDb>()
                     .Where(items => items.CurrentCount == state.GetCount())
                     .Where(items => items.Timestamp == DateTime.UtcNow)
                     .FirstOrDefaultAsync(context.CancellationToken);
