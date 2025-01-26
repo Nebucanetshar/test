@@ -12,23 +12,20 @@ public class ConnectionStringSettings : IConnectionStringSettings
     public bool IsGlobal => false;
 }
 
-public class MigrationSetting : ILinqToDBSettings
+public class Setting : ILinqToDBSettings
 {
     public IEnumerable<IDataProviderSettings> DataProviders => Enumerable.Empty<IDataProviderSettings>();
     public string DefaultConfiguration => "PostgreSQL";
     public string DefaultDataProvider => "PostgreSQL";
-    public readonly string _connectionString;
 
-    public MigrationSetting(string configuration)
-    {
-        _connectionString = configuration;
-    }
 
+    public Setting() { }
+    
     public IEnumerable<IConnectionStringSettings> ConnectionStrings => new[]
     {
         new ConnectionStringSettings
         {
-            Name = "PosteSQL",
+            Name = "PostgreSQL",
             ProviderName = "PostgreSQL",
             ConnectionString = "Host=LocalHost; Database=linQ; UserName=postgres; Password=A1996b4860150*"
         }
@@ -48,11 +45,9 @@ public class LinkToDb
         _connection = new AppDataConnection(_options);
     }
 
-    public void CreateTable(IConfiguration configuration)
+    public void CreateTable()
     {
-        var connectionString = configuration.GetConnectionString("LinQ") ?? throw new InvalidOperationException("args");
-        
-        DataConnection.DefaultSettings = new MigrationSetting(connectionString);
-        _connection.CreateTable<ToDb>(connectionString);
+        DataConnection.DefaultSettings = new Setting();
+        _connection.CreateTable<ToDb>();
     }
 }

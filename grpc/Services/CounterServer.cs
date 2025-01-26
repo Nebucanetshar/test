@@ -47,15 +47,12 @@ public class GrpcService : IGrpcClient
                     .Where(items => items.CurrentCount == state.GetCount())
                     .Where(items => items.Timestamp == DateTime.UtcNow)
                     .FirstOrDefaultAsync(context.CancellationToken);
-
-            }
-            catch (LinqToDBException ex)
-            {
-                Trace.TraceInformation($"Erreur LinqToDb dû à : {ex.Message}");
-            }
-            catch (SqlException ex)
-            {
-                Trace.TraceInformation($"Erreur SQL dû à : {ex.Message}");
+                
+                if (result != null)
+                    await _connection.UpdateAsync(result);
+                else
+                    Trace.TraceInformation("Aucun élément trouvé à mettre à jour");
+                
             }
             catch (Exception ex)
             {

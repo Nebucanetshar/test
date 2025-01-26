@@ -19,10 +19,10 @@ public class GrpcProgram
         //configuration DI de LinqToDb
         services.AddLinqToDBContext<AppDataConnection>((provider, options) =>
          options.UsePostgreSQL(connectionString));
-        
+
         //configuration de la migration vers la base de donnée Postgres
-        LinkToDb link = new LinkToDb();
-        link.CreateTable(configuration);
+        //LinkToDb migration = new LinkToDb();
+        //migration.CreateTable();
 
         #region Programme généré 
         var app = builder.Build();
