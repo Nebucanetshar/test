@@ -3,6 +3,7 @@ using System.Diagnostics;
 using grpc.Models;
 using LinqToDB;
 using LinqToDB.SqlQuery;
+using Google.Protobuf.WellKnownTypes;
 
 
 namespace grpc.Services;
@@ -42,17 +43,12 @@ public class GrpcService : IGrpcClient
 
             try
             {
-                var result = await _connection
-                    .GetTable<ToDb>()
-                    .Where(items => items.CurrentCount == state.GetCount())
-                    .Where(items => items.Timestamp == DateTime.UtcNow)
-                    .FirstOrDefaultAsync(context.CancellationToken);
-                
-                if (result != null)
-                    await _connection.UpdateAsync(result);
-                else
-                    Trace.TraceInformation("Aucun élément trouvé à mettre à jour");
-                
+               var result = _connection.ToDb.Insert( () => new ToDb
+                {
+                    CurrentCount = state.GetCount(),
+                    Timestamp = DateTime.Now
+                });
+
             }
             catch (Exception ex)
             {
