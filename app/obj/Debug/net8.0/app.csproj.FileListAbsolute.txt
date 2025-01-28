@@ -75,3 +75,5 @@ C:\Users\user\source\VisualStudio\c#\test\vans\app\bin\Debug\net8.0\Fluxor.Blazo
 C:\Users\user\source\VisualStudio\c#\test\vans\app\bin\Debug\net8.0\Fluxor.Blazor.Web.ReduxDevTools.dll
 C:\Users\user\source\visualStudio\c#\test\vans\app\bin\Debug\net8.0\linq2db.dll
 C:\Users\user\source\visualStudio\c#\test\vans\app\bin\Debug\net8.0\linq2db.AspNet.dll
+C:\Users\user\source\VisualStudio\c#\test\vans\app\bin\Debug\net8.0\Humanizer.dll
+C:\Users\user\source\VisualStudio\c#\test\vans\app\bin\Debug\net8.0\linq2db.Tools.dll

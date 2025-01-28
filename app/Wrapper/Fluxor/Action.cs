@@ -4,26 +4,16 @@ using Grpc.Core;
 
 namespace app.Wrapper.Fluxor;
 
-public class ActionInput 
+public record StartAction(int StartValue);
+
+public class UpdateCount
 {
-    public CounterRequest request { get; set; }
+    public AsyncServerStreamingCall<CounterResponse> _inner;
+    public int NewCount;
 
-    public ActionInput(CounterRequest request)
+    public UpdateCount(AsyncServerStreamingCall<CounterResponse> inner) 
     {
-        this.request = request;
-    }
-    #region test unitaire
-    public ActionInput() { }
-    #endregion
-
-}
-
-public class ActionOutput
-{
-    public AsyncServerStreamingCall<CounterResponse> Response { get; }
-    
-    public ActionOutput(AsyncServerStreamingCall<CounterResponse> response)
-    {
-        Response = response;
+        _inner = inner;
     }
 }
+

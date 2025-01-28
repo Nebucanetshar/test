@@ -4,17 +4,16 @@
 @using grpc.Services
 @using Microsoft.AspNetCore.Components
 @using Fluxor
+@using app.Wrapper.Fluxor;
 @rendermode InteractiveServer
-@inject IState<AsyncServerStreamingCall<CounterResponse>> State
-
 
 
 <h3>gRpc Client in Blazor</h3>
 
 <SfButton CssClass="e-primary" Content="appeL diffusion" @onclick="Cliked" />
-<SfButton CssClass="e-Danger" Content="Stop" @onclick="Stop"/>
+<SfButton CssClass="e-warning" Content="Stop" @onclick="Stop"/>
 
-<p> response server: @State.Value.ResponseStream.Current</p>
+<p> response server: </p>
 
 
 

@@ -8,6 +8,7 @@ namespace app.Wrapper.Fluxor;
 public class Effet 
 {
     public CancellationTokenSource Cancellation = new CancellationTokenSource();
+    
     public AsyncServerStreamingCall<CounterResponse> _inner;
     public IAsyncStreamReader<CounterResponse> ResponseStream => _inner.ResponseStream;
     public CounterResponse ResponseMessage;
@@ -16,13 +17,15 @@ public class Effet
     public Counter.CounterClient client { get; set; }
 
     public Effet() { }
-    
-    
-    public async Task CallBroadcast(ActionInput action, IDispatcher dispatcher)
+
+
+    [EffectMethod]
+    public async Task CallBroadcast(StartAction action, IDispatcher dispatcher)
     {
+        var request = new CounterRequest { Start = action.StartValue };
         try
         {
-            _inner = client.StartCounter(action.request);
+            _inner = client.StartCounter(request);
             
           
             while(await _inner.ResponseStream.MoveNext(Cancellation.Token))
@@ -30,7 +33,7 @@ public class Effet
                 ResponseMessage = ResponseStream.Current;
             }
 
-            dispatcher.Dispatch(new ActionOutput(_inner)); 
+            dispatcher.Dispatch(new UpdateCount(_inner)); 
 
         }
         catch (RpcException ex) when (ex.StatusCode == StatusCode.Cancelled) { }
