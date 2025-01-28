@@ -1,22 +1,30 @@
 
 using app.Wrapper.Fluxor;
 using Fluxor;
+using Grpc.Core;
 using Microsoft.AspNetCore.Components;
+using grpc;
 
 namespace app.Components.Pages;
 
-public partial class Grpc 
+public partial class Grpc : ComponentBase
 {
-    CancellationTokenSource Cancellation = new CancellationTokenSource();
-    
+    public CancellationTokenSource Cancellation = new CancellationTokenSource();
+    public CounterRequest Request = new CounterRequest { Start = 0 };
+
     [Inject]
-    public IDispatcher dispatcher { get; set; }
+    public Counter.CounterClient client { get; set; }
 
-
+    [Inject]
+    public IDispatcher dispatcher { get; set; } 
+    
     public Grpc() { }
+
     public void Cliked()
     {
-        dispatcher.Dispatch(new StartAction(0));
+        var request = new ActionInput(Request);
+
+        dispatcher.Dispatch(request);
     }
 
     public void Stop()

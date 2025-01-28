@@ -4,16 +4,24 @@ using Grpc.Core;
 
 namespace app.Wrapper.Fluxor;
 
-public record StartAction(int StartValue);
 
-public class UpdateCount
+public class ActionInput
 {
-    public AsyncServerStreamingCall<CounterResponse> _inner;
-    public int NewCount;
+    public CounterRequest Request { get; set; }
 
-    public UpdateCount(AsyncServerStreamingCall<CounterResponse> inner) 
+    public ActionInput(CounterRequest request)
     {
-        _inner = inner;
+        Request = request;
+    }
+}
+
+public class ActionOutput
+{
+    public AsyncServerStreamingCall<CounterResponse> Response { get; }
+
+    public ActionOutput(AsyncServerStreamingCall<CounterResponse> response)
+    {
+        Response = response;
     }
 }
 

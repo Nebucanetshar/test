@@ -20,20 +20,18 @@ public class Effet
 
 
     [EffectMethod]
-    public async Task CallBroadcast(StartAction action, IDispatcher dispatcher)
+    public async Task CallBroadcast(ActionInput action, IDispatcher dispatcher)
     {
-        var request = new CounterRequest { Start = action.StartValue };
+        _inner = client.StartCounter(action.Request);
+
         try
         {
-            _inner = client.StartCounter(request);
-            
-          
             while(await _inner.ResponseStream.MoveNext(Cancellation.Token))
             {
                 ResponseMessage = ResponseStream.Current;
             }
 
-            dispatcher.Dispatch(new UpdateCount(_inner)); 
+            dispatcher.Dispatch(new ActionOutput(_inner)); 
 
         }
         catch (RpcException ex) when (ex.StatusCode == StatusCode.Cancelled) { }

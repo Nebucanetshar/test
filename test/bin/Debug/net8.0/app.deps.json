@@ -167,6 +167,14 @@
         }
       },
       "Grpc.Tools/2.57.0": {},
+      "Humanizer.Core/2.14.1": {
+        "runtime": {
+          "lib/net6.0/Humanizer.dll": {
+            "assemblyVersion": "2.14.0.0",
+            "fileVersion": "2.14.1.48190"
+          }
+        }
+      },
       "linq2db/5.4.1": {
         "runtime": {
           "lib/net6.0/linq2db.dll": {
@@ -190,8 +198,20 @@
       },
       "linq2db.PostgreSQL/5.4.1": {
         "dependencies": {
-          "Npgsql": "8.0.5",
+          "Npgsql": "9.0.2",
           "linq2db": "5.4.1"
+        }
+      },
+      "linq2db.Tools/5.4.1": {
+        "dependencies": {
+          "Humanizer.Core": "2.14.1",
+          "linq2db": "5.4.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/linq2db.Tools.dll": {
+            "assemblyVersion": "5.4.1.0",
+            "fileVersion": "5.4.1.0"
+          }
         }
       },
       "Microsoft.AspNetCore.Authorization/8.0.10": {
@@ -469,14 +489,14 @@
           "System.Xml.XDocument": "4.3.0"
         }
       },
-      "Npgsql/8.0.5": {
+      "Npgsql/9.0.2": {
         "dependencies": {
           "Microsoft.Extensions.Logging.Abstractions": "8.0.2"
         },
         "runtime": {
           "lib/net8.0/Npgsql.dll": {
-            "assemblyVersion": "8.0.5.0",
-            "fileVersion": "8.0.5.0"
+            "assemblyVersion": "9.0.2.0",
+            "fileVersion": "9.0.2.0"
           }
         }
       },
@@ -485,7 +505,7 @@
           "Microsoft.EntityFrameworkCore": "8.0.10",
           "Microsoft.EntityFrameworkCore.Abstractions": "8.0.10",
           "Microsoft.EntityFrameworkCore.Relational": "8.0.10",
-          "Npgsql": "8.0.5"
+          "Npgsql": "9.0.2"
         },
         "runtime": {
           "lib/net8.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll": {
@@ -501,7 +521,7 @@
           "Microsoft.EntityFrameworkCore.Relational.Design": "1.1.0",
           "Microsoft.Extensions.DependencyInjection": "8.0.1",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
-          "Npgsql": "8.0.5",
+          "Npgsql": "9.0.2",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "8.0.10"
         },
         "runtime": {
@@ -1167,9 +1187,11 @@
           "Google.Api.CommonProtos": "2.16.0",
           "Grpc.AspNetCore": "2.57.0",
           "Grpc.AspNetCore.Web": "2.66.0",
+          "linq2db.Tools": "5.4.1",
           "linq2db.AspNet": "5.4.1",
           "Microsoft.AspNetCore.Grpc.JsonTranscoding": "8.0.10",
           "Microsoft.EntityFrameworkCore": "8.0.10",
+          "Npgsql": "9.0.2",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "8.0.10",
           "Npgsql.EntityFrameworkCore.PostgreSQL.Design": "1.1.0",
           "Google.Protobuf": "3.28.3",
@@ -1296,6 +1318,13 @@
       "path": "grpc.tools/2.57.0",
       "hashPath": "grpc.tools.2.57.0.nupkg.sha512"
     },
+    "Humanizer.Core/2.14.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lQKvtaTDOXnoVJ20ibTuSIOf2i0uO0MPbDhd1jm238I+U/2ZnRENj0cktKZhtchBMtCUSRQ5v4xBCUbKNmyVMw==",
+      "path": "humanizer.core/2.14.1",
+      "hashPath": "humanizer.core.2.14.1.nupkg.sha512"
+    },
     "linq2db/5.4.1": {
       "type": "package",
       "serviceable": true,
@@ -1316,6 +1345,13 @@
       "sha512": "sha512-UCZrvZJKkBw2I8Q28QCNlj3T0h1ck8wPdgHv+R8c21BJiMasBwuy81IIbC3ntz51lN8AH9o6Te6oePD/p7FkMQ==",
       "path": "linq2db.postgresql/5.4.1",
       "hashPath": "linq2db.postgresql.5.4.1.nupkg.sha512"
+    },
+    "linq2db.Tools/5.4.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-H3conuJi6+gAvKb+W3qEQU5mH8Zo97VOY40Lbo3l0ZLRF+/BPpRKaKfcu0ZSTLLPEdzD4/QgoQ6NYOtJZVDD6Q==",
+      "path": "linq2db.tools/5.4.1",
+      "hashPath": "linq2db.tools.5.4.1.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authorization/8.0.10": {
       "type": "package",
@@ -1506,12 +1542,12 @@
       "path": "netstandard.library/1.6.1",
       "hashPath": "netstandard.library.1.6.1.nupkg.sha512"
     },
-    "Npgsql/8.0.5": {
+    "Npgsql/9.0.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-zRG5V8cyeZLpzJlKzFKjEwkRMYIYnHWJvEor2lWXeccS2E1G2nIWYYhnukB51iz5XsWSVEtqg3AxTWM0QJ6vfg==",
-      "path": "npgsql/8.0.5",
-      "hashPath": "npgsql.8.0.5.nupkg.sha512"
+      "sha512": "sha512-hCbO8box7i/XXiTFqCJ3GoowyLqx3JXxyrbOJ6om7dr+eAknvBNhhUHeJVGAQo44sySZTfdVffp4BrtPeLZOAA==",
+      "path": "npgsql/9.0.2",
+      "hashPath": "npgsql.9.0.2.nupkg.sha512"
     },
     "Npgsql.EntityFrameworkCore.PostgreSQL/8.0.10": {
       "type": "package",

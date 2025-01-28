@@ -6,21 +6,19 @@ namespace app.Wrapper.Fluxor;
 
 public static class Reduceur
 {
+    [ReducerMethod]
+    public static State ExecuteState(State state, ActionOutput output)
+    {
+        var update = new List<AsyncServerStreamingCall<CounterResponse>>(state._Flux)
+        {
+           output.Response
+        };
 
-    [ReducerMethod]
-    public static CountState ReduceStartCountingAction(CountState state, StartAction action)
-        => state with
+        return new State
         {
-            IsCounting = true,
-            CurrentCount = action.StartValue
+            _Flux = update,
         };
-    
-    [ReducerMethod]
-    public static CountState ReduceCounterUpdateAction(CountState state, UpdateCount action)
-        => state with
-        {
-            CurrentCount = action.NewCount 
-        };
+    }
 }
  
 

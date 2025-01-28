@@ -6,6 +6,7 @@
 @using Fluxor
 @using app.Wrapper.Fluxor;
 @rendermode InteractiveServer
+@inject IState<State> State
 
 
 <h3>gRpc Client in Blazor</h3>
@@ -13,7 +14,7 @@
 <SfButton CssClass="e-primary" Content="appeL diffusion" @onclick="Cliked" />
 <SfButton CssClass="e-warning" Content="Stop" @onclick="Stop"/>
 
-<p> response server: </p>
+<p> response server: @State.Value._Flux</p>
 
 
 

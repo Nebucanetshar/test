@@ -5,8 +5,22 @@ using Grpc.Core;
 namespace app.Wrapper.Fluxor;
 
 
-public record CountState
+public class State
 {
-    public int CurrentCount { get; init; } = 0;
-    public bool IsCounting { get; init; } = false;
+    public List<AsyncServerStreamingCall<CounterResponse>> _Flux { get; set; }
+
+    public State() { }
+
+    
+    public State(IEnumerable<AsyncServerStreamingCall<CounterResponse>> update)
+    {
+        _Flux = new List<AsyncServerStreamingCall<CounterResponse>>();
+    }
+}
+
+public class CountFeature : Feature<State>
+{
+    public override string GetName() => "Count";
+    protected override State GetInitialState() => new State();
+
 }
