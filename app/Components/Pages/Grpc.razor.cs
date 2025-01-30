@@ -4,6 +4,8 @@ using Fluxor;
 using Grpc.Core;
 using Microsoft.AspNetCore.Components;
 using grpc;
+using System.Diagnostics;
+using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage;
 
 namespace app.Components.Pages;
 
@@ -17,18 +19,20 @@ public partial class Grpc : ComponentBase
 
     [Inject]
     public IDispatcher dispatcher { get; set; } 
-    
+
     public Grpc() { }
 
+   
     public void Cliked()
     {
         var request = new ActionInput(Request);
-
         dispatcher.Dispatch(request);
-    }
 
+        Trace.TraceInformation("l'action a était dispatcher");
+    }
     public void Stop()
     {
         Cancellation.Cancel();
     }
+
 }

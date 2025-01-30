@@ -8,6 +8,9 @@ using Microsoft.AspNetCore.Components;
 using Syncfusion.Blazor;
 using Fluxor.Blazor.Web.ReduxDevTools;
 using Grpc.Core;
+using System.Diagnostics;
+using app.Components.Pages;
+
 
 
 public class AppProgram
@@ -16,6 +19,8 @@ public class AppProgram
     {
         var builder = WebApplication.CreateBuilder(args);
         var services = builder.Services;
+        var provider = services.BuildServiceProvider();
+
 
         ///<summary>
         /// ajout du client grpc dans le conteneur de service blazor 
@@ -25,15 +30,49 @@ public class AppProgram
              o.Address = new Uri("http://localhost:7226");
          });
 
-        ///<summary>
-        ///permet de trouver automatiquement les paradigme de fluxor avec les outils de developpement Redux
+        ///<summary> 
+        ///enregistrement manuelle de l'effet dans le conteneur de service addScoped 
         ///</summary>
-        services.AddFluxor(o =>
-        {
-            o.ScanAssemblies(typeof(AppProgram).Assembly); 
-            o.UseReduxDevTools(); 
+        services.AddScoped<Effet>();
+        services.AddScoped<IDispatcher, Fluxor.Dispatcher>();
 
-        });
+
+        ///<summary>
+        ///Chargement automatiquement du ScanAssemblie avec les outils de developpement Redux
+        ///</summary>
+        //services.AddFluxor(o =>
+        //{
+        //    o.ScanAssemblies(typeof(AppProgram).Assembly);
+        //    o.UseReduxDevTools();
+
+        //    Trace.TraceInformation("Scan fluxor effectué");
+        //});
+
+        ///<summary>
+        ///Chargement manuelle du ScanAssemlie en constatant les types scannée 
+        ///</summary>
+        var effetAssembly = typeof(Effet).Assembly;
+        services.AddFluxor(o => o.ScanAssemblies(effetAssembly));
+
+        Trace.TraceInformation($"Chargement manuelle : {effetAssembly.FullName}");
+
+        var types = effetAssembly.GetTypes();
+        foreach (var type in types)
+        {
+            Trace.TraceInformation($"Les paradigme trouvé sont:{type.FullName}");
+        }
+
+        ///<summary>
+        ///Affiche l'enregistrement du services souhaité par le ScanAssemblies
+        ///</summary>
+        //var register = provider;
+        //foreach ( var service in register.GetServices<Effet>())
+        //{
+        //    Trace.TraceInformation($"Les services enregistrer par le scan sont : {service.GetType().FullName}");
+        //}
+
+        //var effet = provider.GetRequiredService<Effet>();
+
 
         ///<summary>
         ///utilisation et configuration du canal avec grpc standard 

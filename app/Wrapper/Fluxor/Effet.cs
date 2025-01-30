@@ -2,13 +2,15 @@
 using Grpc.Core;
 using grpc;
 using Microsoft.AspNetCore.Components;
+using System.Diagnostics;
 
 namespace app.Wrapper.Fluxor;
+
 
 public class Effet 
 {
     public CancellationTokenSource Cancellation = new CancellationTokenSource();
-    
+
     public AsyncServerStreamingCall<CounterResponse> _inner;
     public IAsyncStreamReader<CounterResponse> ResponseStream => _inner.ResponseStream;
     public CounterResponse ResponseMessage;
@@ -19,6 +21,7 @@ public class Effet
     public Effet() { }
 
 
+
     [EffectMethod]
     public async Task CallBroadcast(ActionInput action, IDispatcher dispatcher)
     {
@@ -26,12 +29,12 @@ public class Effet
 
         try
         {
-            while(await _inner.ResponseStream.MoveNext(Cancellation.Token))
+            while (await _inner.ResponseStream.MoveNext(Cancellation.Token))
             {
                 ResponseMessage = ResponseStream.Current;
             }
 
-            dispatcher.Dispatch(new ActionOutput(_inner)); 
+            dispatcher.Dispatch(new ActionOutput(_inner));
 
         }
         catch (RpcException ex) when (ex.StatusCode == StatusCode.Cancelled) { }
@@ -39,3 +42,5 @@ public class Effet
 
    
 }
+
+   
