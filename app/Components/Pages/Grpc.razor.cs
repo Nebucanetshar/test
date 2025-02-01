@@ -15,20 +15,23 @@ public partial class Grpc : ComponentBase
     public CounterRequest Request = new CounterRequest { Start = 0 };
 
     [Inject]
-    public Counter.CounterClient client { get; set; }
-
+    public IDispatcher dispatcher { get; set; }
     [Inject]
-    public IDispatcher dispatcher { get; set; } 
+    public IStore store { get; set; }
 
     public Grpc() { }
 
-   
+    protected override void OnInitialized()
+    {
+        store.InitializeAsync();
+        Trace.TraceInformation("Store Fluxor bien initialisé");
+    }
     public void Cliked()
     {
         var request = new ActionInput(Request);
         dispatcher.Dispatch(request);
 
-        Trace.TraceInformation("l'action a était dispatcher");
+        Trace.TraceInformation("l'action à était dispatcher");
     }
     public void Stop()
     {

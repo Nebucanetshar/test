@@ -19,8 +19,6 @@ public class AppProgram
     {
         var builder = WebApplication.CreateBuilder(args);
         var services = builder.Services;
-        var provider = services.BuildServiceProvider();
-
 
         ///<summary>
         /// ajout du client grpc dans le conteneur de service blazor 
@@ -29,12 +27,6 @@ public class AppProgram
          {
              o.Address = new Uri("http://localhost:7226");
          });
-
-        ///<summary> 
-        ///enregistrement manuelle de l'effet dans le conteneur de service addScoped 
-        ///</summary>
-        services.AddScoped<Effet>();
-        services.AddScoped<IDispatcher, Fluxor.Dispatcher>();
 
 
         ///<summary>
@@ -49,29 +41,45 @@ public class AppProgram
         //});
 
         ///<summary>
-        ///Chargement manuelle du ScanAssemlie en constatant les types scannée 
+        ///Chargement manuelle du ScanAssemblie en constatant les types scannée 
         ///</summary>
         var effetAssembly = typeof(Effet).Assembly;
         services.AddFluxor(o => o.ScanAssemblies(effetAssembly));
 
-        Trace.TraceInformation($"Chargement manuelle : {effetAssembly.FullName}");
-
         var types = effetAssembly.GetTypes();
         foreach (var type in types)
         {
-            Trace.TraceInformation($"Les paradigme trouvé sont:{type.FullName}");
+            Trace.TraceInformation($"Les paradigmes scannée sont: {type.FullName}");
+        }
+
+        ///<summary> 
+        ///Enregistrement manuelle de l'effet dans le conteneur de service AddScoped 
+        ///</summary>
+        services.AddScoped<Effet>();
+        Trace.TraceInformation("Effet à était enregistrer en Scoped");
+
+        ///<summary>
+        ///S'assuré que AddScoped soit definie avant car BuildServiceProvider fige la configuration des services 
+        ///donc tout ajout après ne seront pas pris en compte 
+        ///</summary>
+        var provider = services.BuildServiceProvider();
+        var scope = provider.CreateScope();
+        
+        ///<summary>
+        ///Affiche l'enregistrement du services souhaité 
+        ///</summary>
+        var register = provider;
+        foreach (var service in register.GetServices<Effet>())
+        {
+            Trace.TraceInformation($"Le services enregistrer par le scan est : {service.GetType().FullName}");
         }
 
         ///<summary>
-        ///Affiche l'enregistrement du services souhaité par le ScanAssemblies
+        ///Exception levé pour non enregistrement du service dans le conteneur évitant que GetRequiredService 
+        ///soit appeler dans un context singleton si Effet est Scoped
         ///</summary>
-        //var register = provider;
-        //foreach ( var service in register.GetServices<Effet>())
-        //{
-        //    Trace.TraceInformation($"Les services enregistrer par le scan sont : {service.GetType().FullName}");
-        //}
-
         //var effet = provider.GetRequiredService<Effet>();
+        var effet = scope.ServiceProvider.GetRequiredService<Effet>();
 
 
         ///<summary>

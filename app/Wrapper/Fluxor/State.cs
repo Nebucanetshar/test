@@ -18,7 +18,7 @@ public class State
     }
 }
 
-public class CountFeature : Feature<State>
+public class Feature : Feature<State>
 {
     public override string GetName() => "Count";
     protected override State GetInitialState() => new State();
