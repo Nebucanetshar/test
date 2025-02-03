@@ -53,17 +53,18 @@ public class AppProgram
             Trace.TraceInformation($"Les paradigmes scannée sont: {type.FullName}");
         }
 
-        ///<summary>
-        ///Enregistrement manuelle du client dans le conteneur de service AddScoped 
-        ///</summary>
-        services.AddScoped<ClientFactory>();
-        Trace.TraceInformation($"client a était enregistrer en Scoped");
-
         ///<summary> 
-        ///Enregistrement manuelle de l'effet dans le conteneur de service AddScoped 
+        ///Enregistrement manuelle dans le conteneur de service AddScoped 
         ///</summary>
         services.AddScoped<Effet>();
         Trace.TraceInformation("Effet à était enregistrer en Scoped");
+
+        ///<summary> 
+        ///Enregistrement manuelle dans le conteneur de service Singleton
+        ///</summary>
+        services.AddSingleton(GrpcChannel.ForAddress("https://localhost:7226"));
+        Trace.TraceInformation("GrpcChannel à était enregistrer en Singleton");
+
 
         ///<summary>
         ///S'assuré que AddScoped soit definie avant car BuildServiceProvider fige la configuration des services 
@@ -96,23 +97,33 @@ public class AppProgram
 
 
         ///<summary>
-        ///utilisation et configuration du canal avec grpc standard 
+        ///Configuration du canal avec grpc standard 
         ///</summary>
-        services.AddScoped(o =>
+        //services.AddScoped(o =>
+        //{
+        //    var httpClient = new HttpClient
+        //    {
+        //        BaseAddress = new Uri("https://localhost:7226")
+        //    };
+
+        //    var gRpcChannel = GrpcChannel.ForAddress(httpClient.BaseAddress, new GrpcChannelOptions
+        //    {
+        //        HttpClient = httpClient,
+        //        LoggerFactory = LoggerFactory.Create(builder => builder.AddConsole().SetMinimumLevel(LogLevel.Debug))
+        //    });
+
+        //    return new Counter.CounterClient(gRpcChannel);
+        //});
+
+        ///<summary>
+        ///Configuration du canal avec grpc standard pour Fluxor
+        ///</summary>
+        services.AddScoped<ClientFactory>(o =>
         {
-            var httpClient = new HttpClient
-            {
-                BaseAddress = new Uri("https://localhost:7226")
-            };
-
-            var gRpcChannel = GrpcChannel.ForAddress(httpClient.BaseAddress, new GrpcChannelOptions
-            {
-                HttpClient = httpClient,
-                LoggerFactory = LoggerFactory.Create(builder => builder.AddConsole().SetMinimumLevel(LogLevel.Debug))
-            });
-
-            return new Counter.CounterClient(gRpcChannel);
+            var channel = o.GetRequiredService<GrpcChannel>();
+            return new ClientFactory(channel);
         });
+        Trace.TraceInformation($"client à était enregistrer en Scoped");
 
 
         #region Programme généré 
