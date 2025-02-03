@@ -7,15 +7,14 @@ namespace app.Wrapper.Fluxor;
 
 public class State
 {
-    public List<AsyncServerStreamingCall<CounterResponse>> _Flux { get; set; }
+    public AsyncServerStreamingCall<CounterResponse> _Flux;
 
     public State() { }
-
-    
-    public State(IEnumerable<AsyncServerStreamingCall<CounterResponse>> update)
+    public State(AsyncServerStreamingCall<CounterResponse>update)
     {
-        _Flux = new List<AsyncServerStreamingCall<CounterResponse>>();
+        _Flux = update;
     }
+
 }
 
 public class Feature : Feature<State>

@@ -29,18 +29,6 @@ public class AppProgram
              o.Address = new Uri("http://localhost:7226");
          });
 
-
-        ///<summary>
-        ///Chargement automatiquement du ScanAssemblie avec les outils de developpement Redux
-        ///</summary>
-        //services.AddFluxor(o =>
-        //{
-        //    o.ScanAssemblies(typeof(AppProgram).Assembly);
-        //    o.UseReduxDevTools();
-
-        //    Trace.TraceInformation("Scan fluxor effectué");
-        //});
-
         ///<summary>
         ///Chargement manuelle du ScanAssemblie en constatant les types scannée 
         ///</summary>
@@ -67,53 +55,21 @@ public class AppProgram
 
 
         ///<summary>
-        ///S'assuré que AddScoped soit definie avant car BuildServiceProvider fige la configuration des services 
+        ///S'assuré que AddScoped soit definie avant, car BuildServiceProvider fige la configuration des services 
         ///donc tout ajout après ne seront pas pris en compte 
         ///</summary>
         var provider = services.BuildServiceProvider();
-        var scope = provider.CreateScope();
-        
+
         ///<summary>
         ///Affiche l'enregistrement du services souhaité 
         ///</summary>
-        //var register = provider;
-        //foreach (var service in register.GetServices<Effet>())
-        //{
-        //    Trace.TraceInformation($"Le services enregistrer par le scan est : {service.GetType().FullName}");
-        //}
-
         var client = provider.GetService<Counter.CounterClient>();
         if (client != null)
-            Trace.TraceInformation("Client gRpc a était inject");
+            Trace.TraceInformation("Client gRpc à était inject");
         else
             Trace.TraceInformation("Client est null");
 
-        ///<summary>
-        ///Exception levé pour non enregistrement du service dans le conteneur évitant que GetRequiredService 
-        ///soit appeler dans un context singleton si Effet est Scoped
-        ///</summary>
-        //var effet = provider.GetRequiredService<Effet>();
-        //var effet = scope.ServiceProvider.GetRequiredService<Effet>();
 
-
-        ///<summary>
-        ///Configuration du canal avec grpc standard 
-        ///</summary>
-        //services.AddScoped(o =>
-        //{
-        //    var httpClient = new HttpClient
-        //    {
-        //        BaseAddress = new Uri("https://localhost:7226")
-        //    };
-
-        //    var gRpcChannel = GrpcChannel.ForAddress(httpClient.BaseAddress, new GrpcChannelOptions
-        //    {
-        //        HttpClient = httpClient,
-        //        LoggerFactory = LoggerFactory.Create(builder => builder.AddConsole().SetMinimumLevel(LogLevel.Debug))
-        //    });
-
-        //    return new Counter.CounterClient(gRpcChannel);
-        //});
 
         ///<summary>
         ///Configuration du canal avec grpc standard pour Fluxor

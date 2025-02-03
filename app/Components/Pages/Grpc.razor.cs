@@ -25,17 +25,21 @@ public partial class Grpc : ComponentBase
     {
         store.InitializeAsync();
         Trace.TraceInformation("Store Fluxor bien initialisé");
+
     }
     public void Cliked()
     {
-        var request = new ActionInput(Request);
-        dispatcher.Dispatch(request);
+        var send = new ActionInput(Request);
+        dispatcher.Dispatch(send);
 
-        Trace.TraceInformation("l'action à était dispatcher");
+        Trace.TraceInformation("requête envoyé");
     }
     public void Stop()
     {
-        Cancellation.Cancel();
+        var cancel = new ActionInput(Cancellation);
+        dispatcher.Dispatch(cancel);
+
+        Trace.TraceInformation("requête annulé");
     }
 
 }

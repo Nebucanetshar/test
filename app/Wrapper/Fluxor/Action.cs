@@ -7,13 +7,19 @@ namespace app.Wrapper.Fluxor;
 
 public class ActionInput
 {
-    public CounterRequest Request { get; set; }
+    public CounterRequest Request = new CounterRequest { Start = 0 };
+    public CancellationTokenSource Cancellation = new CancellationTokenSource();
 
     public ActionInput(CounterRequest request)
     {
         Request = request;
     }
+    public ActionInput (CancellationTokenSource cancel)
+    {
+        Cancellation.Cancel();
+    }
 }
+
 
 public class ActionOutput
 {
