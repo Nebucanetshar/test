@@ -10,6 +10,7 @@ using Fluxor.Blazor.Web.ReduxDevTools;
 using Grpc.Core;
 using System.Diagnostics;
 using app.Components.Pages;
+using app;
 
 
 
@@ -52,6 +53,12 @@ public class AppProgram
             Trace.TraceInformation($"Les paradigmes scannée sont: {type.FullName}");
         }
 
+        ///<summary>
+        ///Enregistrement manuelle du client dans le conteneur de service AddScoped 
+        ///</summary>
+        services.AddScoped<ClientFactory>();
+        Trace.TraceInformation($"client a était enregistrer en Scoped");
+
         ///<summary> 
         ///Enregistrement manuelle de l'effet dans le conteneur de service AddScoped 
         ///</summary>
@@ -68,18 +75,24 @@ public class AppProgram
         ///<summary>
         ///Affiche l'enregistrement du services souhaité 
         ///</summary>
-        var register = provider;
-        foreach (var service in register.GetServices<Effet>())
-        {
-            Trace.TraceInformation($"Le services enregistrer par le scan est : {service.GetType().FullName}");
-        }
+        //var register = provider;
+        //foreach (var service in register.GetServices<Effet>())
+        //{
+        //    Trace.TraceInformation($"Le services enregistrer par le scan est : {service.GetType().FullName}");
+        //}
+
+        var client = provider.GetService<Counter.CounterClient>();
+        if (client != null)
+            Trace.TraceInformation("Client gRpc a était inject");
+        else
+            Trace.TraceInformation("Client est null");
 
         ///<summary>
         ///Exception levé pour non enregistrement du service dans le conteneur évitant que GetRequiredService 
         ///soit appeler dans un context singleton si Effet est Scoped
         ///</summary>
         //var effet = provider.GetRequiredService<Effet>();
-        var effet = scope.ServiceProvider.GetRequiredService<Effet>();
+        //var effet = scope.ServiceProvider.GetRequiredService<Effet>();
 
 
         ///<summary>

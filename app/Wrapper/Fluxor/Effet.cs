@@ -7,25 +7,31 @@ using System.Diagnostics;
 namespace app.Wrapper.Fluxor;
 
 
-public class Effet 
+public class Effet : Effect<ActionInput>
 {
     public CancellationTokenSource Cancellation = new CancellationTokenSource();
 
     public AsyncServerStreamingCall<CounterResponse> _inner;
     public IAsyncStreamReader<CounterResponse> ResponseStream => _inner.ResponseStream;
     public CounterResponse ResponseMessage;
+    
+    private readonly Counter.CounterClient _client;
+    private readonly ClientFactory _clientFactory;
 
-    [Inject]
-    public Counter.CounterClient client { get; set; }
-
-    public Effet() { }
-
-
+    //[Inject]
+    //public Counter.CounterClient _client { get; set; }
+    public Effet(ClientFactory clientFactory)
+    {
+        _clientFactory = clientFactory;
+        _client = _clientFactory.CreateClient();
+        
+        Trace.TraceInformation("client gRpc injecté dans l'effet");
+    }
 
     [EffectMethod]
-    public async Task CallBroadcast(ActionInput action, IDispatcher dispatcher)
+    public override async Task HandleAsync(ActionInput action, IDispatcher dispatcher)
     {
-        _inner = client.StartCounter(action.Request);
+        _inner = _client.StartCounter(action.Request);
 
         try
         {
@@ -38,6 +44,7 @@ public class Effet
 
         }
         catch (RpcException ex) when (ex.StatusCode == StatusCode.Cancelled) { }
+        
     }
 
    
