@@ -10,7 +10,14 @@ public static class Reduceur
     [ReducerMethod]
     public static State ExecuteState(State state, ActionOutput output)
     {
-        return new State(output.Response);
+        var newState = new State(output.Response);
+        
+        ///<summary>
+        ///Forcer Blazor à réagir à l'appel du StateChanged
+        ///</summary>
+        newState.NotifyStateChanged();
+
+        return newState;
     }
 }
 

@@ -13,6 +13,7 @@ public partial class Grpc : ComponentBase
 {
     public CancellationTokenSource Cancellation = new CancellationTokenSource();
     public CounterRequest Request = new CounterRequest { Start = 0 };
+    private bool IsRendered = false;
 
     [Inject]
     public IDispatcher dispatcher { get; set; }
@@ -26,7 +27,17 @@ public partial class Grpc : ComponentBase
         store.InitializeAsync();
         Trace.TraceInformation("Store Fluxor bien initialisé");
 
+        ///<summary>
+        ///Branchement du StateChanged pour que Blazor réagit imparablement 
+        ///</summary>
+        State.StateChanged += async (sender, args) =>
+        {
+            await InvokeAsync(StateHasChanged);
+            Trace.TraceInformation("UI mise a jour sans erreur !");
+        };
+
     }
+
     public void Cliked()
     {
         var send = new ActionInput(Request);
@@ -38,8 +49,6 @@ public partial class Grpc : ComponentBase
     {
         var cancel = new ActionInput(Cancellation);
         dispatcher.Dispatch(cancel);
-
-        Trace.TraceInformation("requête annulé");
     }
 
 }

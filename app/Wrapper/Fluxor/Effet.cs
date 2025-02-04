@@ -34,13 +34,14 @@ public class Effet : ComponentBase
             while (await _inner.ResponseStream.MoveNext(action.Cancellation.Token))
             {
                 ResponseMessage = ResponseStream.Current;
-                StateHasChanged();
 
                 dispatcher.Dispatch(new ActionOutput(_inner));
             }
         }
-        catch (RpcException ex) when (ex.StatusCode == StatusCode.Cancelled) { }
-        
+        catch (RpcException ex) when (ex.StatusCode == StatusCode.Cancelled)
+        {
+            Trace.TraceInformation($"Stream gRpc annulé proprement: {ex.Status.Detail}");
+        }
         catch (Exception ex)
         {
             Trace.TraceInformation($"ERREUR global lors de l'effet: {ex.Message}");

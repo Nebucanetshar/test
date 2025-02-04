@@ -54,6 +54,12 @@ public class GrpcService : IGrpcClient
             {
                 Trace.TraceInformation($"Erreur dû a : {ex.Message}");
             }
+            // cas ou le token d'annulation est déclencher 
+            if (context.CancellationToken.IsCancellationRequested)
+            {
+                Trace.TraceInformation("requête annulé par le client");
+                break;
+            }
         }
     }
 }
