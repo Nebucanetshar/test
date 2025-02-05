@@ -11,6 +11,7 @@ public class State
     public event EventHandler StateChanged;
 
     public State() { }
+
     public State(AsyncServerStreamingCall<CounterResponse>update)
     {
         _Flux = update;

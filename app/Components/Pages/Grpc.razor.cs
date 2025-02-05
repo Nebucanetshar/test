@@ -1,11 +1,9 @@
 
 using app.Wrapper.Fluxor;
 using Fluxor;
-using Grpc.Core;
 using Microsoft.AspNetCore.Components;
 using grpc;
 using System.Diagnostics;
-using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage;
 
 namespace app.Components.Pages;
 
@@ -13,7 +11,6 @@ public partial class Grpc : ComponentBase
 {
     public CancellationTokenSource Cancellation = new CancellationTokenSource();
     public CounterRequest Request = new CounterRequest { Start = 0 };
-    private bool IsRendered = false;
 
     [Inject]
     public IDispatcher dispatcher { get; set; }
@@ -24,6 +21,9 @@ public partial class Grpc : ComponentBase
 
     protected override void OnInitialized()
     {
+        ///<summary>
+        ///Si on n'inialise pas le store, l'effet ne réagira pas aux actions dispatcher
+        ///</summary>
         store.InitializeAsync();
         Trace.TraceInformation("Store Fluxor bien initialisé");
 
@@ -33,9 +33,8 @@ public partial class Grpc : ComponentBase
         State.StateChanged += async (sender, args) =>
         {
             await InvokeAsync(StateHasChanged);
-            Trace.TraceInformation("UI mise a jour sans erreur !");
+            Trace.TraceInformation("UI mise à jour sans erreur !");
         };
-
     }
 
     public void Cliked()

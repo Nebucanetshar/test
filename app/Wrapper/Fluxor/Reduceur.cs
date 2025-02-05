@@ -11,9 +11,9 @@ public static class Reduceur
     public static State ExecuteState(State state, ActionOutput output)
     {
         var newState = new State(output.Response);
-        
+
         ///<summary>
-        ///Forcer Blazor à réagir à l'appel du StateChanged
+        ///Forcer Blazor à réagir à l'appel de la methode definie dans le State
         ///</summary>
         newState.NotifyStateChanged();
 

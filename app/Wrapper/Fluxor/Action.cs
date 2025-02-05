@@ -1,5 +1,6 @@
 ﻿using grpc;
 using Grpc.Core;
+using System.Text.Json.Serialization;
 
 
 namespace app.Wrapper.Fluxor;
@@ -20,7 +21,7 @@ public class ActionInput
     }
 }
 
-
+[JsonConverter(typeof(CounterResponseJsonConverter))]
 public class ActionOutput
 {
     public AsyncServerStreamingCall<CounterResponse> Response { get; }
@@ -30,4 +31,3 @@ public class ActionOutput
         Response = response;
     }
 }
-
