@@ -1,29 +1,18 @@
 ﻿using Fluxor;
-using grpc;
-using Grpc.Core;
-using System.Diagnostics;
 
 namespace app.Wrapper.Fluxor;
 
 public static class Reduceur
 {
     [ReducerMethod]
-    public static State ExecuteState(State state, ActionOutput output)
+    public static State CallState(State state, ActionInput intput)
+    { 
+        return new State(intput._response);
+    }
+
+    [ReducerMethod]
+    public static State StopState(State state, ActionOutput stop)
     {
-        var newState = new State(output.Response);
-
-        ///<summary>
-        ///Forcer Blazor à réagir à l'appel de la methode definie dans le State
-        ///</summary>
-        newState.NotifyStateChanged();
-
-        return newState;
+        return new State(stop._cancellation);
     }
 }
-
-
-
-
-
-
-

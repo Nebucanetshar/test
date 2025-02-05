@@ -7,8 +7,6 @@ using Syncfusion.Blazor;
 using System.Diagnostics;
 using app;
 
-
-
 public class AppProgram
 {
     public static void Main (string[] args)
@@ -25,57 +23,24 @@ public class AppProgram
          });
 
         ///<summary>
-        ///Chargement manuelle du ScanAssemblie en constatant les types scannée 
+        ///Chargement manuelle du ScanAssemblie 
         ///</summary>
-        var effetAssembly = typeof(Effet).Assembly;
-        services.AddFluxor(o => o.ScanAssemblies(effetAssembly));
-
-        var types = effetAssembly.GetTypes();
-        foreach (var type in types)
-        {
-            Trace.TraceInformation($"Les paradigmes scannée sont: {type.FullName}");
-        }
-
-        ///<summary> 
-        ///Enregistrement manuelle dans le conteneur de service AddScoped 
-        ///</summary>
-        services.AddScoped<Effet>();
-        Trace.TraceInformation("Effet à était enregistrer en Scoped");
-
-        ///<summary> 
-        ///Enregistrement manuelle dans le conteneur de service Singleton
-        ///</summary>
-        services.AddSingleton(GrpcChannel.ForAddress("https://localhost:7226"));
-        Trace.TraceInformation("GrpcChannel à était enregistrer en Singleton");
-
+        var assembly = typeof(AppProgram).Assembly;
+        services.AddFluxor(o => o.ScanAssemblies(assembly));
 
         ///<summary>
-        ///S'assuré que AddScoped soit definie avant, car BuildServiceProvider fige la configuration des services 
-        ///donc tout ajout après ne seront pas pris en compte 
-        ///</summary>
-        var provider = services.BuildServiceProvider();
-
-        ///<summary>
-        ///Affiche l'enregistrement du services souhaité 
-        ///</summary>
-        var client = provider.GetService<Counter.CounterClient>();
-        if (client != null)
-            Trace.TraceInformation("Client gRpc à était inject");
-        else
-            Trace.TraceInformation("Client est null");
-
-
-
-        ///<summary>
-        ///Configuration du canal avec grpc standard pour Fluxor
+        ///Configuration du canal gRpc avec AddScoped pour Fluxor
         ///</summary>
         services.AddScoped<ClientFactory>(o =>
         {
             var channel = o.GetRequiredService<GrpcChannel>();
             return new ClientFactory(channel);
         });
-        Trace.TraceInformation($"client à était enregistrer en Scoped");
 
+        ///<summary> 
+        ///Enregistrement manuelle du canal dans le conteneur de service Singleton
+        ///</summary>
+        services.AddSingleton(GrpcChannel.ForAddress("https://localhost:7226"));
 
         #region Programme généré 
         builder.Services.AddRazorComponents().AddInteractiveServerComponents();
@@ -104,4 +69,3 @@ public class AppProgram
         #endregion
     }
 }
-

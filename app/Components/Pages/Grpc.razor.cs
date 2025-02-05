@@ -9,45 +9,39 @@ namespace app.Components.Pages;
 
 public partial class Grpc : ComponentBase
 {
-    public CancellationTokenSource Cancellation = new CancellationTokenSource();
-    public CounterRequest Request = new CounterRequest { Start = 0 };
+    public CancellationTokenSource _cancellation;
+    public CounterRequest _request;
 
     [Inject]
     public IDispatcher dispatcher { get; set; }
     [Inject]
     public IStore store { get; set; }
 
-    public Grpc() { }
+    public Grpc()
+    {
+        _cancellation = new CancellationTokenSource();
+        _request = new CounterRequest { Start = 0 };
+    }
 
     protected override void OnInitialized()
     {
-        ///<summary>
-        ///Si on n'inialise pas le store, l'effet ne réagira pas aux actions dispatcher
-        ///</summary>
         store.InitializeAsync();
-        Trace.TraceInformation("Store Fluxor bien initialisé");
-
-        ///<summary>
-        ///Branchement du StateChanged pour que Blazor réagit imparablement 
-        ///</summary>
-        State.StateChanged += async (sender, args) =>
-        {
-            await InvokeAsync(StateHasChanged);
-            Trace.TraceInformation("UI mise à jour sans erreur !");
-        };
+        State.StateChanged += OnStateChanged;
     }
-
-    public void Cliked()
+    private async void OnStateChanged(object? sender, EventArgs e)
     {
-        var send = new ActionInput(Request);
+        await InvokeAsync(StateHasChanged);
+    }
+    public void Call()
+    {
+        var send = new ActionOutput(_request);
         dispatcher.Dispatch(send);
 
         Trace.TraceInformation("requête envoyé");
     }
     public void Stop()
     {
-        var cancel = new ActionInput(Cancellation);
+        var cancel = new ActionOutput(_cancellation);
         dispatcher.Dispatch(cancel);
     }
-
 }

@@ -1,33 +1,28 @@
 ﻿using grpc;
-using Grpc.Core;
-using System.Text.Json.Serialization;
-
 
 namespace app.Wrapper.Fluxor;
 
-
-public class ActionInput
+public class ActionOutput
 {
-    public CounterRequest Request = new CounterRequest { Start = 0 };
-    public CancellationTokenSource Cancellation = new CancellationTokenSource();
+    public CounterRequest _request = new CounterRequest { Start = 0 };
+    public CancellationTokenSource _cancellation = new CancellationTokenSource();
 
-    public ActionInput(CounterRequest request)
+    public ActionOutput(CounterRequest request)
     {
-        Request = request;
+        _request = request;
     }
-    public ActionInput (CancellationTokenSource cancel)
+    public ActionOutput(CancellationTokenSource cancel)
     {
-        Cancellation.Cancel();
+        _cancellation.Cancel();
     }
 }
 
-[JsonConverter(typeof(CounterResponseJsonConverter))]
-public class ActionOutput
+public class ActionInput
 {
-    public AsyncServerStreamingCall<CounterResponse> Response { get; }
+    public CounterResponse _response { get; }
 
-    public ActionOutput(AsyncServerStreamingCall<CounterResponse> response)
+    public ActionInput(CounterResponse response)
     {
-        Response = response;
+        _response = response;
     }
 }

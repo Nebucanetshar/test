@@ -1,28 +1,22 @@
 ﻿using Fluxor;
 using grpc;
-using Grpc.Core;
 
 namespace app.Wrapper.Fluxor;
 
 
 public class State
 {
-    public AsyncServerStreamingCall<CounterResponse> _Flux;
-    public event EventHandler StateChanged;
+    public CounterResponse? _response { get; }
+    public CancellationTokenSource? _cancellation { get; }
 
-    public State() { }
-
-    public State(AsyncServerStreamingCall<CounterResponse>update)
+    public State(CounterResponse? response = null)
     {
-        _Flux = update;
+        _response = response;
     }
-    ///<summary>
-    ///Fluxor ne déclenche pas automatiquement StateChanged alors on le définie manuellement
-    ///directement dans le state
-    ///</summary>
-    public void NotifyStateChanged()
+
+    public State(CancellationTokenSource cancellation)
     {
-        StateChanged?.Invoke(this, EventArgs.Empty);
+        _cancellation = cancellation;
     }
 }
 

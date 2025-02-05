@@ -1,22 +1,19 @@
 ﻿using Fluxor;
 using Grpc.Core;
 using grpc;
-using Microsoft.AspNetCore.Components;
 using System.Diagnostics;
 
 namespace app.Wrapper.Fluxor;
 
 
-public class Effet : ComponentBase
+public class Effet 
 {
     public AsyncServerStreamingCall<CounterResponse> _inner;
     public IAsyncStreamReader<CounterResponse> ResponseStream => _inner.ResponseStream;
-    public CounterResponse ResponseMessage;
-    public int currentCount = 0;
     private readonly Counter.CounterClient _client;
     private readonly ClientFactory _clientFactory;
-    public readonly State _state = new State();
-
+    private bool _IsEffectRunning = false;
+    
     public Effet(ClientFactory clientFactory)
     {
         _clientFactory = clientFactory;
@@ -26,29 +23,23 @@ public class Effet : ComponentBase
     }
 
     [EffectMethod]
-
-    public async Task CallBroadcast(ActionInput action, IDispatcher dispatcher)
+    public async Task CallBroadcast(ActionOutput action, IDispatcher dispatcher)
     {
-        _inner = _client.StartCounter(action.Request);
+        _inner = _client.StartCounter(action._request);
 
+        Trace.TraceInformation($"mise en fonction du token avant foreach: {action._cancellation.Token.IsCancellationRequested}");
         try
         {
-            while (await _inner.ResponseStream.MoveNext(action.Cancellation.Token))
+            await foreach (var stream in _inner.ResponseStream.ReadAllAsync(action._cancellation.Token))
             {
-                ResponseMessage = ResponseStream.Current;
-
-                dispatcher.Dispatch(new ActionOutput(_inner));
+                dispatcher.Dispatch(new ActionInput(stream));
             }
         }
         catch (RpcException ex) when (ex.StatusCode == StatusCode.Cancelled)
         {
-            Trace.TraceInformation($"Stream gRpc annulé proprement: {ex.Status.Detail}");
+            Trace.TraceInformation($"requête annulé: {ex.Status.Detail}");
         }
-        catch (Exception ex)
-        {
-            Trace.TraceInformation($"ERREUR global lors de l'effet: {ex.Message}");
-        }
-    }
+        
+        Trace.TraceInformation($"mise en fonction du token après catch RpcException: {action._cancellation.Token.IsCancellationRequested}");
+    }// cette accolade renvoie la condition Cancellation.IsRequested à [false]
 }
-
-   

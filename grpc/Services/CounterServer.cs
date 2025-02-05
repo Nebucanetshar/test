@@ -2,9 +2,6 @@
 using System.Diagnostics;
 using grpc.Models;
 using LinqToDB;
-using LinqToDB.SqlQuery;
-using Google.Protobuf.WellKnownTypes;
-
 
 namespace grpc.Services;
 
@@ -26,7 +23,7 @@ public class GrpcService : IGrpcClient
         _connection = new AppDataConnection(_options);
     }
     
-    public async Task Stream(CounterRequest request, IServerStreamWriter<CounterResponse> response, ServerCallContext context)
+   public async Task Stream(CounterRequest request, IServerStreamWriter<CounterResponse> response, ServerCallContext context)
     {
         var click = request.Start;
 
@@ -41,23 +38,23 @@ public class GrpcService : IGrpcClient
 
             await Task.Delay(TimeSpan.FromSeconds(1));
 
-            try
-            {
-               var result = _connection.ToDb.Insert( () => new ToDb
-                {
-                    CurrentCount = state.GetCount(),
-                    Timestamp = DateTime.Now
-                });
+            //try
+            //{
+            //    var result = _connection.ToDb.Insert(() => new ToDb
+            //    {
+            //        CurrentCount = state.GetCount(),
+            //        Timestamp = DateTime.Now
+            //    });
 
-            }
-            catch (Exception ex)
-            {
-                Trace.TraceInformation($"Erreur dû a : {ex.Message}");
-            }
-            // cas ou le token d'annulation est déclencher 
+            //}
+            //catch (Exception ex)
+            //{
+            //    Trace.TraceInformation($"Erreur LinQ dû à : {ex.Message}");
+            //}
+
             if (context.CancellationToken.IsCancellationRequested)
             {
-                Trace.TraceInformation("requête annulé par le client");
+                Trace.TraceInformation("Server en arrêt");
                 break;
             }
         }
@@ -66,10 +63,9 @@ public class GrpcService : IGrpcClient
 
 public class CounterServer : Counter.CounterBase
 {
-    public GrpcService _grpcClient = new GrpcService();
+    public GrpcService _gRpcClient = new GrpcService();
     public override async Task StartCounter(CounterRequest request, IServerStreamWriter<CounterResponse> response, ServerCallContext context)
     {
-        await _grpcClient.Stream(request, response, context);
-
+        await _gRpcClient.Stream(request, response, context);
     }
 }
