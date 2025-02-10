@@ -9,7 +9,6 @@ namespace app.Components.Pages;
 
 public partial class Grpc : ComponentBase
 {
-    public CancellationTokenSource _cancellation;
     public CounterRequest _request;
 
     [Inject]
@@ -19,10 +18,9 @@ public partial class Grpc : ComponentBase
 
     public Grpc()
     {
-        _cancellation = new CancellationTokenSource();
         _request = new CounterRequest { Start = 0 };
     }
-
+    #region Initialized et StateHasChanged
     protected override void OnInitialized()
     {
         store.InitializeAsync();
@@ -32,16 +30,19 @@ public partial class Grpc : ComponentBase
     {
         await InvokeAsync(StateHasChanged);
     }
+    #endregion
     public void Call()
     {
-        var send = new ActionOutput(_request);
+        var send = new CallAction(_request);
         dispatcher.Dispatch(send);
 
         Trace.TraceInformation("requête envoyé");
     }
     public void Stop()
     {
-        var cancel = new ActionOutput(_cancellation);
+        var cancel = new StopAction();
         dispatcher.Dispatch(cancel);
+
+        Trace.TraceInformation("annulation du stream");
     }
 }

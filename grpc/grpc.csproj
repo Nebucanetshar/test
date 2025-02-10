@@ -31,8 +31,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Google.Api.CommonProtos" Version="2.16.0" />
-		<PackageReference Include="google.protobuf" Version="3.28.3" />
+		
 		<PackageReference Include="Grpc.AspNetCore" Version="2.57.0" />
 		<PackageReference Include="Grpc.AspNetCore.Web" Version="2.66.0" />
 		<PackageReference Include="linq2db" Version="5.4.1" />

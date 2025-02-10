@@ -2,26 +2,23 @@
 
 namespace app.Wrapper.Fluxor;
 
-public class ActionOutput
+public class CallAction
 {
-    public CounterRequest _request = new CounterRequest { Start = 0 };
-    public CancellationTokenSource _cancellation = new CancellationTokenSource();
-
-    public ActionOutput(CounterRequest request)
+    public CounterRequest _request;
+    
+    public CallAction(CounterRequest request)
     {
-        _request = request;
-    }
-    public ActionOutput(CancellationTokenSource cancel)
-    {
-        _cancellation.Cancel();
+        _request = new CounterRequest { Start = 0 };
     }
 }
 
-public class ActionInput
+public class StopAction { }
+
+public class InputAction
 {
     public CounterResponse _response { get; }
 
-    public ActionInput(CounterResponse response)
+    public InputAction(CounterResponse response)
     {
         _response = response;
     }

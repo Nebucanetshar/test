@@ -12,8 +12,7 @@ public class Effet
     public IAsyncStreamReader<CounterResponse> ResponseStream => _inner.ResponseStream;
     private readonly Counter.CounterClient _client;
     private readonly ClientFactory _clientFactory;
-    private bool _IsEffectRunning = false;
-    
+    public Effet() { }
     public Effet(ClientFactory clientFactory)
     {
         _clientFactory = clientFactory;
@@ -23,23 +22,23 @@ public class Effet
     }
 
     [EffectMethod]
-    public async Task CallBroadcast(ActionOutput action, IDispatcher dispatcher)
+    public async Task CallBroadcast(CallAction action, IDispatcher dispatcher)
     {
         _inner = _client.StartCounter(action._request);
-
-        Trace.TraceInformation($"mise en fonction du token avant foreach: {action._cancellation.Token.IsCancellationRequested}");
-        try
-        {
-            await foreach (var stream in _inner.ResponseStream.ReadAllAsync(action._cancellation.Token))
-            {
-                dispatcher.Dispatch(new ActionInput(stream));
-            }
-        }
-        catch (RpcException ex) when (ex.StatusCode == StatusCode.Cancelled)
-        {
-            Trace.TraceInformation($"requête annulé: {ex.Status.Detail}");
-        }
         
-        Trace.TraceInformation($"mise en fonction du token après catch RpcException: {action._cancellation.Token.IsCancellationRequested}");
-    }// cette accolade renvoie la condition Cancellation.IsRequested à [false]
+        await foreach (var stream in _inner.ResponseStream.ReadAllAsync())
+        {
+            dispatcher.Dispatch(new InputAction(stream));
+        }
+    }
+
+    [EffectMethod]
+    public Task StopBroadcast(StopAction action,IDispatcher dispatcher)
+    {
+       if (_inner != null)
+       {
+            _inner.Dispose();
+       }
+        return Task.CompletedTask;
+    }
 }

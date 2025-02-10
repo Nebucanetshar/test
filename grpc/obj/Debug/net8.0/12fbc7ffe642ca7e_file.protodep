@@ -1,5 +1,2 @@
 obj\Debug\net8.0\Protos/File.cs \
-obj\Debug\net8.0\Protos/FileGrpc.cs: google/api/http.proto\
- C:/Users/user/.nuget/packages/grpc.tools/2.57.0/build/native/include/google/protobuf/descriptor.proto\
- google/api/annotations.proto\
- Protos/file.proto
+obj\Debug\net8.0\Protos/FileGrpc.cs: Protos/file.proto

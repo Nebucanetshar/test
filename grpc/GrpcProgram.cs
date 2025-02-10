@@ -13,14 +13,20 @@ public class GrpcProgram
         var configuration = builder.Configuration;
         var connectionString = configuration.GetConnectionString("linQ") ?? throw new InvalidOperationException("arg");
 
-        // configuration du service gRpc et transcoding si utilisation du protocol http.1.1
-        services.AddGrpc();//.AddJsonTranscoding();
+        ///<summary>
+        /// configuration du service gRpc coté server
+        ///</summary>
+        services.AddGrpc();
 
-        //configuration DI de LinqToDb
+        ///<summary>
+        ///configuration DI de LinqToDb
+        ///</summary>
         services.AddLinqToDBContext<AppDataConnection>((provider, options) =>
          options.UsePostgreSQL(connectionString));
 
-        //configuration de la migration vers la base de donnée Postgres
+        ///<summary>
+        ///configuration de la migration vers la base de donnée PostgreSQL
+        ///</summary>
         //LinkToDb migration = new LinkToDb();
         //migration.CreateTable();
 
