@@ -4,6 +4,7 @@ using grpc;
 using Grpc.Net.Client;
 using Syncfusion.Blazor;
 using app;
+using Syncfusion.Licensing;
 
 public class AppProgram
 {
@@ -39,6 +40,10 @@ public class AppProgram
         ///Enregistrement manuelle du canal dans le conteneur de service Singleton
         ///</summary>
         services.AddSingleton(GrpcChannel.ForAddress("https://localhost:7226"));
+
+        #region test unitaire
+        SyncfusionLicenseProvider.RegisterLicense("license key");
+        #endregion
 
         #region Programme généré 
         builder.Services.AddRazorComponents().AddInteractiveServerComponents();

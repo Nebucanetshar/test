@@ -6,7 +6,14 @@ namespace app.Wrapper.Fluxor;
 public class State
 {
     public CounterResponse? _response { get; }
+    #region test unitaire
+    public int test { get; set; }
 
+    public State(int test)
+    {
+        this.test = test;
+    }
+    #endregion
     public State(CounterResponse? response = null)
     {
         _response = response;

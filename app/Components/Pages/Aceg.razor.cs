@@ -7,7 +7,7 @@ using System.Diagnostics;
 
 namespace app.Components.Pages;
 
-public partial class Grpc : ComponentBase
+public partial class Aceg : ComponentBase
 {
     public CounterRequest _request;
 
@@ -16,7 +16,7 @@ public partial class Grpc : ComponentBase
     [Inject]
     public IStore store { get; set; }
 
-    public Grpc()
+    public Aceg()
     {
         _request = new CounterRequest { Start = 0 };
     }
